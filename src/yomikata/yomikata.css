@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    color: #001050;
+}
+
+html,
+body,
+textarea,
+input {
+    font-family: Verdana, sans-serif;
+    font-size: large;
+}
+
+input,
+textarea {
+    clear: left;
+    border: inset 2px #2050a0;
+    color: #001050;
+    width: 70vw;
+    border-radius: 3px;
+    padding: 0.5vmin;
+}
+
+textarea {
+    height: 45vh;
+    width: 80vw;
+}
+
+html {
+    background-color: #e0e4ff;
+}
+
+body {
+    padding: 1.5vh 1.5vw;
+    width: 97vw;
+}
+
+#splashscreen {
+    background-color: #ffffff;
+    margin: 7vh 5vw;
+    padding: 5vh 4vw;
+    width: 80vw;
+    box-shadow: 0.5vmin 0.5vmin 0.5vmin 0.5vmin #c8cce4;
+}
+
+#splashscreen ul li {
+    display: block;
+    height: 7vw;
+    line-height: 7vw;
+}
+
+#splashscreen .loading {
+    display: block;
+    width: 50vw;
+    float: left;
+    clear: left;
+}
+
+#splashscreen img {
+    height: 2vw;
+    width: 20vw;
+}
+
+.hidden {
+    display: none;
+}
+
+#ui {
+    background-color: #ffffff;
+    margin: auto;
+    padding: 1.5vh 1.5vw;
+    box-shadow: 0.2vmin 0.2vmin 0.2vmin 0.2vmin #c8cce4;
+    min-height: 70vh;
+    width: 90vw;
+}
+
+#ui label {
+    display: block;
+    margin-top: 1vmin;
+}
+
+#buttons {
+    text-align: center;
+}
+
+#ui a.button {
+    display: inline-block;
+    background-color: #001050;
+    color: #ffffff;
+    border: outset 2px #2050a0;
+    border-radius: 3px;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 1vmin 5vmin;
+    padding: 1vmin 5vmin;
+}
+
+#acknowledgement {
+    font-size: 80%;
+    width: 70vw;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#acknowledgement p {
+    margin: 3vmin 0;
+}
+
+#acknowledgement p a {
+    font-weight: bold;
+    color: #102070;
+}

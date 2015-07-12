@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>yomikata</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="yomikata.css" />
+</head>
+<body>
+    <div id="splashscreen">
+        <ul>
+            <li>
+                <span class="loading">Loading tokenizer:</span>
+                <span id="loading-tokenizer-status">
+                    <img src="loading.gif" alt="Please wait..." />
+                </span>
+            </li>
+            <li>
+                <span class="loading">Loading dictionary:</span>
+                <span id="loading-dictionary-status">
+                    <img src="loading.gif" alt="Please wait..." />
+                </span>
+            </li>
+        </ul>
+    </div>
+    <div id="ui" class="hidden">
+        <form action="#" method="post">
+            <div id="japanese-container">
+                <label for="japanese-text">Japanese:</label>
+                <textarea id="japanese-text"></textarea>
+            </div>
+            <div id="title-container">
+                <label for="title">Title</label>
+                <input id="title" value="yomikata" />
+            </div>
+            <div id="buttons">
+                <a class="button" id="open" target="_blank" href="#">Open</a>
+                <a class="button"
+                   id="save"
+                   href="#"
+                   download="reading.html">Save</a>
+            </div>
+        </form>
+    </div>
+    <div id="acknowledgement">
+        <p>
+            This software uses the
+            <a href="http://www.csse.monash.edu.au/~jwb/edict.html">EDICT</a>
+            and
+            <a href="http://www.csse.monash.edu.au/~jwb/kanjidic.html">KANJIDIC</a>
+            dictionary files. These files are the property of the
+            <a href="http://www.edrdg.org/"> Electronic Dictionary Research and Development Group</a>,
+            and are used in conformance with the Group's
+            <a href="http://www.edrdg.org/edrdg/licence.html">licence</a>.
+        </p>
+        <p>
+            This software uses
+            <a href="https://github.com/takuyaa">Takuya Asano</a>'s
+            <a href="https://github.com/takuyaa/kuromoji.js">JavaScript implementation</a>
+            of the
+            <a href="http://www.atilika.com/ja/products/kuromoji.html">Kuromoji</a>
+            Japanese morphological analyzer.
+        </p>
+        <p>
+            <a href="https://github.com/attilammagyar/yomikata">Source code is available on GitHub</a>
+        </p>
+    </div>
+    <script type="text/javascript" src="kuromojijs/kuromoji.js"></script>
+    <script type="text/javascript" src="jmdict.js"></script>
+    <script type="text/javascript" src="yomikata.js"></script>
+</body>
+</html>
