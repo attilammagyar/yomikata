@@ -12,9 +12,25 @@ Tested with [Firefox 38][firefox].
 (ZIP)][download] to your desktop or smartphone, or build it on your GNU/Linux
 system.
 
-  [demo]: http://attilammagyar.github.io/yomikata/index.html
+  [demo]: http://attilammagyar.github.io/yomikata/demo.html
   [sample]: http://attilammagyar.github.io/yomikata/sample.html
   [download]: http://attilammagyar.github.io/yomikata/yomikata.zip
+
+How does it differ from Google Translate?
+-----------------------------------------
+
+ * Furigana is displayed for the first occurrence of each kanji in each
+   paragraph. No roomaji. This is as close to a reading practice textbook as
+   you can get, except for you can choose the text you want to practice with.
+
+ * You have to translate the overall text for yourself, since Yomikata does not
+   try to convert the Japanese text into broken English for you, it just makes
+   it quicker to find dictionary translations for each word (except for some
+   very basic ones). Some brainwork surely won't hurt during reading practice.
+
+ * Print out the generated practice sheets or use them offline. Studying
+   offline is a great way to eliminate all the distractions that gadgets
+   provide.
 
 Using the ZIP
 -------------
