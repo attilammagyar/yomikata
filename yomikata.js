@@ -212,14 +212,14 @@ yomikata = {
         return str != "";
     },
 
-    parse_paragraph: function (paragraph)
+    parse_paragraph: function (paragraph, paragraph_id)
     {
         var tokens = yomikata.tokenizer.tokenize(paragraph),
             parsed_tokens = [],
             writings = [],
-            seen = {},
+            word_ids = {},
             parsed_token,
-            i, l, t, b, s;
+            i, l, t, b, s, w;
 
         for (i = 0, l = tokens.length; i < l; ++i) {
             t = tokens[i];
@@ -227,17 +227,23 @@ yomikata = {
             s = t["surface_form"];
 
             parsed_token = {
+                "word_id": "",
                 "token": s,
                 "reading": null
             };
 
-            if (t["word_type"] === "KNOWN" && (!seen.hasOwnProperty(b))) {
-                seen[b] = true;
-                writings.push(b);
+            if (t["word_type"] === "KNOWN" && (!word_ids.hasOwnProperty(b))) {
+                w = "word-" + String(paragraph_id) + "-" + String(i);
+                word_ids[b] = w;
+                writings.push({"word_id": w, "writing": b});
 
                 if (yomikata.KANJI_RE.test(s)) {
                     parsed_token["reading"] = t["reading"];
                 }
+            }
+
+            if (word_ids.hasOwnProperty(b)) {
+                parsed_token["word_id"] = word_ids[b];
             }
 
             parsed_tokens.push(parsed_token);
@@ -253,29 +259,31 @@ yomikata = {
     {
         var entries = [],
             entry_ids,
+            wi = writing["word_id"],
+            wr = writing["writing"],
             i, l;
 
         if (
-            yomikata.BLACKLIST.hasOwnProperty(writing)
-            || (!JMdict["dictionary"].hasOwnProperty(writing))
+            yomikata.BLACKLIST.hasOwnProperty(wr)
+            || (!JMdict["dictionary"].hasOwnProperty(wr))
         ) {
             return entries;
         }
 
-        entry_ids = JMdict["dictionary"][writing];
+        entry_ids = JMdict["dictionary"][wr];
 
         if (typeof(entry_ids) === "number") {
             entry_ids = [entry_ids];
         }
 
         for (i = 0, l = entry_ids.length; i < l; ++i) {
-            entries.push(yomikata.build_entry(writing, entry_ids[i]));
+            entries.push(yomikata.build_entry(wi, wr, entry_ids[i]));
         }
 
         return entries;
     },
 
-    build_entry: function (writing, entry_id)
+    build_entry: function (word_id, writing, entry_id)
     {
         var entry = JMdict["entries"][entry_id],
             lines, readings, meanings;
@@ -285,6 +293,7 @@ yomikata = {
         meanings = yomikata.collect_meanings(lines);
 
         return {
+            "word_id": word_id,
             "writing": writing,
             "readings": readings,
             "meanings": meanings
@@ -409,7 +418,9 @@ yomikata = {
                 ];
             }
 
-            html.push(f.join(""));
+            f = '<a class="' + t["word_id"] + '">' + f.join("") + '</a>';
+
+            html.push(f);
         }
 
         return html.join("");
@@ -425,7 +436,7 @@ yomikata = {
         var html = [],
             writing = yomikata.quote(entry["writing"]);
 
-        html.push('<dl>');
+        html.push('<dl class="' + entry["word_id"] + '">');
 
         if (entry["readings"].length > 0) {
             html = html.concat([
@@ -530,36 +541,32 @@ yomikata.HTML_HEAD = [
         '<title>{{TITLE}}</title>',
         '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />',
         '<meta charset="utf-8" />',
+        '<meta name="viewport" content="width=device-width, initial-scale=1.0,',
+            ' maximum-scale=1.0, user-scalable=no" />',
         '<style>',
         '* {',
             'margin: 0;',
             'padding: 0;',
         '}',
     '',
-        'html, body {',
-            'background-color: #ffffff;',
-            'color: #000000;',
-        '}',
-    '',
         'body {',
             'padding: 10px;',
         '}',
     '',
-        '.paragraph {',
-            'display: block;',
-            'break-inside: avoid;',
-            'page-break-inside: avoid;',
-            '-webkit-column-break-inside: avoid;',
+        'html, body, .paragraph * {',
+            'background-color: #ffffff;',
+            'color: #000000;',
+            'text-decoration: none',
         '}',
     '',
         '.paragraph p {',
             'display: block;',
-            'margin-right: 2%;',
             'margin: 2%;',
             'line-height: 150%;',
         '}',
     '',
         '.paragraph .vocab {',
+            'display: none;',
             'font-size: 80%;',
             '-webkit-column-count: 2;',
             '-moz-column-count: 2;',
@@ -599,23 +606,122 @@ yomikata.HTML_HEAD = [
             'content: " \\25e6 ";',
         '}',
     '',
+        '#help {',
+            'margin: 0.5em auto;',
+            'font-size: 0.9em;',
+            'font-family: sans-serif;',
+            'width: 80%;',
+        '}',
+    '',
         '#print {',
             'text-align: center;',
         '}',
     '',
+        '#print button {',
+            'background-color: #001050;',
+            'color: #ffffff;',
+            'border: outset 2px #2050a0;',
+            'border-radius: 3px;',
+            'text-decoration: none;',
+            'font-weight: bold;',
+            'margin: 1vmin 5vmin;',
+            'padding: 1vmin 5vmin;',
+        '}',
+    '',
+        '#dictionary {',
+            'position: fixed;',
+            'top: 1em;',
+            'left: 1em;',
+            'right: 1em;',
+            'background-color: #f0f8ff;',
+            'color: #000000;',
+            'padding: 0.2em;',
+            'padding-left: 1.2em;',
+            'border: solid 1px #000080;',
+            'box-shadow: 0.5vmin 0.5vmin 0.5vmin 0.5vmin #c8cce4;',
+            'font-family: sans-serif;',
+        '}',
+    '',
+        '#dictionary dl {',
+            'font-size: 0.9em;',
+        '}',
+    '',
         '@media print {',
-            '#print {',
+            '#print, #dictionary, #help {',
                 'display: none;',
             '}',
-        '}',
+            '',
+            '.paragraph {',
+                'display: block;',
+                'break-inside: avoid;',
+                'page-break-inside: avoid;',
+                '-webkit-column-break-inside: avoid;',
+            '}',
+            '',
+            '.paragraph .vocab {',
+                'display: block;',
+            '}',
         '</style>',
     '</head>',
     '<body>',
         '<div id="print">',
             '<form action="#">',
-                '<button onclick="window.print()">Print (Ctrl+P)</button>',
+                '<button onclick="window.print()">',
+                    'Print (with vocab) [Ctrl+P]',
+                '</button>',
             '</form>',
-        '</div>'
+        '</div>',
+        '<div id="help">',
+            '<p>',
+                'Click on a word to display its meaning, click on the meaning',
+                ' to hide it. If you print this page, then after each',
+                ' paragraph, a complete vocabulary list for that paragraph',
+                ' will be included. <a id="hide-help" href="#">(Hide)</a>',
+            '</p>',
+        '</div>',
+        '<div id="dictionary">',
+        '</div>',
+        '<script type="text/javascript">',
+        '(function () {',
+        'var dictionary = document.getElementById("dictionary"),',
+        '    hide_help = document.getElementById("hide-help");',
+        'function show_dictionary()',
+        '{',
+            'var word_id = this.className,',
+                'html = "",',
+                'entries,',
+                'i, l;',
+            'entries = document.getElementsByClassName(word_id);',
+            'for (i = 0, l = entries.length; i < l; ++i) {',
+                'if (String(entries[i].tagName).toUpperCase() === "DL") {',
+                    'html += "<dl>" + entries[i].innerHTML + "</dl>";',
+                '}',
+            '}',
+            'if (html !== "") {',
+                'dictionary.innerHTML = html;',
+                'dictionary.style.display = "";',
+            '}',
+        '};',
+        'function hide_dictionary()',
+        '{',
+            'dictionary.style.display = "none";',
+        '};',
+        'window.onload = function ()',
+        '{',
+            'var words = document.getElementsByTagName("a"),',
+                'i, l;',
+            'for (i = 0, l = words.length; i < l; ++i) {',
+                'words[i].onclick = show_dictionary;',
+            '}',
+            'dictionary.onclick = hide_dictionary;',
+            'hide_help.onclick = function ()',
+            '{',
+                'document.getElementById("help").style.display = "none";',
+            '};',
+            'hide_dictionary();',
+        '};',
+        '})();',
+        '</script>'
 ].join("");
 
 yomikata.HTML_TAIL = [
