@@ -3,7 +3,7 @@ KUROMOJI_JS_URL=https://github.com/takuyaa/kuromoji.js.git
 KUROMOJI_JS_COMMIT=4ed2bc8b0b26fdbd790df53614322d1beec2027f
 
 .PHONY: all
-all: ./dist/yomikata/jmdict.js ./dist/yomikata/yomikata.js ./dist/yomikata/yomikata.css ./dist/yomikata/index.html ./dist/yomikata/kuromojijs ./dist/yomikata/loading.gif
+all: ./dist/yomikata/jmdict.js ./dist/yomikata/yomikata.js ./dist/yomikata/yomikata.css ./dist/yomikata/index.html ./dist/yomikata/kuromojijs ./dist/yomikata/loading.gif ./dist/yomikata/demo.html ./dist/yomikata/yomikata-demo.js
 
 .PHONY: clean
 clean:
@@ -30,6 +30,10 @@ clean:
 	test -f ./dist/yomikata/yomikata.js \
 		|| cp ./src/yomikata/yomikata.js ./dist/yomikata/yomikata.js
 
+./dist/yomikata/yomikata-demo.js: ./dist/yomikata
+	test -f ./dist/yomikata/yomikata-demo.js \
+		|| cp ./src/yomikata/yomikata-demo.js ./dist/yomikata/yomikata-demo.js
+
 ./dist/yomikata/yomikata.css: ./dist/yomikata
 	test -f ./dist/yomikata/yomikata.css \
 		|| cp ./src/yomikata/yomikata.css ./dist/yomikata/yomikata.css
@@ -37,6 +41,11 @@ clean:
 ./dist/yomikata/index.html: ./dist/yomikata
 	test -f ./dist/yomikata/index.html \
 		|| cp ./src/yomikata/yomikata.html ./dist/yomikata/index.html
+
+./dist/yomikata/demo.html: ./dist/yomikata
+	test -f ./dist/yomikata/demo.html \
+		|| sed 's@</body>@<script type="text/javascript" src="yomikata-demo.js"></script></body>@' \
+			./src/yomikata/yomikata.html >./dist/yomikata/demo.html
 
 ./dist/yomikata/loading.gif: ./dist/yomikata
 	test -f ./dist/yomikata/loading.gif \
