@@ -16,12 +16,27 @@ system.
   [sample]: http://attilammagyar.github.io/yomikata/sample.html
   [download]: http://attilammagyar.github.io/yomikata/yomikata.zip
 
-How does it differ from Google Translate?
------------------------------------------
+Using the ZIP
+-------------
+
+ 1. [Download the ZIP file][download]
+ 2. Extract it into a folder.
+ 3. Open the `index.html` in [Firefox][firefox] (and create a bookmark so next
+    time it's easier to find).
+
+How does it differ from [Google Translate][gt]?
+----------------------------------------------
+
+Using [Google Translate][gt] as a reading practice? [Surely you can't be
+serious][surely].
+
+  [gt]: https://translate.google.com
+  [surely]: https://www.youtube.com/watch?v=0A5t5_O8hdA
 
  * Furigana is displayed for the first occurrence of each kanji in each
    paragraph. No roomaji. This is as close to a reading practice textbook as
-   you can get, except for you can choose the text you want to practice with.
+   you can get, except for you have complete freedom in choosing the text you
+   want to practice with.
 
  * You have to translate the overall text for yourself, since Yomikata does not
    try to convert the Japanese text into broken English for you, it just makes
@@ -29,16 +44,9 @@ How does it differ from Google Translate?
    very basic ones). Some brainwork surely won't hurt during reading practice.
 
  * Print out the generated practice sheets or use them offline. Studying
-   offline is a great way to eliminate all the distractions that gadgets
-   provide.
-
-Using the ZIP
--------------
-
- 1. [Download the ZIP file][download]
- 2. Extract it into a folder.
- 3. Open the `index.html` in Firefox (and create a bookmark so next time it's
-    easier to find).
+   offline is a great way to eliminate all the distractions that modern gadgets
+   provide. (Did you open the link to that YouTube video above? That's what
+   I'm talking about.)
 
 Build
 -----
