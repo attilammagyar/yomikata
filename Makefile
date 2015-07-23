@@ -3,7 +3,7 @@ KUROMOJI_JS_URL=https://github.com/takuyaa/kuromoji.js.git
 KUROMOJI_JS_COMMIT=4ed2bc8b0b26fdbd790df53614322d1beec2027f
 
 .PHONY: all
-all: ./dist/yomikata/jmdict.js ./dist/yomikata/yomikata.js ./dist/yomikata/yomikata.css ./dist/yomikata/index.html ./dist/yomikata/kuromojijs ./dist/yomikata/loading.gif ./dist/yomikata/demo.html ./dist/yomikata/yomikata-demo.js ./dist/yomikata/license.txt
+all: ./dist/yomikata/jmdict.js ./dist/yomikata/yomikata.js ./dist/yomikata/yomikata.css ./dist/yomikata/index.html ./dist/yomikata/kuromojijs ./dist/yomikata/loading.gif ./dist/yomikata/demo.html ./dist/yomikata/yomikata-demo.js ./dist/yomikata/license.txt ./dist/yomikata/readme.txt
 
 .PHONY: clean
 clean:
@@ -54,6 +54,10 @@ clean:
 ./dist/yomikata/license.txt: ./dist/yomikata
 	test -f ./dist/yomikata/license.txt \
 		|| cp ./LICENSE ./dist/yomikata/license.txt
+
+./dist/yomikata/readme.txt: ./dist/yomikata
+	test -f ./dist/yomikata/readme.txt \
+		|| cp ./README.md ./dist/yomikata/readme.txt
 
 ./dist/yomikata/kuromojijs: ./build/kuromojijs ./dist/yomikata
 	test -d ./dist/yomikata/kuromojijs || mkdir ./dist/yomikata/kuromojijs
