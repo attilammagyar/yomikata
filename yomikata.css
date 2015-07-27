@@ -96,8 +96,8 @@ body {
     border-radius: 3px;
     text-decoration: none;
     font-weight: bold;
-    margin: 1vmin 5vmin;
-    padding: 1vmin 5vmin;
+    margin: 1vmin;
+    padding: 1vmin 3vmin;
 }
 
 #acknowledgement {
