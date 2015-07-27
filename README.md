@@ -35,7 +35,7 @@ serious][surely].
 
  * Furigana is displayed for the first occurrence of each kanji in each
    paragraph. No roomaji. This is as close to a reading practice textbook as
-   you can get, except for you have complete freedom in choosing the text you
+   you can get, except for having complete freedom in choosing the text you
    want to practice with.
 
  * You have to translate the overall text for yourself, since Yomikata does not
