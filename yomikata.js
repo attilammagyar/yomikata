@@ -217,14 +217,16 @@ yomikata = {
         var tokens = yomikata.tokenizer.tokenize(paragraph),
             parsed_tokens = [],
             writings = [],
+            readings = {},
             word_ids = {},
             parsed_token,
-            i, l, t, b, s, w;
+            i, l, t, b, s, w, r;
 
         for (i = 0, l = tokens.length; i < l; ++i) {
             t = tokens[i];
             b = t["basic_form"];
             s = t["surface_form"];
+            r = t["reading"];
 
             parsed_token = {
                 "word_id": "",
@@ -236,10 +238,11 @@ yomikata = {
                 w = "word-" + String(paragraph_id) + "-" + String(i);
                 word_ids[b] = w;
                 writings.push({"word_id": w, "writing": b});
+            }
 
-                if (yomikata.KANJI_RE.test(s)) {
-                    parsed_token["reading"] = t["reading"];
-                }
+            if (yomikata.KANJI_RE.test(s) && (!readings.hasOwnProperty(r))) {
+                parsed_token["reading"] = r;
+                readings[r] = true;
             }
 
             if (word_ids.hasOwnProperty(b)) {
