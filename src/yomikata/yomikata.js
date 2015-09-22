@@ -152,10 +152,7 @@ yomikata = {
 
     open: function ()
     {
-        this.setAttribute(
-            "href",
-            yomikata.process_text($("japanese-text").value)
-        );
+        yomikata.japanese_text_to_href_data_url(this);
 
         return true;
     },
@@ -164,20 +161,41 @@ yomikata = {
     {
         var title = String($("title").value);
 
-        this.setAttribute(
-            "href",
-            yomikata.process_text($("japanese-text").value)
-        );
+        yomikata.japanese_text_to_href_data_url(this);
         this.setAttribute("download", title + ".html");
 
         return true;
     },
 
-    process_text: function (text)
+    japanese_text_to_href_data_url: function (dom_element)
+    {
+        var blacklist = yomikata.build_blacklist();
+
+        dom_element.setAttribute(
+            "href",
+            yomikata.process_text($("japanese-text").value, blacklist)
+        );
+    },
+
+    build_blacklist: function ()
+    {
+        var blacklist = {},
+            k, v;
+
+        for (k in yomikata.BLACKLIST) {
+            if (yomikata.BLACKLIST.hasOwnProperty(k)) {
+                blacklist[k] = yomikata.BLACKLIST[v];
+            }
+        }
+
+        return blacklist;
+    },
+
+    process_text: function (text, blacklist)
     {
         return yomikata.html_to_data_url(
             yomikata.generate_html(
-                yomikata.parse_text(text)
+                yomikata.parse_text(text, blacklist)
             )
         );
     },
@@ -199,12 +217,17 @@ yomikata = {
         ].join("");
     },
 
-    parse_text: function (text)
+    parse_text: function (text, blacklist)
     {
         var paragraphs = text.split(/\n\n+/).filter(yomikata.is_not_empty),
             i, l;
 
-        return paragraphs.map(yomikata.parse_paragraph);
+        return paragraphs.map(
+            function (paragraph, paragraph_id)
+            {
+                return yomikata.parse_paragraph(paragraph, paragraph_id, blacklist);
+            }
+        );
     },
 
     is_not_empty: function (str)
@@ -212,7 +235,7 @@ yomikata = {
         return str != "";
     },
 
-    parse_paragraph: function (paragraph, paragraph_id)
+    parse_paragraph: function (paragraph, paragraph_id, blacklist)
     {
         var tokens = yomikata.tokenizer.tokenize(paragraph),
             parsed_tokens = [],
@@ -254,11 +277,16 @@ yomikata = {
 
         return {
             "tokens": parsed_tokens,
-            "words": writings.map(yomikata.lookup_by_writing)
+            "words": writings.map(
+                function (writing)
+                {
+                    return yomikata.lookup_by_writing(writing, blacklist);
+                }
+            )
         };
     },
 
-    lookup_by_writing: function (writing)
+    lookup_by_writing: function (writing, blacklist)
     {
         var entries = [],
             entry_ids,
@@ -267,7 +295,7 @@ yomikata = {
             i, l;
 
         if (
-            yomikata.BLACKLIST.hasOwnProperty(wr)
+            blacklist.hasOwnProperty(wr)
             || (!JMdict["dictionary"].hasOwnProperty(wr))
         ) {
             return entries;

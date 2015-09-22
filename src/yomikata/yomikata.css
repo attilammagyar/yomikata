@@ -54,14 +54,14 @@ body {
     line-height: 7vw;
 }
 
-#splashscreen .loading {
+#splashscreen span.loading {
     display: block;
     width: 50vw;
     float: left;
     clear: left;
 }
 
-#splashscreen img {
+img.loading {
     height: 2vw;
     width: 20vw;
 }
@@ -84,7 +84,8 @@ body {
     margin-top: 1vmin;
 }
 
-#buttons {
+#ui div.buttons,
+.center {
     text-align: center;
 }
 
