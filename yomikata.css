@@ -54,14 +54,14 @@ body {
     line-height: 7vw;
 }
 
-#splashscreen .loading {
+#splashscreen span.loading {
     display: block;
     width: 50vw;
     float: left;
     clear: left;
 }
 
-#splashscreen img {
+img.loading {
     height: 2vw;
     width: 20vw;
 }
@@ -84,8 +84,43 @@ body {
     margin-top: 1vmin;
 }
 
-#buttons {
+#ui div.buttons,
+.center {
     text-align: center;
+}
+
+#vocab {
+    width: 100%;
+    margin: 3vmin 0;
+    display: none;
+}
+
+#vocab,
+#vocab tr,
+#vocab tr td {
+    border: solid 1px #001050;
+    border-collapse: collapse;
+}
+
+#vocab tr td label {
+    cursor: pointer;
+}
+
+#vocab tr td:nth-child(2) {
+    min-width: 7em;
+}
+
+#vocab tr td ul {
+    margin-left: 5vmin;
+    font-size: 80%;
+}
+
+#vocab tr td input {
+    width: auto;
+}
+
+#vocab tr td {
+    padding: 1vmin;
 }
 
 #ui a.button {

@@ -74,17 +74,20 @@ yomikata = {
 
     timer: null,
     tokenizer: null,
+    vocab_selector_loader: null,
 
     initialize: function ()
     {
         var open = $("open"),
             save = $("save");
+            customize_vocab = $("customize-vocab");
 
         yomikata.timer = setInterval(yomikata.update_dictionary_status, 1000);
         setTimeout(yomikata.initialize_tokenizer, 300);
 
         open.onclick = yomikata.open;
         save.onclick = yomikata.save;
+        customize_vocab.onclick = yomikata.customize_vocab;
     },
 
     bind: function (func, obj)
@@ -152,10 +155,7 @@ yomikata = {
 
     open: function ()
     {
-        this.setAttribute(
-            "href",
-            yomikata.process_text($("japanese-text").value)
-        );
+        yomikata.japanese_text_to_href_data_url(this);
 
         return true;
     },
@@ -164,20 +164,123 @@ yomikata = {
     {
         var title = String($("title").value);
 
-        this.setAttribute(
-            "href",
-            yomikata.process_text($("japanese-text").value)
-        );
+        yomikata.japanese_text_to_href_data_url(this);
         this.setAttribute("download", title + ".html");
 
         return true;
     },
 
-    process_text: function (text)
+    customize_vocab: function ()
+    {
+        var vocab_table = $("vocab"),
+            text = $("japanese-text").value,
+            html = [],
+            id = 0,
+            blacklist = yomikata.build_blacklist(),
+            words;
+
+        $("customize-vocab").innerHTML = "Update vocab customizer";
+        vocab_table.innerHTML = [
+            '<tr>',
+                '<td class="center" colspan="3">',
+                    '<img class="loading" src="loading.gif" alt="Please wait..." />',
+                '</td>',
+            '</tr>',
+        ].join("");
+        vocab_table.style.display = "table";
+
+        words = yomikata.parse_paragraph(text, "", yomikata.BLACKLIST)["words"];
+
+        html = words.map(function (entries) {
+            var writing;
+
+            if (entries.length == 0) {
+                return "";
+            }
+
+            writing = yomikata.quote(entries[0]["writing"]);
+            ++id;
+
+            return [
+                "<tr>",
+                    "<td>",
+                        "<input id=\"vocab-checkbox-", String(id), "\" ",
+                                "type=\"checkbox\" value=\"", writing, "\" ",
+                                blacklist.hasOwnProperty(entries[0]["writing"])
+                                    ? ""
+                                    : "checked=\"checked\" ",
+                                "/>",
+                    "</td>",
+                    "<td>",
+                        "<label for=\"vocab-checkbox-", String(id), "\">",
+                            writing,
+                        "</label>",
+                    "</td>",
+                    "<td>",
+                        "<ul>",
+                            entries.map(function (word) {
+                                return [
+                                    "<li>",
+                                        "<label for=\"vocab-checkbox-", String(id), "\">",
+                                        (word["readings"].length > 0)
+                                            ? "[" + yomikata.format_readings(word["readings"]) + "] "
+                                            : "",
+                                        word["meanings"].map(function (meaning) {
+                                            return [
+                                                yomikata.format_annotations(meaning["annotations"]),
+                                                " ",
+                                                yomikata.quote(meaning["meaning"]),
+                                            ].join("");
+                                        }).join("; "),
+                                        "</label>",
+                                    "</li>"
+                                ].join("");
+                            }).join(""),
+                        "</ul>",
+                    "</td>",
+                "</tr>"
+            ].join("");
+        }).join("");
+
+        vocab.innerHTML = html;
+    },
+
+    japanese_text_to_href_data_url: function (dom_element)
+    {
+        var blacklist = yomikata.build_blacklist();
+
+        dom_element.setAttribute(
+            "href",
+            yomikata.process_text($("japanese-text").value, blacklist)
+        );
+    },
+
+    build_blacklist: function ()
+    {
+        var blacklist = {},
+            checkboxes = $("vocab").getElementsByTagName("input"),
+            i, l, k, v;
+
+        for (k in yomikata.BLACKLIST) {
+            if (yomikata.BLACKLIST.hasOwnProperty(k)) {
+                blacklist[k] = yomikata.BLACKLIST[v];
+            }
+        }
+
+        for (i = 0, l = checkboxes.length; i < l; ++i) {
+            if (!checkboxes[i].checked) {
+                blacklist[checkboxes[i].value] = 0;
+            }
+        }
+
+        return blacklist;
+    },
+
+    process_text: function (text, blacklist)
     {
         return yomikata.html_to_data_url(
             yomikata.generate_html(
-                yomikata.parse_text(text)
+                yomikata.parse_text(text, blacklist)
             )
         );
     },
@@ -199,12 +302,17 @@ yomikata = {
         ].join("");
     },
 
-    parse_text: function (text)
+    parse_text: function (text, blacklist)
     {
         var paragraphs = text.split(/\n\n+/).filter(yomikata.is_not_empty),
             i, l;
 
-        return paragraphs.map(yomikata.parse_paragraph);
+        return paragraphs.map(
+            function (paragraph, paragraph_id)
+            {
+                return yomikata.parse_paragraph(paragraph, paragraph_id, blacklist);
+            }
+        );
     },
 
     is_not_empty: function (str)
@@ -212,7 +320,7 @@ yomikata = {
         return str != "";
     },
 
-    parse_paragraph: function (paragraph, paragraph_id)
+    parse_paragraph: function (paragraph, paragraph_id, blacklist)
     {
         var tokens = yomikata.tokenizer.tokenize(paragraph),
             parsed_tokens = [],
@@ -254,11 +362,16 @@ yomikata = {
 
         return {
             "tokens": parsed_tokens,
-            "words": writings.map(yomikata.lookup_by_writing)
+            "words": writings.map(
+                function (writing)
+                {
+                    return yomikata.lookup_by_writing(writing, blacklist);
+                }
+            )
         };
     },
 
-    lookup_by_writing: function (writing)
+    lookup_by_writing: function (writing, blacklist)
     {
         var entries = [],
             entry_ids,
@@ -267,7 +380,7 @@ yomikata = {
             i, l;
 
         if (
-            yomikata.BLACKLIST.hasOwnProperty(wr)
+            blacklist.hasOwnProperty(wr)
             || (!JMdict["dictionary"].hasOwnProperty(wr))
         ) {
             return entries;
