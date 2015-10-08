@@ -74,17 +74,20 @@ yomikata = {
 
     timer: null,
     tokenizer: null,
+    vocab_selector_loader: null,
 
     initialize: function ()
     {
         var open = $("open"),
             save = $("save");
+            customize_vocab = $("customize-vocab");
 
         yomikata.timer = setInterval(yomikata.update_dictionary_status, 1000);
         setTimeout(yomikata.initialize_tokenizer, 300);
 
         open.onclick = yomikata.open;
         save.onclick = yomikata.save;
+        customize_vocab.onclick = yomikata.customize_vocab;
     },
 
     bind: function (func, obj)
@@ -167,6 +170,81 @@ yomikata = {
         return true;
     },
 
+    customize_vocab: function ()
+    {
+        var vocab_table = $("vocab"),
+            text = $("japanese-text").value,
+            html = [],
+            id = 0,
+            blacklist = yomikata.build_blacklist(),
+            words;
+
+        $("customize-vocab").innerHTML = "Update vocab customizer";
+        vocab_table.innerHTML = [
+            '<tr>',
+                '<td class="center" colspan="3">',
+                    '<img class="loading" src="loading.gif" alt="Please wait..." />',
+                '</td>',
+            '</tr>',
+        ].join("");
+        vocab_table.style.display = "table";
+
+        words = yomikata.parse_paragraph(text, "", yomikata.BLACKLIST)["words"];
+
+        html = words.map(function (entries) {
+            var writing;
+
+            if (entries.length == 0) {
+                return "";
+            }
+
+            writing = yomikata.quote(entries[0]["writing"]);
+            ++id;
+
+            return [
+                "<tr>",
+                    "<td>",
+                        "<input id=\"vocab-checkbox-", String(id), "\" ",
+                                "type=\"checkbox\" value=\"", writing, "\" ",
+                                blacklist.hasOwnProperty(entries[0]["writing"])
+                                    ? ""
+                                    : "checked=\"checked\" ",
+                                "/>",
+                    "</td>",
+                    "<td>",
+                        "<label for=\"vocab-checkbox-", String(id), "\">",
+                            writing,
+                        "</label>",
+                    "</td>",
+                    "<td>",
+                        "<ul>",
+                            entries.map(function (word) {
+                                return [
+                                    "<li>",
+                                        "<label for=\"vocab-checkbox-", String(id), "\">",
+                                        (word["readings"].length > 0)
+                                            ? "[" + yomikata.format_readings(word["readings"]) + "] "
+                                            : "",
+                                        word["meanings"].map(function (meaning) {
+                                            return [
+                                                yomikata.format_annotations(meaning["annotations"]),
+                                                " ",
+                                                yomikata.quote(meaning["meaning"]),
+                                            ].join("");
+                                        }).join("; "),
+                                        "</label>",
+                                    "</li>"
+                                ].join("");
+                            }).join(""),
+                        "</ul>",
+                    "</td>",
+                "</tr>"
+            ].join("");
+        }).join("");
+
+        vocab.innerHTML = html;
+    },
+
     japanese_text_to_href_data_url: function (dom_element)
     {
         var blacklist = yomikata.build_blacklist();
@@ -180,11 +258,18 @@ yomikata = {
     build_blacklist: function ()
     {
         var blacklist = {},
-            k, v;
+            checkboxes = $("vocab").getElementsByTagName("input"),
+            i, l, k, v;
 
         for (k in yomikata.BLACKLIST) {
             if (yomikata.BLACKLIST.hasOwnProperty(k)) {
                 blacklist[k] = yomikata.BLACKLIST[v];
+            }
+        }
+
+        for (i = 0, l = checkboxes.length; i < l; ++i) {
+            if (!checkboxes[i].checked) {
+                blacklist[checkboxes[i].value] = 0;
             }
         }
 
