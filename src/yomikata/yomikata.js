@@ -349,8 +349,12 @@ yomikata = {
             }
 
             if (yomikata.KANJI_RE.test(s) && (!readings.hasOwnProperty(r))) {
-                parsed_token["reading"] = r;
-                readings[r] = true;
+                if (r !== undefined) {
+                    parsed_token["reading"] = r;
+                    readings[r] = true;
+                } else {
+                    parsed_token["reading"] = "";
+                }
             }
 
             if (word_ids.hasOwnProperty(b)) {
