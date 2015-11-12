@@ -349,8 +349,12 @@ yomikata = {
             }
 
             if (yomikata.KANJI_RE.test(s) && (!readings.hasOwnProperty(r))) {
-                parsed_token["reading"] = r;
-                readings[r] = true;
+                if (r !== undefined) {
+                    parsed_token["reading"] = r;
+                    readings[r] = true;
+                } else {
+                    parsed_token["reading"] = "";
+                }
             }
 
             if (word_ids.hasOwnProperty(b)) {
@@ -664,75 +668,40 @@ yomikata.HTML_HEAD = [
             'margin: 0;',
             'padding: 0;',
         '}',
-    '',
+
         'body {',
             'padding: 10px;',
         '}',
-    '',
-        'html, body, .paragraph * {',
+
+        'html,',
+        'body,',
+        '.paragraph * {',
             'background-color: #ffffff;',
             'color: #000000;',
             'text-decoration: none',
         '}',
-    '',
+
         '.paragraph p {',
             'display: block;',
             'margin: 2%;',
             'line-height: 150%;',
         '}',
-    '',
+
         '.paragraph .vocab {',
             'display: none;',
-            'font-size: 80%;',
-            '-webkit-column-count: 2;',
-            '-moz-column-count: 2;',
-            'column-count: 2;',
         '}',
-    '',
-        '.paragraph .vocab dl,',
-        '.paragraph .vocab dl dt,',
-        '.paragraph .vocab dl dd,',
-        '.paragraph .vocab dl dd ul,',
-        '.paragraph .vocab dl dd ul li {',
-            'display: inline;',
-        '}',
-    '',
-        '.paragraph .vocab dl {',
-            'padding: 0.2em;',
-            'line-height: 1.2em;',
-        '}',
-    '',
-        '.paragraph .vocab dl:before {',
-            'content: " \\2022 ";',
-        '}',
-    '',
-        '.paragraph .vocab dl dt {',
-            'white-space: nowrap;',
-        '}',
-    '',
-        '.paragraph .vocab dl dd {',
-            'font-size: 80%;',
-        '}',
-    '',
-        '.paragraph .vocab dl dd small {',
-            'font-size: 75%;',
-        '}',
-    '',
-        '.paragraph .vocab dl dd ul li:before {',
-            'content: " \\25e6 ";',
-        '}',
-    '',
+
         '#help {',
             'margin: 0.5em auto;',
             'font-size: 0.9em;',
             'font-family: sans-serif;',
             'width: 80%;',
         '}',
-    '',
+
         '#print {',
             'text-align: center;',
         '}',
-    '',
+
         '#print button {',
             'background-color: #001050;',
             'color: #ffffff;',
@@ -743,7 +712,7 @@ yomikata.HTML_HEAD = [
             'margin: 1vmin 5vmin;',
             'padding: 1vmin 5vmin;',
         '}',
-    '',
+
         '#dictionary {',
             'position: fixed;',
             'top: 1em;',
@@ -757,26 +726,79 @@ yomikata.HTML_HEAD = [
             'box-shadow: 0.5vmin 0.5vmin 0.5vmin 0.5vmin #c8cce4;',
             'font-family: sans-serif;',
         '}',
-    '',
+
         '#dictionary dl {',
             'font-size: 0.9em;',
         '}',
-    '',
+
         '@media print {',
-            '#print, #dictionary, #help {',
+            '#print,',
+            '#dictionary,',
+            '#help {',
                 'display: none;',
             '}',
-            '',
+
             '.paragraph {',
                 'display: block;',
-                'break-inside: avoid;',
-                'page-break-inside: avoid;',
-                '-webkit-column-break-inside: avoid;',
+                'margin-top: 0.7em;',
+                'border-top: dotted 0.2em black;',
+                'padding-top: 0.7em;',
+                'font-size: 80%;',
+                '-webkit-column-count: 2;',
+                '-moz-column-count: 2;',
+                'column-count: 2;',
             '}',
-            '',
+
+            '.paragraph p {',
+                'page-break-inside: avoid;',
+                '-webkit-page-break-inside: avoid;',
+                'break-inside: avoid-page;',
+            '}',
+
             '.paragraph .vocab {',
                 'display: block;',
             '}',
+
+            '.paragraph .vocab dl,',
+            '.paragraph .vocab dl dt,',
+            '.paragraph .vocab dl dd,',
+            '.paragraph .vocab dl dd ul,',
+            '.paragraph .vocab dl dd ul li {',
+                'display: inline;',
+            '}',
+
+            '.paragraph .vocab dl {',
+                'display: block;',
+                'page-break-inside: avoid;',
+                '-webkit-page-break-inside: avoid;',
+                'break-inside: avoid-page;',
+            '}',
+
+            '.paragraph .vocab dl {',
+                'padding: 0.2em;',
+                'line-height: 1.2em;',
+            '}',
+
+            '.paragraph .vocab dl:before {',
+                'content: " \\2022 ";',
+            '}',
+
+            '.paragraph .vocab dl dt {',
+                'white-space: nowrap;',
+            '}',
+
+            '.paragraph .vocab dl dd {',
+                'font-size: 80%;',
+            '}',
+
+            '.paragraph .vocab dl dd small {',
+                'font-size: 75%;',
+            '}',
+
+            '.paragraph .vocab dl dd ul li:before {',
+                'content: " \\25e6 ";',
+            '}',
+        '}',
         '</style>',
     '</head>',
     '<body>',
