@@ -90,36 +90,39 @@ img.loading {
 }
 
 #vocab {
-    width: 100%;
-    margin: 3vmin 0;
     display: none;
 }
 
-#vocab,
-#vocab tr,
-#vocab tr td {
+#vocab-table {
+    width: 100%;
+    margin: 3vmin 0;
+}
+
+#vocab-table,
+#vocab-table tr,
+#vocab-table tr td {
     border: solid 1px #001050;
     border-collapse: collapse;
 }
 
-#vocab tr td label {
+#vocab-table tr td label {
     cursor: pointer;
 }
 
-#vocab tr td:nth-child(2) {
+#vocab-table tr td:nth-child(2) {
     min-width: 7em;
 }
 
-#vocab tr td ul {
+#vocab-table tr td ul {
     margin-left: 5vmin;
     font-size: 80%;
 }
 
-#vocab tr td input {
+#vocab-table tr td input {
     width: auto;
 }
 
-#vocab tr td {
+#vocab-table tr td {
     padding: 1vmin;
 }
 
