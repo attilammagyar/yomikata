@@ -172,7 +172,7 @@ yomikata = {
 
     customize_vocab: function ()
     {
-        var vocab_table = $("vocab"),
+        var vocab_table = $("vocab-table"),
             text = $("japanese-text").value,
             html = [],
             id = 0,
@@ -187,7 +187,7 @@ yomikata = {
                 '</td>',
             '</tr>',
         ].join("");
-        vocab_table.style.display = "table";
+        $("vocab").style.display = "block";
 
         words = yomikata.parse_paragraph(text, "", yomikata.BLACKLIST)["words"];
 
@@ -242,7 +242,7 @@ yomikata = {
             ].join("");
         }).join("");
 
-        vocab.innerHTML = html;
+        vocab_table.innerHTML = html;
     },
 
     japanese_text_to_href_data_url: function (dom_element)
@@ -258,7 +258,7 @@ yomikata = {
     build_blacklist: function ()
     {
         var blacklist = {},
-            checkboxes = $("vocab").getElementsByTagName("input"),
+            checkboxes = $("vocab-table").getElementsByTagName("input"),
             i, l, k, v;
 
         for (k in yomikata.BLACKLIST) {
@@ -379,17 +379,16 @@ yomikata = {
     {
         var entries = [],
             entry_ids,
+            is_blacklisted = false,
             wi = writing["word_id"],
             wr = writing["writing"],
             i, l;
 
-        if (
-            blacklist.hasOwnProperty(wr)
-            || (!JMdict["dictionary"].hasOwnProperty(wr))
-        ) {
+        if (!JMdict["dictionary"].hasOwnProperty(wr)) {
             return entries;
         }
 
+        is_blacklisted = blacklist.hasOwnProperty(wr);
         entry_ids = JMdict["dictionary"][wr];
 
         if (typeof(entry_ids) === "number") {
@@ -397,13 +396,15 @@ yomikata = {
         }
 
         for (i = 0, l = entry_ids.length; i < l; ++i) {
-            entries.push(yomikata.build_entry(wi, wr, entry_ids[i]));
+            entries.push(
+                yomikata.build_entry(wi, wr, entry_ids[i], is_blacklisted)
+            );
         }
 
         return entries;
     },
 
-    build_entry: function (word_id, writing, entry_id)
+    build_entry: function (word_id, writing, entry_id, is_blacklisted)
     {
         var entry = JMdict["entries"][entry_id],
             lines, readings, meanings;
@@ -416,7 +417,8 @@ yomikata = {
             "word_id": word_id,
             "writing": writing,
             "readings": readings,
-            "meanings": meanings
+            "meanings": meanings,
+            "is_blacklisted": is_blacklisted
         };
     },
 
@@ -554,9 +556,10 @@ yomikata = {
     format_entry: function (entry)
     {
         var html = [],
+            classes = entry["is_blacklisted"] ? " no-print" : "",
             writing = yomikata.quote(entry["writing"]);
 
-        html.push('<dl class="' + entry["word_id"] + '">');
+        html.push('<dl class="' + entry["word_id"] + classes + '">');
 
         if (entry["readings"].length > 0) {
             html = html.concat([
@@ -772,15 +775,16 @@ yomikata.HTML_HEAD = [
                 'page-break-inside: avoid;',
                 '-webkit-page-break-inside: avoid;',
                 'break-inside: avoid-page;',
-            '}',
-
-            '.paragraph .vocab dl {',
                 'padding: 0.2em;',
                 'line-height: 1.2em;',
             '}',
 
             '.paragraph .vocab dl:before {',
                 'content: " \\2022 ";',
+            '}',
+
+            '.paragraph .vocab dl.no-print {',
+                'display: none;',
             '}',
 
             '.paragraph .vocab dl dt {',
