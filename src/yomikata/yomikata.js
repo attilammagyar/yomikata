@@ -10,6 +10,8 @@ var yomikata;
 yomikata = {
     DIC_PATH: "kuromojijs/dict/",
 
+    TXT_EOL: "\r\n",
+
     HTML_HEAD: "",
     HTML_TAIL: "",
 
@@ -78,15 +80,17 @@ yomikata = {
 
     initialize: function ()
     {
-        var open = $("open"),
-            save = $("save");
+        var open_html = $("open-html"),
+            save_html = $("save-html");
+            save_txt = $("save-txt");
             customize_vocab = $("customize-vocab");
 
         yomikata.timer = setInterval(yomikata.update_dictionary_status, 1000);
         setTimeout(yomikata.initialize_tokenizer, 300);
 
-        open.onclick = yomikata.open;
-        save.onclick = yomikata.save;
+        open_html.onclick = yomikata.open_html;
+        save_html.onclick = yomikata.save_html;
+        save_txt.onclick = yomikata.save_txt;
         customize_vocab.onclick = yomikata.customize_vocab;
     },
 
@@ -153,19 +157,29 @@ yomikata = {
         yomikata.update_loading_progress();
     },
 
-    open: function ()
+    open_html: function ()
     {
-        yomikata.japanese_text_to_href_data_url(this);
+        yomikata.japanese_text_to_href_data_url_html(this);
 
         return true;
     },
 
-    save: function ()
+    save_html: function ()
     {
         var title = String($("title").value);
 
-        yomikata.japanese_text_to_href_data_url(this);
+        yomikata.japanese_text_to_href_data_url_html(this);
         this.setAttribute("download", title + ".html");
+
+        return true;
+    },
+
+    save_txt: function ()
+    {
+        var title = String($("title").value);
+
+        yomikata.japanese_text_to_href_data_url_txt(this);
+        this.setAttribute("download", title + ".txt");
 
         return true;
     },
@@ -198,7 +212,7 @@ yomikata = {
                 return "";
             }
 
-            writing = yomikata.quote(entries[0]["writing"]);
+            writing = yomikata.quote_html(entries[0]["writing"]);
             ++id;
 
             return [
@@ -223,13 +237,13 @@ yomikata = {
                                     "<li>",
                                         "<label for=\"vocab-checkbox-", String(id), "\">",
                                         (word["readings"].length > 0)
-                                            ? "[" + yomikata.format_readings(word["readings"]) + "] "
+                                            ? "[" + yomikata.format_readings_html(word["readings"]) + "] "
                                             : "",
                                         word["meanings"].map(function (meaning) {
                                             return [
-                                                yomikata.format_annotations(meaning["annotations"]),
+                                                yomikata.format_annotations_html(meaning["annotations"]),
                                                 " ",
-                                                yomikata.quote(meaning["meaning"]),
+                                                yomikata.quote_html(meaning["meaning"]),
                                             ].join("");
                                         }).join("; "),
                                         "</label>",
@@ -245,13 +259,37 @@ yomikata = {
         vocab_table.innerHTML = html;
     },
 
-    japanese_text_to_href_data_url: function (dom_element)
+    japanese_text_to_href_data_url_html: function (dom_element)
     {
         var blacklist = yomikata.build_blacklist();
 
         dom_element.setAttribute(
             "href",
-            yomikata.process_text($("japanese-text").value, blacklist)
+            yomikata.html_to_data_url(
+                yomikata.generate_html(
+                    yomikata.parse_text(
+                        $("japanese-text").value,
+                        blacklist
+                    )
+                )
+            )
+        );
+    },
+
+    japanese_text_to_href_data_url_txt: function (dom_element)
+    {
+        var blacklist = yomikata.build_blacklist();
+
+        dom_element.setAttribute(
+            "href",
+            yomikata.txt_to_data_url(
+                yomikata.generate_txt(
+                    yomikata.parse_text(
+                        $("japanese-text").value,
+                        blacklist
+                    )
+                )
+            )
         );
     },
 
@@ -276,19 +314,21 @@ yomikata = {
         return blacklist;
     },
 
-    process_text: function (text, blacklist)
-    {
-        return yomikata.html_to_data_url(
-            yomikata.generate_html(
-                yomikata.parse_text(text, blacklist)
-            )
-        );
-    },
-
     html_to_data_url: function (html)
     {
-        var binary = unescape(encodeURIComponent(html));
-        return "data:text/html;charset=utf-8;base64," + btoa(binary);
+        return yomikata.to_data_url("text/html", html);
+    },
+
+    txt_to_data_url: function (text)
+    {
+        return yomikata.to_data_url("text/plain", text);
+    },
+
+    to_data_url: function (mime_type, text)
+    {
+        var binary = unescape(encodeURIComponent(text));
+
+        return "data:" + String(mime_type) + ";charset=utf-8;base64," + btoa(binary);
     },
 
     generate_html: function (paragraphs)
@@ -297,9 +337,21 @@ yomikata = {
 
         return [
             yomikata.HTML_HEAD.replace("{{TITLE}}", title),
-            yomikata.format_paragraphs(paragraphs),
+            yomikata.format_paragraphs_html(paragraphs),
             yomikata.HTML_TAIL
         ].join("");
+    },
+
+    generate_txt: function (paragraphs)
+    {
+        var title = $("title").value || "yomikata";
+
+        return [
+            String(title),
+            "===================",
+            "",
+            yomikata.format_paragraphs_txt(paragraphs),
+        ].join(yomikata.TXT_EOL);
     },
 
     parse_text: function (text, blacklist)
@@ -339,7 +391,8 @@ yomikata = {
             parsed_token = {
                 "word_id": "",
                 "token": s,
-                "reading": null
+                "reading": null,
+                "is_blacklisted": blacklist.hasOwnProperty(b)
             };
 
             if (t["word_type"] === "KNOWN" && (!word_ids.hasOwnProperty(b))) {
@@ -496,28 +549,28 @@ yomikata = {
         return items;
     },
 
-    format_paragraphs: function (paragraphs)
+    format_paragraphs_html: function (paragraphs)
     {
-        return paragraphs.map(yomikata.format_paragraph).join("");
+        return paragraphs.map(yomikata.format_paragraph_html).join("");
     },
 
-    format_paragraph: function (paragraph, words)
+    format_paragraph_html: function (paragraph, words)
     {
         return [
             '<div class="paragraph">',
                 '<p>',
-                    yomikata.format_tokens(paragraph["tokens"]),
+                    yomikata.format_tokens_html(paragraph["tokens"]),
                 '</p>',
                 '<div class="vocab">',
                     ].concat(
-                        paragraph["words"].map(yomikata.format_entries)
+                        paragraph["words"].map(yomikata.format_entries_html)
                     ).concat([
                 '</div>',
             '</div>'
         ]).join("");
     },
 
-    format_tokens: function (tokens)
+    format_tokens_html: function (tokens)
     {
         var html = [],
             i, l, t, f;
@@ -528,15 +581,15 @@ yomikata = {
             if (t["reading"] !== null) {
                 f = [
                     "<ruby>",
-                        yomikata.quote(t["token"]),
+                        yomikata.quote_html(t["token"]),
                         "<rt>",
-                            yomikata.quote(t["reading"]),
+                            yomikata.quote_html(t["reading"]),
                         "</rt>",
                     "</ruby>"
                 ];
             } else {
                 f = [
-                    (t["token"] == "\n") ? "<br />" : yomikata.quote(t["token"])
+                    (t["token"] == "\n") ? "\n<br />" : yomikata.quote_html(t["token"])
                 ];
             }
 
@@ -548,16 +601,16 @@ yomikata = {
         return html.join("");
     },
 
-    format_entries: function (entries)
+    format_entries_html: function (entries)
     {
-        return entries.map(yomikata.format_entry).join("");
+        return entries.map(yomikata.format_entry_html).join("");
     },
 
-    format_entry: function (entry)
+    format_entry_html: function (entry)
     {
         var html = [],
-            classes = entry["is_blacklisted"] ? " no-print" : "",
-            writing = yomikata.quote(entry["writing"]);
+            classes = entry["is_blacklisted"] ? " blacklisted" : "",
+            writing = yomikata.quote_html(entry["writing"]);
 
         html.push('<dl class="' + entry["word_id"] + classes + '">');
 
@@ -567,7 +620,7 @@ yomikata = {
                     writing,
                     '<small>',
                         "【",
-                        yomikata.format_readings(entry["readings"]),
+                        yomikata.format_readings_html(entry["readings"]),
                         "】",
                     '</small>',
                 '</dt>',
@@ -579,35 +632,35 @@ yomikata = {
         return html.concat([
                 '<dd>',
                     '<ul>',
-                        yomikata.format_meanings(entry["meanings"]),
+                        yomikata.format_meanings_html(entry["meanings"]),
                     '</ul>',
                 '</dd>',
             '</dl>',
         ]).join("");
     },
 
-    format_readings: function (readings)
+    format_readings_html: function (readings)
     {
-        return readings.map(yomikata.quote).join("; ");
+        return readings.map(yomikata.quote_html).join("、");
     },
 
-    format_meanings: function (meanings)
+    format_meanings_html: function (meanings)
     {
-        return meanings.map(yomikata.format_meaning).join("");
+        return meanings.map(yomikata.format_meaning_html).join("");
     },
 
-    format_meaning: function (meaning)
+    format_meaning_html: function (meaning)
     {
         return [
             "<li>",
-                yomikata.format_annotations(meaning["annotations"]),
+                yomikata.format_annotations_html(meaning["annotations"]),
                 "\n",
-                yomikata.quote(meaning["meaning"]),
+                yomikata.quote_html(meaning["meaning"]),
             "</li>"
         ].join("");
     },
 
-    format_annotations: function (annotations)
+    format_annotations_html: function (annotations)
     {
         var html = [],
             last_index = annotations.length - 1,
@@ -615,21 +668,21 @@ yomikata = {
 
         for (i = 0, l = annotations.length; i < l; ++i) {
             html.push(
-                yomikata.format_annotation(annotations[i], i >= last_index)
+                yomikata.format_annotation_html(annotations[i], i >= last_index)
             );
         }
 
         return html.join("");
     },
 
-    format_annotation: function (annotation, is_last)
+    format_annotation_html: function (annotation, is_last)
     {
         var html;
 
         if (annotation["explanation"] !== "") {
             html = [
                 '<small title="',
-                    yomikata.quote(annotation["explanation"]),
+                    yomikata.quote_html(annotation["explanation"]),
                 '">'
             ];
         } else {
@@ -637,13 +690,13 @@ yomikata = {
         }
 
         return html.concat([
-                yomikata.quote(annotation["abbreviation"]),
+                yomikata.quote_html(annotation["abbreviation"]),
                 is_last ? "" : "; ",
             "</small>",
         ]).join("");
     },
 
-    quote: function (str)
+    quote_html: function (str)
     {
         return (String(str)
             .replace("&", "&amp;")
@@ -652,6 +705,121 @@ yomikata = {
             .replace(">", "&gt;")
             .replace("<", "&lt;")
         );
+    },
+
+    format_paragraphs_txt: function (paragraphs)
+    {
+        return paragraphs.map(yomikata.format_paragraph_txt).join(yomikata.TXT_EOL);
+    },
+
+    format_paragraph_txt: function (paragraph, words)
+    {
+        return [
+            yomikata.format_tokens_txt(paragraph["tokens"]),
+            ""
+        ].concat(
+            paragraph["words"].map(
+                yomikata.format_entries_txt
+            ).filter(
+                yomikata.is_not_empty
+            ),
+            "",
+            "-------------------",
+            ""
+        ).join(yomikata.TXT_EOL);
+    },
+
+    is_not_empty: function (word)
+    {
+        return word !== "";
+    },
+
+    format_tokens_txt: function (tokens)
+    {
+        var txt = [],
+            i, l, t, f;
+
+        for (i = 0, l = tokens.length; i < l; ++i) {
+            t = tokens[i];
+
+            if (t["reading"] !== null && !t["is_blacklisted"]) {
+                f = [String(t["token"]), " 【", String(t["reading"]), "】 "];
+            } else {
+                f = [String(t["token"])];
+            }
+
+            txt.push(f.join(""));
+        }
+
+        return txt.join("");
+    },
+
+    format_entries_txt: function (entries)
+    {
+        return entries.filter(
+            yomikata.is_not_blacklisted_entry
+        ).map(
+            yomikata.format_entry_txt
+        ).join(yomikata.TXT_EOL);
+    },
+
+    is_not_blacklisted_entry: function (word)
+    {
+        return !word["is_blacklisted"];
+    },
+
+    format_entry_txt: function (entry)
+    {
+        var txt = [],
+            writing = String(entry["writing"]);
+
+        txt.push(writing);
+
+        if (entry["readings"].length > 0) {
+            txt = txt.concat([
+                " 【",
+                yomikata.format_readings_txt(entry["readings"]),
+                "】"
+            ]);
+        }
+
+        return [
+            txt.join(""),
+            yomikata.format_meanings_txt(entry["meanings"])
+        ].join("");
+    },
+
+    format_readings_txt: function (readings)
+    {
+        return readings.map(String).join("、");
+    },
+
+    format_meanings_txt: function (meanings)
+    {
+        return meanings.map(yomikata.format_meaning_txt).join(yomikata.TXT_EOL);
+    },
+
+    format_meaning_txt: function (meaning)
+    {
+        return [
+            " * ",
+            yomikata.format_annotations_txt(meaning["annotations"]),
+            " ",
+            String(meaning["meaning"]),
+        ].join("");
+    },
+
+    format_annotations_txt: function (annotations)
+    {
+        var txt = [],
+            last_index = annotations.length - 1,
+            i, l;
+
+        for (i = 0, l = annotations.length; i < l; ++i) {
+            txt.push(annotations[i]["abbreviation"]);
+        }
+
+        return txt.join("; ");
     },
 
     _: null
@@ -783,7 +951,7 @@ yomikata.HTML_HEAD = [
                 'content: " \\2022 ";',
             '}',
 
-            '.paragraph .vocab dl.no-print {',
+            '.paragraph .vocab dl.blacklisted {',
                 'display: none;',
             '}',
 
