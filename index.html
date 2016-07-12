@@ -8,7 +8,13 @@
     <link rel="stylesheet" href="yomikata.css" />
 </head>
 <body>
+    <div id="info">
+        <h1>Generate nicely printable Japanese reading practice sheets from any text.</h1>
+    </div>
     <div id="splashscreen">
+        <p>
+            Please wait while dictionaries are being loaded, this may take some time.
+        </p>
         <ul>
             <li>
                 <span class="loading">Loading tokenizer:</span>
@@ -27,7 +33,9 @@
     <div id="ui" class="hidden">
         <form action="#" method="post">
             <div id="japanese-container">
-                <label for="japanese-text">Japanese:</label>
+                <label for="japanese-text">
+                    Japanese <small>(new paragraph = empty line)</small>:
+                </label>
                 <textarea id="japanese-text"></textarea>
             </div>
             <div id="title-container">
