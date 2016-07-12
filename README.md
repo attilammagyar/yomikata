@@ -31,7 +31,7 @@ Using [Google Translate][gt] as a reading practice? [Surely you can't be
 serious][surely].
 
   [gt]: https://translate.google.com
-  [surely]: https://www.youtube.com/watch?v=0A5t5_O8hdA
+  [surely]: https://www.youtube.com/watch?v=B_XuPXGMpLA
 
  * Furigana is displayed for the first occurrence of each kanji in each
    paragraph. No roomaji. This is as close to a reading practice textbook as
