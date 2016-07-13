@@ -557,7 +557,7 @@ yomikata = {
     format_paragraph_html: function (paragraph, words)
     {
         return [
-            '<div class="paragraph">',
+            '<div class="paragraph page_break">',
                 '<p>',
                     yomikata.format_tokens_html(paragraph["tokens"]),
                 '</p>',
