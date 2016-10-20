@@ -46,9 +46,17 @@
                 <a class="button" id="customize-vocab" href="#">Customize vocab</a>
             </div>
             <div id="vocab">
-                <p class="center">
-                    Remove the tick from the row of those words that you don't
-                    want to see in the printed version.
+                <p class="guide">
+                    Paste or type a list of words (one word per line) here that
+                    you already know so you don't want to see them in the
+                    printed version, and click the <em>Update vocab customizer</em>
+                    button above. Only the first word in each line will be
+                    processed.
+                </p>
+                <textarea class="vocab-word-list" id="vocab-import-known"></textarea>
+                <p class="guide">
+                    Or remove the tick from the row of those words below
+                    that you don't want to see in the printed version.
                 </p>
                 <table id="vocab-table"></table>
             </div>
@@ -62,6 +70,14 @@
                    id="save-txt"
                    href="#"
                    download="reading.txt">Download TXT practice sheet</a>
+                <a class="button"
+                   id="save-new-words"
+                   href="#"
+                   download="new_words.tsv">Download tab separated list (TSV) of NEW words</a>
+                <a class="button"
+                   id="save-known-words"
+                   href="#"
+                   download="known_words.tsv">Download tab separated list (TSV) of KNOWN words</a>
             </div>
         </form>
     </div>
