@@ -15,6 +15,8 @@ yomikata = {
     HTML_HEAD: "",
     HTML_TAIL: "",
 
+    TSV_HEADER: "Writing\tReadings\tMeanings",
+
     KANJI_RE: /[\u4e00-\u9faf\u3400-\u4dbf]/,
 
     BLACKLIST: { // basic words and common particles that make vocab lists noisy
@@ -83,6 +85,8 @@ yomikata = {
         var open_html = $("open-html"),
             save_html = $("save-html");
             save_txt = $("save-txt");
+            save_known_words = $("save-known-words");
+            save_new_words = $("save-new-words");
             customize_vocab = $("customize-vocab");
 
         yomikata.timer = setInterval(yomikata.update_dictionary_status, 1000);
@@ -91,6 +95,8 @@ yomikata = {
         open_html.onclick = yomikata.open_html;
         save_html.onclick = yomikata.save_html;
         save_txt.onclick = yomikata.save_txt;
+        save_known_words.onclick = yomikata.save_known_words;
+        save_new_words.onclick = yomikata.save_new_words;
         customize_vocab.onclick = yomikata.customize_vocab;
     },
 
@@ -180,6 +186,22 @@ yomikata = {
 
         yomikata.japanese_text_to_href_data_url_txt(this);
         this.setAttribute("download", title + ".txt");
+
+        return true;
+    },
+
+    save_known_words: function ()
+    {
+        yomikata.blacklist_to_href_data_url_tsv(this);
+        this.setAttribute("download", "known_words-" + String(Date.now()) + ".tsv");
+
+        return true;
+    },
+
+    save_new_words: function ()
+    {
+        yomikata.new_words_to_href_data_url_tsv(this);
+        this.setAttribute("download", "new_words-" + String(Date.now()) + ".tsv");
 
         return true;
     },
@@ -293,11 +315,107 @@ yomikata = {
         );
     },
 
+    blacklist_to_href_data_url_tsv: function (dom_element)
+    {
+        var blacklist = yomikata.build_blacklist();
+
+        dom_element.setAttribute(
+            "href",
+            yomikata.tsv_to_data_url(
+                yomikata.generate_blacklist_tsv(blacklist)
+            )
+        );
+    },
+
+    new_words_to_href_data_url_tsv: function (dom_element)
+    {
+        var blacklist = yomikata.build_blacklist();
+
+        dom_element.setAttribute(
+            "href",
+            yomikata.tsv_to_data_url(
+                yomikata.generate_new_words_tsv(
+                    yomikata.parse_paragraph(
+                        $("japanese-text").value,
+                        "",
+                        blacklist
+                    )["words"]
+                )
+            )
+        );
+    },
+
+    generate_blacklist_tsv: function (blacklist)
+    {
+        var lines = [yomikata.TSV_HEADER],
+            entries, writing;
+
+        for (writing in blacklist) {
+            if (blacklist.hasOwnProperty(writing) && (!yomikata.BLACKLIST.hasOwnProperty(writing))) {
+                entries = yomikata.lookup_by_writing(
+                    {"word_id": null, "writing": writing},
+                    {}
+                );
+                lines.push(yomikata.entries_to_tsv_line(writing, entries));
+            }
+        }
+
+        return lines.join(yomikata.TXT_EOL);
+    },
+
+    entries_to_tsv_line: function (writing, entries)
+    {
+        var entry, readings, meanings, meaning, i, l, j, ll;
+
+        if (entries.length > 0) {
+            meanings = [];
+
+            for (i = 0, l = entries.length; i < l; ++i) {
+                entry = entries[i];
+                readings = entry["readings"].join(",");
+
+                for (j = 0, ll = entry["meanings"].length; j < ll; ++j) {
+                    meaning = entry["meanings"][j];
+                    meanings.push([
+                        yomikata.format_annotations_txt(meaning["annotations"]),
+                        String(meaning["meaning"]),
+                    ].join(" "));
+                }
+            }
+
+            meanings = meanings.join(" // ");
+
+            return [writing, readings, meanings].join("\t");
+        } else {
+            return String(writing) + "\t\t";
+        }
+    },
+
+    generate_new_words_tsv: function (words)
+    {
+        var lines = [yomikata.TSV_HEADER],
+            entries, writing, i, l;
+
+        for (i = 0, l = words.length; i < l; ++i) {
+            entries = words[i];
+
+            if (entries.length > 0) {
+                if (!entries[0]["is_blacklisted"]) {
+                    writing = entries[0]["writing"];
+                    lines.push(yomikata.entries_to_tsv_line(writing, entries));
+                }
+            }
+        }
+
+        return lines.join(yomikata.TXT_EOL);
+    },
+
     build_blacklist: function ()
     {
         var blacklist = {},
+            known_list = $("vocab-import-known").value,
             checkboxes = $("vocab-table").getElementsByTagName("input"),
-            i, l, k, v;
+            lines, word, i, l, k, v;
 
         for (k in yomikata.BLACKLIST) {
             if (yomikata.BLACKLIST.hasOwnProperty(k)) {
@@ -308,6 +426,20 @@ yomikata = {
         for (i = 0, l = checkboxes.length; i < l; ++i) {
             if (!checkboxes[i].checked) {
                 blacklist[checkboxes[i].value] = 0;
+            }
+        }
+
+        lines = known_list.split("\n");
+
+        for (i = 0, l = lines.length; i < l; ++i) {
+            word = lines[i].trim().match(/([^\s;,]*)/);
+
+            if (word && word.length > 1) {
+                word = word[1].replace(/['"]/g, "");
+
+                if (word !== "") {
+                    blacklist[word] = 0;
+                }
             }
         }
 
@@ -322,6 +454,11 @@ yomikata = {
     txt_to_data_url: function (text)
     {
         return yomikata.to_data_url("text/plain", text);
+    },
+
+    tsv_to_data_url: function (text)
+    {
+        return yomikata.to_data_url("text/tab-separated-values", text);
     },
 
     to_data_url: function (mime_type, text)
@@ -812,14 +949,17 @@ yomikata = {
     format_annotations_txt: function (annotations)
     {
         var txt = [],
-            last_index = annotations.length - 1,
             i, l;
+
+        if (annotations.length === 0) {
+            return "";
+        }
 
         for (i = 0, l = annotations.length; i < l; ++i) {
             txt.push(annotations[i]["abbreviation"]);
         }
 
-        return txt.join("; ");
+        return "[" + txt.join("; ") + "]";
     },
 
     _: null

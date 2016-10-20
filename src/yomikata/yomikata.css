@@ -31,6 +31,10 @@ textarea {
     width: 80vw;
 }
 
+textarea.vocab-word-list {
+    height: 15vh;
+}
+
 html {
     background-color: #e0e4ff;
 }
@@ -97,8 +101,7 @@ img.loading {
     margin-top: 1vmin;
 }
 
-#ui div.buttons,
-.center {
+#ui div.buttons {
     text-align: center;
 }
 
@@ -165,4 +168,11 @@ img.loading {
 #acknowledgement p a {
     font-weight: bold;
     color: #102070;
+}
+
+#vocab .guide {
+    text-align: center;
+    padding: 2vmin;
+    margin-top: 2vh;
+    margin-bottom: 0;
 }

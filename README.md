@@ -48,6 +48,10 @@ serious][surely].
    provide. (Did you open the link to that YouTube video above? That's what
    I'm talking about.)
 
+ * You can generate customized word lists from the text that can be later fed
+   into popular flashcard/SRS apps or that you can use to customize the next
+   practice sheet.
+
 Build
 -----
 
