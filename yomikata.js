@@ -555,6 +555,7 @@ yomikata = {
         }
 
         return {
+            "paragraph_id": paragraph_id,
             "tokens": parsed_tokens,
             "words": writings.map(
                 function (writing)
@@ -691,10 +692,12 @@ yomikata = {
         return paragraphs.map(yomikata.format_paragraph_html).join("");
     },
 
-    format_paragraph_html: function (paragraph, words)
+    format_paragraph_html: function (paragraph)
     {
+        var pi = String(paragraph["paragraph_id"]);
+
         return [
-            '<div class="paragraph page_break">',
+            '<div id="paragraph_' + pi + '" class="paragraph page_break">',
                 '<p>',
                     yomikata.format_tokens_html(paragraph["tokens"]),
                 '</p>',
@@ -702,6 +705,14 @@ yomikata = {
                     ].concat(
                         paragraph["words"].map(yomikata.format_entries_html)
                     ).concat([
+                '</div>',
+                '<div class="buttons">',
+                    '<form action="#">',
+                        '<label>',
+                            '<input type="checkbox" class="add_break" id="add_break_' + pi + '" checked="checked" /> ',
+                            'Page break',
+                        '</label>',
+                    '</form>',
                 '</div>',
             '</div>'
         ]).join("");
@@ -987,7 +998,7 @@ yomikata.HTML_HEAD = [
         '.paragraph * {',
             'background-color: #ffffff;',
             'color: #000000;',
-            'text-decoration: none',
+            'text-decoration: none;',
         '}',
         '.paragraph {',
             'break-inside: avoid-page;',
@@ -1024,10 +1035,10 @@ yomikata.HTML_HEAD = [
             'font-family: sans-serif;',
             'width: 80%;',
         '}',
-        '#buttons {',
+        '.buttons {',
             'text-align: center;',
         '}',
-        '#buttons button {',
+        '.buttons button {',
             'background-color: #001050;',
             'color: #ffffff;',
             'border: outset 2px #2050a0;',
@@ -1107,8 +1118,13 @@ yomikata.HTML_HEAD = [
                 'column-count: 4;',
             '}',
         '}',
+        '@media only screen {',
+            '.page_break {',
+                'border-bottom: dashed 1px #808080;',
+            '}',
+        '}',
         '@media print {',
-            '#buttons,',
+            '.buttons,',
             '#dictionary,',
             '#help {',
                 'display: none;',
@@ -1130,7 +1146,7 @@ yomikata.HTML_HEAD = [
         '</style>',
     '</head>',
     '<body>',
-        '<div id="buttons">',
+        '<div class="buttons">',
             '<form action="#">',
                 '<div>',
                     '<button id="print">',
@@ -1161,16 +1177,24 @@ yomikata.HTML_HEAD = [
         '<script type="text/javascript">',
         '(function () {',
         'var dictionary = document.getElementById("dictionary"),',
-            'hide_help = document.getElementById("hide-help"),',
-            'paragraphs = document.getElementsByClassName("paragraph");',
+            'add_break_checkboxes = document.getElementsByClassName("add_break");',
         'function toggle_breaks()',
         '{',
-            'var cls = document.getElementById("add_breaks").checked ',
-                       '? "paragraph page_break" : "paragraph",',
-                 'i,l;',
-            'for (i = 0, l = paragraphs.length; i < l; ++i) {',
-                'paragraphs[i].className = cls;',
+            'var checked = document.getElementById("add_breaks").checked,',
+                 'cb,i,l;',
+            'for (i = 0, l = add_break_checkboxes.length; i < l; ++i) {',
+                'cb = add_break_checkboxes[i];',
+                'cb.checked = checked;',
+                'update_break.apply(cb);',
             '}',
+        '}',
+        'function update_break()',
+        '{',
+            'var pi, cls;',
+            'console.log(this);console.log(this.getAttribute("id"));',
+            'pi = this.getAttribute("id").replace("add_break_", "paragraph_");',
+            'cls = this.checked ? "paragraph page_break" : "paragraph";',
+            'document.getElementById(pi).className = cls;',
         '}',
         'function show_dictionary()',
         '{',
@@ -1203,9 +1227,13 @@ yomikata.HTML_HEAD = [
         'window.onload = function ()',
         '{',
             'var words = document.getElementsByTagName("a"),',
+                'hide_help = document.getElementById("hide-help"),',
                 'i, l;',
             'for (i = 0, l = words.length; i < l; ++i) {',
                 'words[i].onclick = show_dictionary;',
+            '}',
+            'for (i = 0, l = add_break_checkboxes.length; i < l; ++i) {',
+                'add_break_checkboxes[i].onclick = update_break;',
             '}',
             'dictionary.onclick = hide_dictionary;',
             'hide_help.onclick = function ()',
