@@ -176,3 +176,8 @@ img.loading {
     margin-top: 2vh;
     margin-bottom: 0;
 }
+
+#ad {
+    margin: 3vmin;
+    text-align: center;
+}

@@ -9,6 +9,10 @@ all: ./dist/yomikata/jmdict.js ./dist/yomikata/yomikata.js ./dist/yomikata/yomik
 clean:
 	rm -rf ./build ./dist
 
+.PHONY: gh-pages
+gh-pages: all
+	bash gh-pages.sh
+
 ./dist/yomikata/jmdict.js: ./dist/yomikata ./build/JMdict.gz
 	test -f ./dist/yomikata/jmdict.js \
 		|| PYTHONIOENCODING=utf-8 python3 \
