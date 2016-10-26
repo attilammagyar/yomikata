@@ -4,7 +4,7 @@ Yomikata
 Proof-of-concept utility for generating nicely printable Japanese reading
 practice sheets from any text using nothing but a browser.
 
-Tested with [Firefox 38][firefox].
+Tested with [Firefox 49][firefox].
 
   [firefox]: https://www.mozilla.org/en-US/firefox/new/
 
@@ -64,6 +64,11 @@ The following software are used for building:
  * `make`
 
 The command `make` will build everything in the `dist/yomikata` directory.
+
+The code is really ugly and lacks any automated tests. The reason for this is
+that I didn't have a clue how I wanted it to work and what uses cases I needed.
+Now that I know, I might rewrite the app properly before adding any major
+features to it.
 
 Acknowledgements
 ----------------
