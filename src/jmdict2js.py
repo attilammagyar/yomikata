@@ -17,26 +17,41 @@ HEADER = """
 /* Format:                                                                    */
 /*                                                                            */
 /* (function() {                                                              */
-/*   window.JMdict = {                                                        */
-/*      "annotation_definitions": {                                           */
-/*        "ann1": "explanation1",                                             */
-/*        "ann2": "explanation2",                                             */
-/*        ...                                                                 */
-/*      },                                                                    */
-/*      "annotations": ["ann1", "ann2", "ann3", ... ],                        */
-/*      "readings": ["read1", "read2", "read3", ... ],                        */
-/*      "entries": [                                                          */
-/*        "READ_ID1;READ_ID2\\nANN_ID1;ANN_ID2|mean1; mean2\\nANN_ID2|mean3", */
-/*        ...                                                                 */
-/*      ],                                                                    */
-/*      "dictionary": {                                                       */
-/*        "writing1": ENTRY_ID,                                               */
-/*        "writing2": [ENTRY_ID1, ENTRY_ID2],                                 */
-/*        ...                                                                 */
-/*      }                                                                     */
-/*   };                                                                       */
+/* window.JMdict = {                                                          */
+/*   "annotation_definitions": {                                              */
+/*     "ann1": "explanation1",                                                */
+/*     "ann2": "explanation2",                                                */
+/*     ...                                                                    */
+/*   },                                                                       */
+/*   "annotations": ["ann1", "ann2", "ann3", ... ],                           */
+/*   "readings": ["read1", "read2", "read3", ... ],                           */
+/*   "entries": [                                                             */
+/*    "READ_IDX1;READ_IDX2\\nANN_IDX1;ANN_IDX2|mean1; mean2\\nANN_IDX2|mean3",*/
+/*    ...                                                                     */
+/*   ],                                                                       */
+/*   "dictionary_trie": {                                                     */
+/*     "w": {                                                                 */
+/*       "r": {                                                               */
+/*         "i": {                                                             */
+/*           "t": {                                                           */
+/*             "": ENTRY_IDX1                                                 */
+/*             "e": {                                                         */
+/*               "": [ENTRY_IDX2, ENTRY_IDX3]                                 */
+/*             },                                                             */
+/*             "i": {                                                         */
+/*               "n": {                                                       */
+/*                 "g": {                                                     */
+/*                   "": ENTRY_IDX4                                           */
+/*                 }                                                          */
+/*               }                                                            */
+/*             }                                                              */
+/*           }                                                                */
+/*         }                                                                  */
+/*       }                                                                    */
+/*     }                                                                      */
+/*   }                                                                        */
+/* };                                                                         */
 /* })();                                                                      */
-
 (function () {
 """
 
@@ -237,7 +252,7 @@ class JMdict:
         readings = {}
         entries = []
         dictionary = {}
-        entry_id = 0
+        entry_idx = 0
 
         for entry in self.ENTRY_XPATH(jmdict_xml):
             entry_readings = self.__texts_from_xpath(entry, self.READINGS_XPATH)
@@ -264,13 +279,7 @@ class JMdict:
                 )
 
             for key in kanji + (entry_readings if include_kana else ()):
-                if key in dictionary:
-                    if not isinstance(dictionary[key], list):
-                        dictionary[key] = [dictionary[key]]
-
-                    dictionary[key].append(entry_id)
-                else:
-                    dictionary[key] = entry_id
+                self.__add_to_dictionary(dictionary, key, entry_idx)
 
             for reading in entry_readings:
                 if reading not in readings:
@@ -282,10 +291,10 @@ class JMdict:
                     "\n".join(definitions)
                 )
             )
-            entry_id += 1
+            entry_idx += 1
 
-            if entry_id % 5000 == 0:
-                print("{} entries done".format(entry_id), file=sys.stderr);
+            if entry_idx % 5000 == 0:
+                print("{} entries done".format(entry_idx), file=sys.stderr);
 
         annotations = [a for a, _ in sorted(annotations.items(), key=lambda a: a[1])]
         readings = [r for r, _ in sorted(readings.items(), key=lambda r: r[1])]
@@ -295,7 +304,7 @@ class JMdict:
             "annotations": annotations,
             "readings": readings,
             "entries": entries,
-            "dictionary": dictionary,
+            "dictionary_trie": dictionary,
         }
 
     def __extract_annotations(self, sense):
@@ -306,6 +315,19 @@ class JMdict:
 
     def __texts_from_xpath(self, element, xpath):
         return tuple(e.text for e in xpath(element) or ())
+
+    def __add_to_dictionary(self, dictionary, key, entry_idx):
+        node = dictionary
+
+        for char in key:
+            node = node.setdefault(char, {})
+
+        if "" in node:
+            if not isinstance(node[""], list):
+                node[""] = [node[""]]
+            node[""].append(entry_idx)
+        else:
+            node[""] = entry_idx
 
 
 def main(argv):
@@ -321,11 +343,10 @@ def main(argv):
     print(TAIL)
 
     print(
-        "annotations: {}, readings: {}, entries: {}, dictionary: {}".format(
+        "annotations: {}, readings: {}, entries: {}".format(
             len(jmdict["annotations"]),
             len(jmdict["readings"]),
-            len(jmdict["entries"]),
-            len(jmdict["dictionary"]),
+            len(jmdict["entries"])
         ),
         file=sys.stderr
     )

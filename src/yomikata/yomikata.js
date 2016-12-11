@@ -566,21 +566,39 @@ yomikata = {
         };
     },
 
+    find_trie_node: function (word)
+    {
+        var root = JMdict["dictionary_trie"],
+            node, i, l;
+
+        for (i = 0, l = word.length, node = root; i < l; ++i) {
+            if (!node.hasOwnProperty(word[i])) {
+                return null;
+            }
+            node = node[word[i]];
+        }
+
+        return node;
+    },
+
     lookup_by_writing: function (writing, blacklist)
     {
         var entries = [],
+            node,
             entry_ids,
             is_blacklisted = false,
             wi = writing["word_id"],
             wr = writing["writing"],
             i, l;
 
-        if (!JMdict["dictionary"].hasOwnProperty(wr)) {
-            return entries;
+        node = yomikata.find_trie_node(wr);
+
+        if (node === null || !node.hasOwnProperty("")) {
+            return [];
         }
 
         is_blacklisted = blacklist.hasOwnProperty(wr);
-        entry_ids = JMdict["dictionary"][wr];
+        entry_ids = node[""];
 
         if (typeof(entry_ids) === "number") {
             entry_ids = [entry_ids];
