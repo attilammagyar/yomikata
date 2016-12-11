@@ -1209,7 +1209,6 @@ yomikata.HTML_HEAD = [
         'function update_break()',
         '{',
             'var pi, cls;',
-            'console.log(this);console.log(this.getAttribute("id"));',
             'pi = this.getAttribute("id").replace("add_break_", "paragraph_");',
             'cls = this.checked ? "paragraph page_break" : "paragraph";',
             'document.getElementById(pi).className = cls;',
