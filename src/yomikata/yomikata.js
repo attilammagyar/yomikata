@@ -357,39 +357,40 @@ yomikata = {
                     {"word_id": null, "writing": writing},
                     {}
                 );
-                lines.push(yomikata.entries_to_tsv_line(writing, entries));
+                lines.push(yomikata.entries_to_tsv_lines(writing, entries));
             }
         }
 
         return lines.join(yomikata.TXT_EOL);
     },
 
-    entries_to_tsv_line: function (writing, entries)
+    entries_to_tsv_lines: function (writing, entries)
     {
-        var entry, readings, meanings, meaning, i, l, j, ll;
+        var lines = [],
+            entry, readings, meanings, meaning, columns, i, l, j, ll;
 
-        if (entries.length > 0) {
-            meanings = [];
-
-            for (i = 0, l = entries.length; i < l; ++i) {
-                entry = entries[i];
-                readings = entry["readings"].join(",");
-
-                for (j = 0, ll = entry["meanings"].length; j < ll; ++j) {
-                    meaning = entry["meanings"][j];
-                    meanings.push([
-                        yomikata.format_annotations_txt(meaning["annotations"]),
-                        String(meaning["meaning"]),
-                    ].join(" "));
-                }
-            }
-
-            meanings = meanings.join(" // ");
-
-            return [writing, readings, meanings].join("\t");
-        } else {
+        if (entries.length === 0) {
             return String(writing) + "\t\t";
         }
+
+        for (i = 0, l = entries.length; i < l; ++i) {
+            entry = entries[i];
+            readings = entry["readings"];
+            meanings = [];
+
+            for (j = 0, ll = entry["meanings"].length; j < ll; ++j) {
+                meaning = entry["meanings"][j];
+                meanings.push([
+                    yomikata.format_annotations_txt(meaning["annotations"]),
+                    String(meaning["meaning"]),
+                ].join(" "));
+            }
+
+            columns = [writing, readings.join(","), meanings.join(" // ")];
+            lines.push(columns.join("\t"));
+        }
+
+        return lines.join(yomikata.TXT_EOL);
     },
 
     generate_new_words_tsv: function (words)
@@ -403,7 +404,7 @@ yomikata = {
             if (entries.length > 0) {
                 if (!entries[0]["is_blacklisted"]) {
                     writing = entries[0]["writing"];
-                    lines.push(yomikata.entries_to_tsv_line(writing, entries));
+                    lines.push(yomikata.entries_to_tsv_lines(writing, entries));
                 }
             }
         }
