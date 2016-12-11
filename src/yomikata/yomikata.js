@@ -18,6 +18,7 @@ yomikata = {
     TSV_HEADER: "Writing\tReadings\tMeanings",
 
     KANJI_RE: /[\u4e00-\u9faf\u3400-\u4dbf]/,
+    NOISE_RE: /^([ a-zA-Z0-9_.,;:()\[\]{}'"\/*+-]|　|。|、|；|：|（|）|【|】|｛|｝|「|」|『|』|・|＊|＋|ー|＝)*$/,
 
     BLACKLIST: { // basic words and common particles that make vocab lists noisy
         "て": 0,
@@ -511,13 +512,16 @@ yomikata = {
 
     parse_paragraph: function (paragraph, paragraph_id, blacklist)
     {
-        var tokens = yomikata.tokenizer.tokenize(paragraph),
+        var tokens,
             parsed_tokens = [],
             writings = [],
             readings = {},
             word_ids = {},
             parsed_token,
             i, l, t, b, s, w, r;
+
+        tokens = yomikata.tokenizer.tokenize(paragraph);
+        tokens = yomikata.grow_expressions(tokens);
 
         for (i = 0, l = tokens.length; i < l; ++i) {
             t = tokens[i];
@@ -532,14 +536,17 @@ yomikata = {
                 "is_blacklisted": blacklist.hasOwnProperty(b)
             };
 
-            if (t["word_type"] === "KNOWN" && (!word_ids.hasOwnProperty(b))) {
+            if (
+                (t["word_type"] === "KNOWN" || t["word_type"] === "EXTRA")
+                && (!word_ids.hasOwnProperty(b))
+            ) {
                 w = "word-" + String(paragraph_id) + "-" + String(i);
                 word_ids[b] = w;
                 writings.push({"word_id": w, "writing": b});
             }
 
             if (yomikata.KANJI_RE.test(s) && (!readings.hasOwnProperty(r))) {
-                if (r !== undefined) {
+                if (r !== undefined && r !== null) {
                     parsed_token["reading"] = r;
                     readings[r] = true;
                 } else {
@@ -566,6 +573,111 @@ yomikata = {
         };
     },
 
+    grow_expressions: function (tokens)
+    {
+        var extended = [],
+            expr = [],
+            seen_exprs = {},
+            i, l, t;
+
+        function grow()
+        {
+            var i, l, c1, c2;
+
+            if (expr.length < 2) {
+                return;
+            }
+
+            for (i = 0, l = expr.length; i < l - 1; ++i) {
+                c1 = try_making_expression(expr.slice(i, expr.length));
+
+                if (c1 !== null && !seen_exprs.hasOwnProperty(c1)) {
+                    extended.push(yomikata.make_extra_token(c1));
+                    seen_exprs[c1] = true;
+                }
+
+                c2 = try_making_expression(
+                    expr.slice(i, expr.length - 1).concat([t["basic_form"]])
+                );
+
+                if (c2 !== null && !seen_exprs.hasOwnProperty(c2)) {
+                    extended.push(yomikata.make_extra_token(c2));
+                    seen_exprs[c2] = true;
+                }
+
+                if (c1 === null && c2 === null) {
+                    break;
+                }
+            }
+
+            while (
+                !(
+                    yomikata.is_trie_prefix(expr.join(""))
+                    || yomikata.is_trie_prefix(clean(expr).join(""))
+                )
+            ) {
+                expr.shift();
+            }
+        };
+
+        function try_making_expression(parts)
+        {
+            var exp = parts.join("");
+
+            if (yomikata.is_trie_leaf(exp)) {
+                return exp;
+            }
+
+            parts = clean(parts);
+
+            if (parts.length > 1) {
+                exp = parts.join("");
+
+                if (yomikata.is_trie_leaf(exp)) {
+                    return exp;
+                }
+            }
+
+            return null;
+        };
+
+        function clean(parts)
+        {
+            return parts.filter(
+                function (p) { return p.match(yomikata.NOISE_RE) === null; }
+            )
+        };
+
+        for (i = 0, l = tokens.length; i < l; ++i) {
+            t = tokens[i];
+            extended.push(t);
+            expr.push(t["surface_form"]);
+            grow();
+        }
+
+        grow();
+
+        return extended;
+    },
+
+    is_trie_leaf: function (node)
+    {
+        if (typeof(node) === "string") {
+            node = yomikata.find_trie_node(node);
+        }
+
+        return node !== null && node.hasOwnProperty("");
+    },
+
+    is_trie_prefix: function (node)
+    {
+        if (typeof(node) === "string") {
+            node = yomikata.find_trie_node(node);
+        }
+
+        return node !== null;
+    },
+
     find_trie_node: function (word)
     {
         var root = JMdict["dictionary_trie"],
@@ -581,6 +693,16 @@ yomikata = {
         return node;
     },
 
+    make_extra_token: function (expr)
+    {
+        return {
+            "basic_form": expr,
+            "surface_form": "",
+            "reading": undefined,
+            "word_type": "EXTRA"
+        };
+    },
+
     lookup_by_writing: function (writing, blacklist)
     {
         var entries = [],
@@ -593,7 +715,7 @@ yomikata = {
 
         node = yomikata.find_trie_node(wr);
 
-        if (node === null || !node.hasOwnProperty("")) {
+        if (!yomikata.is_trie_leaf(node)) {
             return [];
         }
 
