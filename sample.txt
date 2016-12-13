@@ -1,20 +1,22 @@
 日本
 ===================
 
-日本国（にっぽんこく、にほんこく）、または日本（にっぽん、にほん）は、東アジア 【ヒガシアジア】 に位置 【イチ】 する日本列島（北海道 【ホッカイドウ】 ・本州 【ホンシュウ】 ・四国 【シコク】 ・九州 【キュウシュウ】 の主要 【シュヨウ】 四 【ヨン】 島 【トウ】 およびそれに付随 【フズイ】 する島々 【シマジマ】 ）及び 【オヨビ】 、南西諸島 【ナンセイショトウ】 ・小笠原諸島 【オガサワラショトウ】 などの諸 【ショ】 島嶼 【トウショ】 から成る 【ナル】 島国 【シマグニ】 である[1]。日本語 【ニホンゴ】 が事実上の公用 【コウヨウ】 語として使用 【シヨウ】 されている。首都 【シュト】 は事実上東京都とされている。
+日本 【ニッポン】 国 【コク】 （にっぽんこく、にほんこく）、または日本（にっぽん、にほん）は、東アジア 【ヒガシアジア】 に位置する日本列島 【レットウ】 （北海道・本州・四国 【シコク】 ・九州の主要 【シュヨウ】 四島 【トウ】 およびそれに付随 【フズイ】 する島々 【シマジマ】 ）及び 【オヨビ】 、南西諸島 【ナンセイショトウ】 ・小笠原諸島 【オガサワラショトウ】 などの諸 【ショ】 島嶼 【トウショ】 から成る 【ナル】 島国 【シマグニ】 である[1]。日本語 【ニホンゴ】 が事実 【ジジツ】 上の公用 【コウヨウ】 語 【ゴ】 として使用されている。首都は事実上東京 【トウキョウ】 都とされている。
 
+日本 【にほん、にっぽん】 * [n.] Japan
+国 【くに】 * [n.] country; state
+ * [n.] region
+ * [n.] national government; central government
+ * [n.] home (i.e. hometown, home country)
+ * [arch.] province (of Japan)
+ * [arch.] land; earth
 日本国 【にほんこく】 * [n.] Japan
 または * [conj.; phrase; us. kana] or; otherwise
 東アジア 【ひがしアジア】 * [n.; no-n.] East Asia
-位置 【いち】 * [n.; suru] place; situation; position; location
+列島 【れっとう】 * [n.] archipelago; chain of islands
 日本列島 【にほんれっとう、にっぽんれっとう】 * [n.] the Japanese islands
-北海道 【ほっかいどう】 * [n.] Hokkaido (island, prefectural-level administrative unit)
-本州 【ほんしゅう】 * [n.] Honshu (largest of the four main islands of Japan)
 四国 【しこく】 * [n.] Shikoku (smallest of the four main islands of Japan)
-九州 【きゅうしゅう】 * [n.] Kyushu (southernmost of the four main islands of Japan)
 主要 【しゅよう】 * [adjn..; n.] chief; main; principal; major
-四 【し、よん、よ】 * [num.] four
-四 【スー】 * [num.] four
 島 【しま】 * [n.] island
  * [us. kana] territory (of a prostitute, organized crime gang, etc.); turf
 島 【とう】 * [suffix] Island
@@ -24,9 +26,6 @@
 島々 【しまじま】 * [n.] islands
 及び 【および】 * [conj.] and; as well as
 南西諸島 【なんせいしょとう】 * [n.] Nansei Islands; Ryukyu Islands; chain of islands extending from southwestern Kyushu to northern Taiwan
-など * [part.; us. kana] et cetera; etc.; and the like; and so forth
- * [us. kana] or something
- * [us. kana] the likes of
 諸 【しょ】 * [pref.] various; many; several
 諸 【もろ、モロ】 * [pref.; us. kana] both
  * [us. kana] many; various; all
@@ -41,69 +40,81 @@
  * [n.] to be promoted
  * [v5ru.; sonkeigo] to do ...
 島国 【しまぐに、とうごく】 * [n.] island country (sometimes used as a metaphor for Japan)
+である * [v5ruirr.] be; is
 日本語 【にほんご、にっぽんご】 * [n.; no-n.] Japanese (language)
  * [n.] Japanese as a second language
+事実 【じじつ】 * [advn.; n.] fact; truth; reality
 事実上 【じじつじょう】 * [n.; no-n.] (as a) matter of fact; actually; in reality
 公用 【こうよう】 * [n.] government business; official business
  * [no-n.] public; official; governmental
+語 【ご】 * [n.; sufn.] language
+ * [n.] word
+語 【かたり】 * [n.] talk; recital
+ * [n.] narration
+ * [n.] topic
 公用語 【こうようご】 * [n.] official language
-として * [phrase] as (i.e. in the role of); for (i.e. from the viewpoint of)
- * [n.] apart from... (used to change the topic)
- * [n.] even (e.g. "not even a single person")
- * [n.] thinking that...; trying to...
-使用 【しよう】 * [n.; suru] use; application; employment; utilization; utilisation
-首都 【しゅと】 * [n.; no-n.] capital city; metropolis
-東京都 【とうきょうと】 * [n.] Tokyo Metropolis; Tokyo metropolitan area
+東京 【とうきょう】 * [n.] Tokyo
 とされる * [phrase; v1.] ... is considered to ...
 
 -------------------
 
 国号 【コクゴウ】 
 ----------
-「日本」という漢字 【カンジ】 による国号の表記 【ヒョウキ】 は、日本列島が中国大陸から見て東の果て 【ハテ】 、つまり「日の本 【ヒノモト】 （ひのもと）」に位置 【イチ】 することに由来 【ユライ】 するのではないかとされる[2]。近代 【キンダイ】 の二つの憲法 【ケンポウ】 の表題 【ヒョウダイ】 は、「日本国 【ニッポンコク】 憲法」および「大日本帝国憲法」であるが、国号を「日本国」または「日本」と直接 【チョクセツ】 かつ明確 【メイカク】 に規定 【キテイ】 した法令 【ホウレイ】 は存在 【ソンザイ】 しない。[疑問点 – ノート]ただし、日本工業規格 【ニホンコウギョウキカク】  (Japanese Industrial Standard) では日本国、英語 【エイゴ】 表記をJapanと規定。更に 【サラニ】 、国際規格 (ISO) では3文字 【モジ】 略号 【リャクゴウ】 をJPN、2文字略号をJPと規定している。また、日本国外務省 【ガイムショウ】 から発給 【ハッキュウ】 される旅券 【リョケン】 の表紙 【ヒョウシ】 には「日本国」の表記と十六一重表菊 【キク】 [3]を提示 【テイジ】 している。
+「日本 【ニッポン】 」という漢字 【カンジ】 による国号の表記は、日本列島 【レットウ】 が中国 【チュウゴク】 大陸 【タイリク】 から見て東の果て 【ハテ】 、つまり「日の本 【ヒノモト】 （ひのもと）」に位置することに由来するのではないかとされる[2]。近代 【キンダイ】 の二つの憲法の表題 【ヒョウダイ】 は、「日本国 【ニッポンコク】 憲法」および「大日本帝国 【ダイニッポンテイコク】 憲法」であるが、国号を「日本国 【コク】 」または「日本」と直接かつ明確 【メイカク】 に規定 【キテイ】 した法令 【ホウレイ】 は存在しない。[疑問点 – ノート]ただし、日本工業規格 【ニホンコウギョウキカク】  (Japanese Industrial Standard) では日本国、英語 【エイゴ】 表記をJapanと規定。更に、国際 【コクサイ】 規格 【キカク】  (ISO) では3文字略号 【リャクゴウ】 をJPN、2文字略号をJPと規定している。また、日本国外務省 【ガイムショウ】 から発給 【ハッキュウ】 される旅券 【リョケン】 の表紙には「日本国」の表記と十六一重表菊[3]を提示 【テイジ】 している。
 (From Wikipedia: https://ja.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC )
 
 国号 【こくごう】 * [n.] name of a country
+日本 【にほん、にっぽん】 * [n.] Japan
 漢字 【かんじ】 * [n.] Chinese characters; kanji
 による * [phrase; v5ru.; us. kana] by means of; due to; because of; according to
-表記 【ひょうき】 * [n.; suru; no-n.] writing on the surface (e.g. an address on an envelope); inscribing on the face
- * [n.] expression in writing; notation; surface form; transcription
+列島 【れっとう】 * [n.] archipelago; chain of islands
 日本列島 【にほんれっとう、にっぽんれっとう】 * [n.] the Japanese islands
+中国 【ちゅうごく】 * [n.] China
+ * [abbr.] Chugoku region of western Honshu (incl. Okayama, Hiroshima, Shimane, Tottori and Yamaguchi prefectures)
+ * [n.] central part of a country; main region
+大陸 【たいりく】 * [n.; no-n.] continent
+ * [n.] continental Asia (esp. mainland China)
+ * [n.] continental Europe
 中国大陸 【ちゅうごくたいりく】 * [n.] continent of China
 果て 【はて】 * [n.] the end; the extremity; the limit; the limits; the result
 日の本 【ひのもと】 * [n.; arch.] Japan
-位置 【いち】 * [n.; suru] place; situation; position; location
-由来 【ゆらい】 * [adv.; n.; suru] origin; source; history; derivation; reason; destiny
 とされる * [phrase; v1.] ... is considered to ...
 近代 【きんだい】 * [n.; no-n.] present day; modern times
-憲法 【けんぽう】 * [n.; no-n.] constitution
 表題 【ひょうだい】 * [n.] title; index; heading; headline; caption
 日本国 【にほんこく】 * [n.] Japan
 日本国憲法 【にほんこくけんぽう】 * [n.] constitution of Japan; Japanese constitution
+大日本帝国 【だいにっぽんていこく】 * [n.] Empire of Japan (Japan's official name under the Meiji Constitution)
 大日本帝国憲法 【だいにっぽんていこくけんぽう】 * [n.] Meiji Constitution (Constitution of the Empire of Japan)
+である * [v5ruirr.] be; is
+国 【くに】 * [n.] country; state
+ * [n.] region
+ * [n.] national government; central government
+ * [n.] home (i.e. hometown, home country)
+ * [arch.] province (of Japan)
+ * [arch.] land; earth
 または * [conj.; phrase; us. kana] or; otherwise
-直接 【ちょくせつ】 * [adjn..; advn.; no-n.] direct; immediate; personal; firsthand
 かつ * [adv.; conj.; us. kana] yet; moreover; and
 明確 【めいかく】 * [adjn..] clear; precise; definite; distinct
 規定 【きてい】 * [n.; no-n.; suru] stipulation; prescription; provision; regulation; rule
 法令 【ほうれい】 * [n.; no-n.] laws and ordinances; acts (of parliament, congress, etc.)
-存在 【そんざい】 * [n.; suru; no-n.] existence; being
 疑問点 【ぎもんてん】 * [n.] point of uncertainty; unclarified issue; doubt
-ただし * [conj.; us. kana] but; however; provided that
 日本工業規格 【にほんこうぎょうきかく】 * [n.] Japan Industrial Standards; JIS
 英語 【えいご】 * [n.; no-n.] English (language)
-更に 【さらに】 * [adv.; conj.; us. kana] furthermore; again; after all; more and more; moreover; even more
+国際 【こくさい】 * [n.; no-n.] international
+規格 【きかく】 * [n.] standard; norm
 国際規格 【こくさいきかく】 * [n.] international standard
-文字 【もじ、もんじ】 * [n.] letter (of alphabet); character
- * [no-n.] literal
 略号 【りゃくごう】 * [n.] code; mark; symbol
 外務省 【がいむしょう】 * [n.] Ministry of Foreign Affairs
 発給 【はっきゅう】 * [n.; suru] issuance (e.g. of a passport); issuing
 旅券 【りょけん】 * [n.] passport
-表紙 【ひょうし】 * [n.] front cover; binding; (book) cover
- * [n.; suru] appearing on the cover of a magazine
+重 【おも】 * [adjn..; n.] chief; main; principal; important
+ * [abbr.] main secondary or supporting role (in kyogen)
+重 【え】 * [suffix; cnt.] -fold; -ply
+重 【じゅう】 * [n.; abbr.] multi-tiered food box; stacked boxes
+ * [prefn.] heavy
+ * [n.] serious; extreme
+ * [suffix; cnt.] -fold; -ply
 一重 【ひとえ】 * [n.; no-n.] one layer; single; onefold
-菊 【きく】 * [n.] chrysanthemum (Chrysanthemum morifolium)
 提示 【ていじ】 * [n.; suru] presentation; exhibit; suggest; citation
 
 -------------------
