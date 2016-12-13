@@ -520,7 +520,7 @@ yomikata = {
             word_ids = {},
             parsed_token,
             word_id,
-            i, l, j, t, b, s, w, r;
+            i, l, j, k, t, b, s, w, r;
 
         tokens = yomikata.tokenizer.tokenize(paragraph);
         tokens = yomikata.grow_expressions(tokens);
@@ -535,7 +535,8 @@ yomikata = {
                 "word_ids": [],
                 "token": s,
                 "reading": null,
-                "is_blacklisted": blacklist.hasOwnProperty(b)
+                "is_blacklisted": blacklist.hasOwnProperty(b),
+                "is_expression": false
             };
 
             if (
@@ -565,8 +566,17 @@ yomikata = {
             parsed_tokens.push(parsed_token);
 
             if (t["word_type"] === "EXPRESSION") {
-                for (j = t["length"]; j > 0; --j) {
-                    parsed_tokens[i - j]["word_ids"].unshift(word_id);
+                parsed_token["is_expression"] = true;
+
+                for (j = i, k = t["length"]; j >= 0 && k > 0; --j) {
+                    if (!parsed_tokens[j]["is_expression"]) {
+                        if (parsed_tokens[j]["word_ids"].indexOf(word_id) === -1) {
+                            parsed_tokens[j]["word_ids"].unshift(word_id);
+                            --k;
+                        } else {
+                            break;
+                        }
+                    }
                 }
             }
         }
