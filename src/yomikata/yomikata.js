@@ -519,7 +519,8 @@ yomikata = {
             readings = {},
             word_ids = {},
             parsed_token,
-            i, l, t, b, s, w, r;
+            word_id,
+            i, l, j, t, b, s, w, r;
 
         tokens = yomikata.tokenizer.tokenize(paragraph);
         tokens = yomikata.grow_expressions(tokens);
@@ -531,14 +532,14 @@ yomikata = {
             r = t["reading"];
 
             parsed_token = {
-                "word_id": "",
+                "word_ids": [],
                 "token": s,
                 "reading": null,
                 "is_blacklisted": blacklist.hasOwnProperty(b)
             };
 
             if (
-                (t["word_type"] === "KNOWN" || t["word_type"] === "EXTRA")
+                (t["word_type"] === "KNOWN" || t["word_type"] === "EXPRESSION")
                 && (!word_ids.hasOwnProperty(b))
             ) {
                 w = "word-" + String(paragraph_id) + "-" + String(i);
@@ -555,11 +556,19 @@ yomikata = {
                 }
             }
 
+            word_id = word_ids[b];
+
             if (word_ids.hasOwnProperty(b)) {
-                parsed_token["word_id"] = word_ids[b];
+                parsed_token["word_ids"].push(word_id);
             }
 
             parsed_tokens.push(parsed_token);
+
+            if (t["word_type"] === "EXPRESSION") {
+                for (j = t["length"]; j > 0; --j) {
+                    parsed_tokens[i - j]["word_ids"].unshift(word_id);
+                }
+            }
         }
 
         return {
@@ -578,35 +587,31 @@ yomikata = {
     {
         var extended = [],
             expr = [],
-            seen_exprs = {},
+            seen_candidates = {},
+            latest = null,
             i, l, t;
 
         function grow()
         {
-            var i, l, c1, c2;
+            var i, l, c;
 
             if (expr.length < 2) {
                 return;
             }
 
             for (i = 0, l = expr.length; i < l - 1; ++i) {
-                c1 = try_making_expression(expr.slice(i, expr.length));
+                c = try_making_expression(expr.slice(i, expr.length));
 
-                if (c1 !== null && !seen_exprs.hasOwnProperty(c1)) {
-                    extended.push(yomikata.make_extra_token(c1));
-                    seen_exprs[c1] = true;
+                if (c === null) {
+                    c = try_making_expression(
+                        expr.slice(i, expr.length - 1).concat([t["basic_form"]])
+                    );
                 }
 
-                c2 = try_making_expression(
-                    expr.slice(i, expr.length - 1).concat([t["basic_form"]])
-                );
-
-                if (c2 !== null && !seen_exprs.hasOwnProperty(c2)) {
-                    extended.push(yomikata.make_extra_token(c2));
-                    seen_exprs[c2] = true;
-                }
-
-                if (c1 === null && c2 === null) {
+                if (c !== null && c !== latest) {
+                    extended.push(yomikata.make_extra_token(c, l - i));
+                    latest = c;
+                } else {
                     break;
                 }
             }
@@ -618,24 +623,34 @@ yomikata = {
                 )
             ) {
                 expr.shift();
+                latest = null;
             }
         };
 
         function try_making_expression(parts)
         {
-            var exp = parts.join("");
+            var exp = parts.join(""),
+                cleaned_exp;
+
+            if (seen_candidates.hasOwnProperty(exp)) {
+                return seen_candidates[exp];
+            }
 
             if (yomikata.is_trie_leaf(exp)) {
+                seen_candidates[exp] = exp;
+
                 return exp;
             }
 
             parts = clean(parts);
 
             if (parts.length > 1) {
-                exp = parts.join("");
+                cleaned_exp = parts.join("");
 
-                if (yomikata.is_trie_leaf(exp)) {
-                    return exp;
+                if (yomikata.is_trie_leaf(cleaned_exp)) {
+                    seen_candidates[exp] = cleaned_exp;
+
+                    return cleaned_exp;
                 }
             }
 
@@ -694,13 +709,14 @@ yomikata = {
         return node;
     },
 
-    make_extra_token: function (expr)
+    make_extra_token: function (expr, length)
     {
         return {
             "basic_form": expr,
             "surface_form": "",
             "reading": undefined,
-            "word_type": "EXTRA"
+            "word_type": "EXPRESSION",
+            "length": length
         };
     },
 
@@ -867,22 +883,26 @@ yomikata = {
         for (i = 0, l = tokens.length; i < l; ++i) {
             t = tokens[i];
 
-            if (t["reading"] !== null) {
-                f = [
-                    "<ruby>",
-                        yomikata.quote_html(t["token"]),
-                        "<rt>",
-                            yomikata.quote_html(t["reading"]),
-                        "</rt>",
-                    "</ruby>"
-                ];
-            } else {
-                f = [
-                    (t["token"] == "\n") ? "\n<br />" : yomikata.quote_html(t["token"])
-                ];
-            }
+            if (t["token"] !== "") {
+                if (t["reading"] !== null) {
+                    f = [
+                        "<ruby>",
+                            yomikata.quote_html(t["token"]),
+                            "<rt>",
+                                yomikata.quote_html(t["reading"]),
+                            "</rt>",
+                        "</ruby>"
+                    ];
+                } else {
+                    f = [
+                        (t["token"] == "\n") ? "\n<br />" : yomikata.quote_html(t["token"])
+                    ];
+                }
 
-            f = '<a class="' + t["word_id"] + '">' + f.join("") + '</a>';
+                f = '<a class="' + t["word_ids"].join(" ") + '">' + f.join("") + '</a>';
+            } else {
+                f = '';
+            }
 
             html.push(f);
         }
@@ -1203,7 +1223,11 @@ yomikata.HTML_HEAD = [
             'font-family: sans-serif;',
         '}',
         '#dictionary dl {',
+            'margin-bottom: 0.5em;',
             'font-size: 0.9em;',
+        '}',
+        '#dictionary dd {',
+            'margin-left: 2em;',
         '}',
         '.paragraph .vocab dl,',
         '.paragraph .vocab dl dt,',
@@ -1338,14 +1362,18 @@ yomikata.HTML_HEAD = [
         '}',
         'function show_dictionary()',
         '{',
-            'var word_id = this.className,',
+            'var word_ids = this.className.trim().split(/  */),',
                 'html = "",',
                 'entries,',
-                'i, l;',
-            'entries = document.getElementsByClassName(word_id);',
-            'for (i = 0, l = entries.length; i < l; ++i) {',
-                'if (String(entries[i].tagName).toUpperCase() === "DL") {',
-                    'html += "<dl>" + entries[i].innerHTML + "</dl>";',
+                'word_id,',
+                'i, l, ii, ll;',
+            'for (i = 0, l = word_ids.length; i < l; ++i) {',
+                'word_id = word_ids[i];',
+                'entries = document.getElementsByClassName(word_id);',
+                'for (ii = 0, ll = entries.length; ii < ll; ++ii) {',
+                    'if (String(entries[ii].tagName).toUpperCase() === "DL") {',
+                        'html += "<dl>" + entries[ii].innerHTML + "</dl>";',
+                    '}',
                 '}',
             '}',
             'if (html !== "") {',
