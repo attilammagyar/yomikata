@@ -18,7 +18,7 @@ yomikata = {
     TSV_HEADER: "Writing\tReadings\tMeanings",
 
     KANJI_RE: /[\u4e00-\u9faf\u3400-\u4dbf]/,
-    NOISE_RE: /^([ a-zA-Z0-9_.,;:()\[\]{}'"\/*+-]|　|。|、|；|：|（|）|【|】|｛|｝|「|」|『|』|・|＊|＋|ー|＝)*$/,
+    NOISE_RE: /^([ _.,;:()\[\]{}'"\/*+-]|　|。|、|；|：|（|）|【|】|｛|｝|「|」|『|』|・|＊|＋|ー|＝)$/g,
 
     BLACKLIST: { // basic words and common particles that make vocab lists noisy
         "て": 0,
@@ -523,7 +523,7 @@ yomikata = {
             i, l, j, k, t, b, s, w, r;
 
         tokens = yomikata.tokenizer.tokenize(paragraph);
-        tokens = yomikata.grow_expressions(tokens);
+        tokens = yomikata.extend_with_expressions(tokens);
 
         for (i = 0, l = tokens.length; i < l; ++i) {
             t = tokens[i];
@@ -570,12 +570,8 @@ yomikata = {
 
                 for (j = i, k = t["length"]; j >= 0 && k > 0; --j) {
                     if (!parsed_tokens[j]["is_expression"]) {
-                        if (parsed_tokens[j]["word_ids"].indexOf(word_id) === -1) {
-                            parsed_tokens[j]["word_ids"].unshift(word_id);
-                            --k;
-                        } else {
-                            break;
-                        }
+                        --k;
+                        parsed_tokens[j]["word_ids"].push(word_id);
                     }
                 }
             }
@@ -593,121 +589,124 @@ yomikata = {
         };
     },
 
-    grow_expressions: function (tokens)
+    extend_with_expressions: function (tokens)
     {
         var extended = [],
-            expr = [],
-            seen_candidates = {},
-            latest = null,
-            i, l, t;
+            candidates = [],
+            new_candidates,
+            i, l, j, ll, t, c;
 
-        function grow()
+        function make_empty_token()
         {
-            var i, l, c;
+            return {
+                "basic_form": "",
+                "latest_addition": "",
+                "node": JMdict["dictionary_trie"],
+                "length": 0,
+                "word_type": "EMPTY",
+                "surface_form": "",
+                "reading": undefined
+            };
+        };
 
-            if (expr.length < 2) {
+        function try_to_append(token, str)
+        {
+            var node = yomikata.find_trie_node(str, token["node"]),
+                word_type = token["word_type"];
+
+            if (node === null) {
+                str = str.replace(yomikata.NOISE_RE, "");
+
+                if (str === "") {
+                    node = token["node"];
+                } else {
+                    node = yomikata.find_trie_node(str, token["node"]);
+
+                    if (node === null) {
+                        return null;
+                    }
+                }
+            }
+
+            if (str !== "") {
+                if (word_type === "EMPTY") {
+                    word_type = "KNOWN";
+                } else {
+                    word_type = "EXPRESSION";
+                }
+            } else {
+                if (word_type === "EMPTY") {
+                    return null;
+                }
+            }
+
+            return {
+                "basic_form": token["basic_form"] + str,
+                "latest_addition": str,
+                "node": node,
+                "length": token["length"] + 1,
+                "word_type": word_type,
+                "surface_form": "",
+                "reading": undefined
+            };
+        }
+
+        function try_new_candidate(candidate, str)
+        {
+            var nc = try_to_append(candidate, str);
+
+            if (nc === null) {
                 return;
             }
 
-            for (i = 0, l = expr.length; i < l - 1; ++i) {
-                c = try_making_expression(expr.slice(i, expr.length));
+            new_candidates.push(nc);
 
-                if (c === null) {
-                    c = try_making_expression(
-                        expr.slice(i, expr.length - 1).concat([t["basic_form"]])
-                    );
-                }
-
-                if (c !== null && c !== latest) {
-                    extended.push(yomikata.make_extra_token(c, l - i));
-                    latest = c;
-                } else {
-                    break;
-                }
-            }
-
-            while (
-                !(
-                    yomikata.is_trie_prefix(expr.join(""))
-                    || yomikata.is_trie_prefix(clean(expr).join(""))
-                )
+            if (
+                nc["word_type"] === "EXPRESSION"
+                && nc["latest_addition"] !== ""
+                && yomikata.is_trie_leaf(nc["node"])
             ) {
-                expr.shift();
-                latest = null;
+                extended.push(nc);
             }
-        };
-
-        function try_making_expression(parts)
-        {
-            var exp = parts.join(""),
-                cleaned_exp;
-
-            if (seen_candidates.hasOwnProperty(exp)) {
-                return seen_candidates[exp];
-            }
-
-            if (yomikata.is_trie_leaf(exp)) {
-                seen_candidates[exp] = exp;
-
-                return exp;
-            }
-
-            parts = clean(parts);
-
-            if (parts.length > 1) {
-                cleaned_exp = parts.join("");
-
-                if (yomikata.is_trie_leaf(cleaned_exp)) {
-                    seen_candidates[exp] = cleaned_exp;
-
-                    return cleaned_exp;
-                }
-            }
-
-            return null;
-        };
-
-        function clean(parts)
-        {
-            return parts.filter(
-                function (p) { return p.match(yomikata.NOISE_RE) === null; }
-            )
-        };
+        }
 
         for (i = 0, l = tokens.length; i < l; ++i) {
             t = tokens[i];
             extended.push(t);
-            expr.push(t["surface_form"]);
-            grow();
-        }
+            candidates.push(make_empty_token());
+            new_candidates = [];
 
-        grow();
+            for (j = 0, ll = candidates.length; j < ll; ++j) {
+                c = candidates[j];
+                try_new_candidate(c, t["surface_form"]);
+
+                if (t["basic_form"] !== t["surface_form"]) {
+                    try_new_candidate(c, t["basic_form"]);
+                }
+            }
+
+            candidates = new_candidates;
+        }
 
         return extended;
     },
 
     is_trie_leaf: function (node)
     {
-        if (typeof(node) === "string") {
-            node = yomikata.find_trie_node(node);
-        }
-
         return node !== null && node.hasOwnProperty("");
     },
 
-    is_trie_prefix: function (node)
+    find_trie_node: function (word, root)
     {
-        if (typeof(node) === "string") {
-            node = yomikata.find_trie_node(node);
+        var node, i, l;
+
+        if (root === null) {
+            return null;
         }
 
-        return node !== null;
-    },
-
-    find_trie_node: function (word)
-    {
-        var root = JMdict["dictionary_trie"],
-            node, i, l;
+        if (root === undefined) {
+            root = JMdict["dictionary_trie"];
+        }
 
         for (i = 0, l = word.length, node = root; i < l; ++i) {
             if (!node.hasOwnProperty(word[i])) {
@@ -717,17 +716,6 @@ yomikata = {
         }
 
         return node;
-    },
-
-    make_extra_token: function (expr, length)
-    {
-        return {
-            "basic_form": expr,
-            "surface_form": "",
-            "reading": undefined,
-            "word_type": "EXPRESSION",
-            "length": length
-        };
     },
 
     lookup_by_writing: function (writing, blacklist)
@@ -909,7 +897,7 @@ yomikata = {
                     ];
                 }
 
-                f = '<a class="' + t["word_ids"].join(" ") + '">' + f.join("") + '</a>';
+                f = '<a class="' + t["word_ids"].reverse().join(" ") + '">' + f.join("") + '</a>';
             } else {
                 f = '';
             }
