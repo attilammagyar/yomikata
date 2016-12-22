@@ -18,7 +18,7 @@ yomikata = {
     TSV_HEADER: "Writing\tReadings\tMeanings",
 
     KANJI_RE: /[\u4e00-\u9faf\u3400-\u4dbf]/,
-    NOISE_RE: /^([ _.,;:()\[\]{}'"\/*+-]|　|。|、|；|：|（|）|【|】|｛|｝|「|」|『|』|・|＊|＋|ー|＝)$/g,
+    NOISE_RE: /([ _.,;:()\[\]{}'"\/*+-]|　|。|、|；|：|（|）|【|】|｛|｝|「|」|『|』|・|＊|＋|ー|＝)/g,
 
     BLACKLIST: { // basic words and common particles that make vocab lists noisy
         "て": 0,
