@@ -22,7 +22,7 @@
 島 【とう】 * [suffix] Island
  * [sufn.; n.] insula; island; islet
 それに * [conj.; us. kana] besides; in addition; also; moreover
-付随 【ふずい】 * [n.; suru] incident to; attaching to; annexed to; concomitant; attending
+付随 【ふずい】 * [n.; suru] being incident to; being accompanied by; being collateral with; being attached to
 島々 【しまじま】 * [n.] islands
 及び 【および】 * [conj.] and; as well as
 南西諸島 【なんせいしょとう】 * [n.] Nansei Islands; Ryukyu Islands; chain of islands extending from southwestern Kyushu to northern Taiwan
@@ -75,7 +75,7 @@
 大陸 【たいりく】 * [n.; no-n.] continent
  * [n.] continental Asia (esp. mainland China)
  * [n.] continental Europe
-中国大陸 【ちゅうごくたいりく】 * [n.] continent of China
+中国大陸 【ちゅうごくたいりく】 * [n.] mainland China
 果て 【はて】 * [n.] the end; the extremity; the limit; the limits; the result
 日の本 【ひのもと】 * [n.; arch.] Japan
 とされる * [phrase; v1.] ... is considered to ...
