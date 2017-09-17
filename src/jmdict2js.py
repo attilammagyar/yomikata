@@ -261,7 +261,12 @@ class JMdict:
             include_kana = not kanji
 
             for sense in self.SENSES_XPATH(entry):
-                definition = "; ".join(self.__texts_from_xpath(sense, self.GLOSS_XPATH))
+                glosses = self.__texts_from_xpath(sense, self.GLOSS_XPATH)
+
+                if len(glosses) == 0:
+                    continue
+
+                definition = "; ".join(glosses)
                 entry_annotations = self.__extract_annotations(sense)
 
                 if self.INCLUDE_KANA in "".join(entry_annotations):
@@ -314,7 +319,7 @@ class JMdict:
         return tuple(self.ANNOTATION_ABREV.get(a, a) for a in (pos + info))
 
     def __texts_from_xpath(self, element, xpath):
-        return tuple(e.text for e in xpath(element) or ())
+        return tuple(e.text for e in (xpath(element) or ()))
 
     def __add_to_dictionary(self, dictionary, key, entry_idx):
         node = dictionary
