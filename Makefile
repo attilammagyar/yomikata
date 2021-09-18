@@ -1,4 +1,4 @@
-JMDICT_URL=http://ftp.monash.edu.au/pub/nihongo/JMdict.gz
+JMDICT_URL=ftp://ftp.edrdg.org/pub/Nihongo/JMdict.gz
 KUROMOJI_JS_URL=https://github.com/takuyaa/kuromoji.js.git
 KUROMOJI_JS_COMMIT=4ed2bc8b0b26fdbd790df53614322d1beec2027f
 
