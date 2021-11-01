@@ -219,7 +219,7 @@ yomikata = {
         $("customize-vocab").innerHTML = "Update vocab customizer";
         vocab_table.innerHTML = [
             '<tr>',
-                '<td class="center" colspan="3">',
+                '<td class="center" colspan="3" lang="en">',
                     '<img class="loading" src="loading.gif" alt="Please wait..." />',
                 '</td>',
             '</tr>',
@@ -262,13 +262,15 @@ yomikata = {
                                         (word["readings"].length > 0)
                                             ? "[" + yomikata.format_readings_html(word["readings"]) + "] "
                                             : "",
-                                        word["meanings"].map(function (meaning) {
-                                            return [
-                                                yomikata.format_annotations_html(meaning["annotations"]),
-                                                " ",
-                                                yomikata.quote_html(meaning["meaning"]),
-                                            ].join("");
-                                        }).join("; "),
+                                        '<span lang="en">',
+                                            word["meanings"].map(function (meaning) {
+                                                return [
+                                                    yomikata.format_annotations_html(meaning["annotations"]),
+                                                    " ",
+                                                    yomikata.quote_html(meaning["meaning"]),
+                                                ].join("");
+                                            }).join("; "),
+                                        "</span>",
                                         "</label>",
                                     "</li>"
                                 ].join("");
@@ -863,7 +865,7 @@ yomikata = {
                 '</div>',
                 '<div class="buttons">',
                     '<form action="#">',
-                        '<label>',
+                        '<label lang="en">',
                             '<input type="checkbox" class="add_break" id="add_break_' + pi + '" checked="checked" /> ',
                             'Page break',
                         '</label>',
@@ -937,7 +939,7 @@ yomikata = {
         }
 
         return html.concat([
-                '<dd>',
+                '<dd lang="en">',
                     '<ul>',
                         yomikata.format_meanings_html(entry["meanings"]),
                     '</ul>',
@@ -1137,7 +1139,7 @@ yomikata = {
 
 yomikata.HTML_HEAD = [
     '<!DOCTYPE html>',
-    '<html lang="en">',
+    '<html lang="ja">',
     '<head>',
         '<title>{{TITLE}}</title>',
         '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />',
@@ -1309,7 +1311,7 @@ yomikata.HTML_HEAD = [
         '</style>',
     '</head>',
     '<body>',
-        '<div class="buttons">',
+        '<div class="buttons" lang="en">',
             '<form action="#">',
                 '<div>',
                     '<button id="print">',
@@ -1327,7 +1329,7 @@ yomikata.HTML_HEAD = [
                 '</div>',
             '</form>',
         '</div>',
-        '<div id="help">',
+        '<div id="help" lang="en">',
             '<p>',
                 'Click on a word to display its meaning, click on the meaning',
                 ' to hide it. If you print this page, then after each',

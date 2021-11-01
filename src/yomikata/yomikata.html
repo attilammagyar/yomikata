@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
-    <title>yomikata</title>
+    <title lang="en">yomikata</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -9,9 +9,9 @@
 </head>
 <body>
     <div id="info">
-        <h1>Generate nicely printable Japanese reading practice sheets from any text.</h1>
+        <h1 lang="en">Generate nicely printable Japanese reading practice sheets from any text.</h1>
     </div>
-    <div id="splashscreen">
+    <div id="splashscreen" lang="en">
         <p>
             Please wait while dictionaries are being loaded, this may take some time.
         </p>
@@ -34,7 +34,7 @@
     <div id="ui" class="hidden">
         <form action="#" method="post">
             <div id="japanese-container">
-                <label for="japanese-text">
+                <label for="japanese-text" lang="en">
                     Japanese <small>(new paragraph = empty line)</small>:
                 </label>
                 <textarea id="japanese-text"></textarea>
@@ -44,10 +44,10 @@
                 <input id="title" value="yomikata" />
             </div>
             <div class="buttons">
-                <a class="button" id="customize-vocab" href="#">Customize vocab</a>
+                <a class="button" id="customize-vocab" href="#" lang="en">Customize vocab</a>
             </div>
             <div id="vocab">
-                <p class="guide">
+                <p class="guide" lang="en">
                     Paste or type a list of words (one word per line) here that
                     you already know so you don't want to see them in the
                     printed version, and click the <em>Update vocab customizer</em>
@@ -55,13 +55,13 @@
                     processed.
                 </p>
                 <textarea class="vocab-word-list" id="vocab-import-known"></textarea>
-                <p class="guide">
+                <p class="guide" lang="en">
                     Or remove the tick from the row of those words below
                     that you don't want to see in the printed version.
                 </p>
                 <table id="vocab-table"></table>
             </div>
-            <div class="buttons">
+            <div class="buttons" lang="en">
                 <a class="button" id="open-html" target="_blank" href="#">Open practice sheet</a>
                 <a class="button"
                    id="save-html"
@@ -82,7 +82,7 @@
             </div>
         </form>
     </div>
-    <div id="acknowledgement">
+    <div id="acknowledgement" lang="en">
         <p>
             This software uses the
             <a href="https://www.edrdg.org/jmdict/edict.html">EDICT</a>
