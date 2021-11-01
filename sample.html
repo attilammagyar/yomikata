@@ -1,475 +1,530 @@
-<!DOCTYPE html><html lang="en"><head><title>日本</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /><style>* {margin: 0;padding: 0;}body {padding: 10px;}html,body,.paragraph * {background-color: #ffffff;color: #000000;text-decoration: none;}.paragraph {break-inside: avoid-page;page-break-inside: avoid;-webkit-page-break-inside: avoid;}.page_break {page-break-after: always;-webkit-page-break-after: always;break-after: always;}.paragraph p {display: block;page-break-inside: avoid;-webkit-page-break-inside: avoid;break-inside: avoid-page;margin: 2%;line-height: 150%;}.paragraph .vocab {display: none;}#text.show-vocab .paragraph .vocab {display: block;}#text.show-vocab .paragraph {margin-top: 0.7em;border-top: dotted 0.2em black;padding-top: 0.7em;}#help {margin: 0.5em auto;font-size: 0.9em;font-family: sans-serif;width: 80%;}.buttons {text-align: center;}.buttons button {background-color: #001050;color: #ffffff;border: outset 2px #2050a0;border-radius: 3px;text-decoration: none;font-weight: bold;margin: 1vmin 5vmin;padding: 1vmin 5vmin;}#dictionary {position: fixed;top: 1em;left: 1em;right: 1em;background-color: #f0f8ff;color: #000000;padding: 0.2em;padding-left: 1.2em;border: solid 1px #000080;box-shadow: 0.5vmin 0.5vmin 0.5vmin 0.5vmin #c8cce4;font-family: sans-serif;}#dictionary dl {margin-bottom: 0.5em;font-size: 0.9em;}#dictionary dd {margin-left: 2em;}.paragraph .vocab dl,.paragraph .vocab dl dt,.paragraph .vocab dl dd,.paragraph .vocab dl dd ul,.paragraph .vocab dl dd ul li {display: inline;}.paragraph .vocab dl {display: block;page-break-inside: avoid;-webkit-page-break-inside: avoid;break-inside: avoid-page;padding: 0.2em;line-height: 1.2em;}.paragraph .vocab dl:before {content: " \2022 ";}.paragraph .vocab dl.blacklisted {display: none;}.paragraph .vocab dl dt {white-space: nowrap;}.paragraph .vocab dl dd {font-size: 80%;}.paragraph .vocab dl dd small {font-size: 75%;}.paragraph .vocab dl dd ul li:before {content: " \25e6 ";}@media only screen and (min-width : 600px) {.paragraph .vocab {-webkit-column-count: 2;-moz-column-count: 2;column-count: 2;}}@media only screen and (min-width : 1200px) {.paragraph .vocab {-webkit-column-count: 3;-moz-column-count: 3;column-count: 3;}}@media only screen and (min-width : 1500px) {.paragraph .vocab {-webkit-column-count: 4;-moz-column-count: 4;column-count: 4;}}@media only screen {.page_break {border-bottom: dashed 1px #808080;}}@media print {.buttons,#dictionary,#help {display: none;}.paragraph {display: block;margin-top: 0.7em;border-top: dotted 0.2em black;padding-top: 0.7em;font-size: 80%;-webkit-column-count: 2;-moz-column-count: 2;column-count: 2;}.paragraph .vocab {display: block;}}</style></head><body><div class="buttons"><form action="#"><div><button id="print">Print (with vocab) [Ctrl+P]</button><button id="toggle-vocab">Toggle vocab</button></div><div><label><input type="checkbox" id="add_breaks" checked="checked" /> Print with page break after every paragraph (recommended for Firefox)</label></div></form></div><div id="help"><p>Click on a word to display its meaning, click on the meaning to hide it. If you print this page, then after each paragraph, a complete vocabulary list for that paragraph will be included. <a id="hide-help" href="#">(Hide)</a></p></div><div id="dictionary"></div><script type="text/javascript">(function () {var dictionary = document.getElementById("dictionary"),add_break_checkboxes = document.getElementsByClassName("add_break");function toggle_breaks(){var checked = document.getElementById("add_breaks").checked,cb,i,l;for (i = 0, l = add_break_checkboxes.length; i < l; ++i) {cb = add_break_checkboxes[i];cb.checked = checked;update_break.apply(cb);}}function update_break(){var pi, cls;pi = this.getAttribute("id").replace("add_break_", "paragraph_");cls = this.checked ? "paragraph page_break" : "paragraph";document.getElementById(pi).className = cls;}function show_dictionary(){var word_ids = this.className.trim().split(/  */),html = "",entries,word_id,i, l, ii, ll;for (i = 0, l = word_ids.length; i < l; ++i) {word_id = word_ids[i];entries = document.getElementsByClassName(word_id);for (ii = 0, ll = entries.length; ii < ll; ++ii) {if (String(entries[ii].tagName).toUpperCase() === "DL") {html += "<dl>" + entries[ii].innerHTML + "</dl>";}}}if (html !== "") {dictionary.innerHTML = html;dictionary.style.display = "";}};function hide_dictionary(){dictionary.style.display = "none";};function toggle_vocab(){var body = document.getElementById("text");body.className = body.className ? "" : "show-vocab";return false;}window.onload = function (){var words = document.getElementsByTagName("a"),hide_help = document.getElementById("hide-help"),i, l;for (i = 0, l = words.length; i < l; ++i) {words[i].onclick = show_dictionary;}for (i = 0, l = add_break_checkboxes.length; i < l; ++i) {add_break_checkboxes[i].onclick = update_break;}dictionary.onclick = hide_dictionary;hide_help.onclick = function (){document.getElementById("help").style.display = "none";return false;};hide_dictionary();document.getElementById("print").onclick = function () { window.print(); return false; };document.getElementById("add_breaks").onclick = toggle_breaks;document.getElementById("toggle-vocab").onclick = toggle_vocab;};})();</script><div id="text"><div id="paragraph_0" class="paragraph page_break"><p><a class="word-0-2 word-0-0"><ruby>日本<rt>ニッポン</rt></ruby></a><a class="word-0-2 word-0-1"><ruby>国<rt>コク</rt></ruby></a><a class="word-0-3">（</a><a class="word-0-4">にっぽん</a><a class="word-0-5">こく</a><a class="word-0-6">、</a><a class="word-0-7">に</a><a class="word-0-8">ほん</a><a class="word-0-5">こく</a><a class="word-0-10">）</a><a class="word-0-6">、</a><a class="word-0-12">または</a><a class="word-0-0">日本</a><a class="word-0-3">（</a><a class="word-0-4">にっぽん</a><a class="word-0-6">、</a><a class="word-0-7">に</a><a class="word-0-8">ほん</a><a class="word-0-10">）</a><a class="word-0-20">は</a><a class="word-0-6">、</a><a class="word-0-22"><ruby>東アジア<rt>ヒガシアジア</rt></ruby></a><a class="word-0-7">に</a><a class="word-0-24"><ruby>位置<rt>イチ</rt></ruby></a><a class="word-0-25">する</a><a class="word-0-28 word-0-0">日本</a><a class="word-0-28 word-0-27"><ruby>列島<rt>レットウ</rt></ruby></a><a class="word-0-3">（</a><a class="word-0-30"><ruby>北海道<rt>ホッカイドウ</rt></ruby></a><a class="word-0-31">・</a><a class="word-0-32"><ruby>本州<rt>ホンシュウ</rt></ruby></a><a class="word-0-31">・</a><a class="word-0-34"><ruby>四国<rt>シコク</rt></ruby></a><a class="word-0-31">・</a><a class="word-0-36"><ruby>九州<rt>キュウシュウ</rt></ruby></a><a class="word-0-37">の</a><a class="word-0-38"><ruby>主要<rt>シュヨウ</rt></ruby></a><a class="word-0-39"><ruby>四<rt>ヨン</rt></ruby></a><a class="word-0-40"><ruby>島<rt>トウ</rt></ruby></a><a class="word-0-41">および</a><a class="word-0-44 word-0-42">それ</a><a class="word-0-44 word-0-7">に</a><a class="word-0-45"><ruby>付随<rt>フズイ</rt></ruby></a><a class="word-0-25">する</a><a class="word-0-47"><ruby>島々<rt>シマジマ</rt></ruby></a><a class="word-0-10">）</a><a class="word-0-49"><ruby>及び<rt>オヨビ</rt></ruby></a><a class="word-0-6">、</a><a class="word-0-51"><ruby>南西諸島<rt>ナンセイショトウ</rt></ruby></a><a class="word-0-31">・</a><a class="word-0-53"><ruby>小笠原諸島<rt>オガサワラショトウ</rt></ruby></a><a class="word-0-54">など</a><a class="word-0-37">の</a><a class="word-0-56"><ruby>諸<rt>ショ</rt></ruby></a><a class="word-0-57"><ruby>島嶼<rt>トウショ</rt></ruby></a><a class="word-0-58">から</a><a class="word-0-59"><ruby>成る<rt>ナル</rt></ruby></a><a class="word-0-60"><ruby>島国<rt>シマグニ</rt></ruby></a><a class="word-0-63 word-0-61">で</a><a class="word-0-63 word-0-62">ある</a><a class="">[</a><a class="">1</a><a class="">]。</a><a class="word-0-67"><ruby>日本語<rt>ニホンゴ</rt></ruby></a><a class="word-0-68">が</a><a class="word-0-71 word-0-69"><ruby>事実<rt>ジジツ</rt></ruby></a><a class="word-0-71 word-0-70"><ruby>上<rt>ジョウ</rt></ruby></a><a class="word-0-37">の</a><a class="word-0-75 word-0-73"><ruby>公用<rt>コウヨウ</rt></ruby></a><a class="word-0-75 word-0-74"><ruby>語<rt>ゴ</rt></ruby></a><a class="word-0-76">として</a><a class="word-0-77"><ruby>使用<rt>シヨウ</rt></ruby></a><a class="word-0-80 word-0-25">さ</a><a class="word-0-80 word-0-79">れ</a><a class="word-0-81">て</a><a class="word-0-82">いる</a><a class="word-0-83">。</a><a class="word-0-84"><ruby>首都<rt>シュト</rt></ruby></a><a class="word-0-20">は</a><a class="word-0-71 word-0-69">事実</a><a class="word-0-71 word-0-70">上</a><a class="word-0-91 word-0-89"><ruby>東京<rt>トウキョウ</rt></ruby></a><a class="word-0-91 word-0-90"><ruby>都<rt>ト</rt></ruby></a><a class="word-0-97 word-0-95 word-0-94 word-0-92">と</a><a class="word-0-80 word-0-97 word-0-95 word-0-94 word-0-25">さ</a><a class="word-0-80 word-0-97 word-0-79">れ</a><a class="word-0-81">て</a><a class="word-0-82">いる</a><a class="word-0-83">。</a></p><div class="vocab"><dl class="word-0-0"><dt>日本<small>【にほん、にっぽん】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
-Japan</li></ul></dd></dl><dl class="word-0-1"><dt>国<small>【くに】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+<!DOCTYPE html><html lang="ja"><head><title>日本</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /><style>* {margin: 0;padding: 0;}body {padding: 10px;}html,body,.paragraph * {background-color: #ffffff;color: #000000;text-decoration: none;}.paragraph {break-inside: avoid-page;page-break-inside: avoid;-webkit-page-break-inside: avoid;}.page_break {page-break-after: always;-webkit-page-break-after: always;break-after: always;}.paragraph p {display: block;page-break-inside: avoid;-webkit-page-break-inside: avoid;break-inside: avoid-page;margin: 2%;line-height: 150%;}.paragraph .vocab {display: none;}#text.show-vocab .paragraph .vocab {display: block;}#text.show-vocab .paragraph {margin-top: 0.7em;border-top: dotted 0.2em black;padding-top: 0.7em;}#help {margin: 0.5em auto;font-size: 0.9em;font-family: sans-serif;width: 80%;}.buttons {text-align: center;}.buttons button {background-color: #001050;color: #ffffff;border: outset 2px #2050a0;border-radius: 3px;text-decoration: none;font-weight: bold;margin: 1vmin 5vmin;padding: 1vmin 5vmin;}#dictionary {position: fixed;top: 1em;left: 1em;right: 1em;background-color: #f0f8ff;color: #000000;padding: 0.2em;padding-left: 1.2em;border: solid 1px #000080;box-shadow: 0.5vmin 0.5vmin 0.5vmin 0.5vmin #c8cce4;font-family: sans-serif;}#dictionary dl {margin-bottom: 0.5em;font-size: 0.9em;}#dictionary dd {margin-left: 2em;}.paragraph .vocab dl,.paragraph .vocab dl dt,.paragraph .vocab dl dd,.paragraph .vocab dl dd ul,.paragraph .vocab dl dd ul li {display: inline;}.paragraph .vocab dl {display: block;page-break-inside: avoid;-webkit-page-break-inside: avoid;break-inside: avoid-page;padding: 0.2em;line-height: 1.2em;}.paragraph .vocab dl:before {content: " \2022 ";}.paragraph .vocab dl.blacklisted {display: none;}.paragraph .vocab dl dt {white-space: nowrap;}.paragraph .vocab dl dd {font-size: 80%;}.paragraph .vocab dl dd small {font-size: 75%;}.paragraph .vocab dl dd ul li:before {content: " \25e6 ";}@media only screen and (min-width : 600px) {.paragraph .vocab {-webkit-column-count: 2;-moz-column-count: 2;column-count: 2;}}@media only screen and (min-width : 1200px) {.paragraph .vocab {-webkit-column-count: 3;-moz-column-count: 3;column-count: 3;}}@media only screen and (min-width : 1500px) {.paragraph .vocab {-webkit-column-count: 4;-moz-column-count: 4;column-count: 4;}}@media only screen {.page_break {border-bottom: dashed 1px #808080;}}@media print {.buttons,#dictionary,#help {display: none;}.paragraph {display: block;margin-top: 0.7em;border-top: dotted 0.2em black;padding-top: 0.7em;font-size: 80%;-webkit-column-count: 2;-moz-column-count: 2;column-count: 2;}.paragraph .vocab {display: block;}}</style></head><body><div class="buttons" lang="en"><form action="#"><div><button id="print">Print (with vocab) [Ctrl+P]</button><button id="toggle-vocab">Toggle vocab</button></div><div><label><input type="checkbox" id="add_breaks" checked="checked" /> Print with page break after every paragraph (recommended for Firefox)</label></div></form></div><div id="help" lang="en"><p>Click on a word to display its meaning, click on the meaning to hide it. If you print this page, then after each paragraph, a complete vocabulary list for that paragraph will be included. <a id="hide-help" href="#">(Hide)</a></p></div><div id="dictionary"></div><script type="text/javascript">(function () {var dictionary = document.getElementById("dictionary"),add_break_checkboxes = document.getElementsByClassName("add_break");function toggle_breaks(){var checked = document.getElementById("add_breaks").checked,cb,i,l;for (i = 0, l = add_break_checkboxes.length; i < l; ++i) {cb = add_break_checkboxes[i];cb.checked = checked;update_break.apply(cb);}}function update_break(){var pi, cls;pi = this.getAttribute("id").replace("add_break_", "paragraph_");cls = this.checked ? "paragraph page_break" : "paragraph";document.getElementById(pi).className = cls;}function show_dictionary(){var word_ids = this.className.trim().split(/  */),html = "",entries,word_id,i, l, ii, ll;for (i = 0, l = word_ids.length; i < l; ++i) {word_id = word_ids[i];entries = document.getElementsByClassName(word_id);for (ii = 0, ll = entries.length; ii < ll; ++ii) {if (String(entries[ii].tagName).toUpperCase() === "DL") {html += "<dl>" + entries[ii].innerHTML + "</dl>";}}}if (html !== "") {dictionary.innerHTML = html;dictionary.style.display = "";}};function hide_dictionary(){dictionary.style.display = "none";};function toggle_vocab(){var body = document.getElementById("text");body.className = body.className ? "" : "show-vocab";return false;}window.onload = function (){var words = document.getElementsByTagName("a"),hide_help = document.getElementById("hide-help"),i, l;for (i = 0, l = words.length; i < l; ++i) {words[i].onclick = show_dictionary;}for (i = 0, l = add_break_checkboxes.length; i < l; ++i) {add_break_checkboxes[i].onclick = update_break;}dictionary.onclick = hide_dictionary;hide_help.onclick = function (){document.getElementById("help").style.display = "none";return false;};hide_dictionary();document.getElementById("print").onclick = function () { window.print(); return false; };document.getElementById("add_breaks").onclick = toggle_breaks;document.getElementById("toggle-vocab").onclick = toggle_vocab;};})();</script><div id="text"><div id="paragraph_0" class="paragraph page_break"><p><a class="word-0-2 word-0-0"><ruby>日本<rt>ニッポン</rt></ruby></a><a class="word-0-2 word-0-1"><ruby>国<rt>コク</rt></ruby></a><a class="word-0-3">（</a><a class="word-0-4">にっぽん</a><a class="word-0-5">こく</a><a class="word-0-6">、</a><a class="word-0-7">に</a><a class="word-0-8">ほん</a><a class="word-0-5">こく</a><a class="word-0-10">）</a><a class="word-0-6">、</a><a class="word-0-12">または</a><a class="word-0-0">日本</a><a class="word-0-3">（</a><a class="word-0-4">にっぽん</a><a class="word-0-6">、</a><a class="word-0-7">に</a><a class="word-0-8">ほん</a><a class="word-0-10">）</a><a class="word-0-20">は</a><a class="word-0-6">、</a><a class="word-0-22"><ruby>東アジア<rt>ヒガシアジア</rt></ruby></a><a class="word-0-7">に</a><a class="word-0-24"><ruby>位置<rt>イチ</rt></ruby></a><a class="word-0-25">する</a><a class="word-0-28 word-0-0">日本</a><a class="word-0-28 word-0-27"><ruby>列島<rt>レットウ</rt></ruby></a><a class="word-0-3">（</a><a class="word-0-30"><ruby>北海道<rt>ホッカイドウ</rt></ruby></a><a class="word-0-31">・</a><a class="word-0-32"><ruby>本州<rt>ホンシュウ</rt></ruby></a><a class="word-0-31">・</a><a class="word-0-34"><ruby>四国<rt>シコク</rt></ruby></a><a class="word-0-31">・</a><a class="word-0-36"><ruby>九州<rt>キュウシュウ</rt></ruby></a><a class="word-0-37">の</a><a class="word-0-38"><ruby>主要<rt>シュヨウ</rt></ruby></a><a class="word-0-39"><ruby>四<rt>ヨン</rt></ruby></a><a class="word-0-40"><ruby>島<rt>トウ</rt></ruby></a><a class="word-0-41">および</a><a class="word-0-44 word-0-42">それ</a><a class="word-0-44 word-0-7">に</a><a class="word-0-45"><ruby>付随<rt>フズイ</rt></ruby></a><a class="word-0-25">する</a><a class="word-0-47"><ruby>島々<rt>シマジマ</rt></ruby></a><a class="word-0-10">）</a><a class="word-0-49"><ruby>及び<rt>オヨビ</rt></ruby></a><a class="word-0-6">、</a><a class="word-0-51"><ruby>南西諸島<rt>ナンセイショトウ</rt></ruby></a><a class="word-0-31">・</a><a class="word-0-53"><ruby>小笠原諸島<rt>オガサワラショトウ</rt></ruby></a><a class="word-0-54">など</a><a class="word-0-37">の</a><a class="word-0-56"><ruby>諸<rt>ショ</rt></ruby></a><a class="word-0-57"><ruby>島嶼<rt>トウショ</rt></ruby></a><a class="word-0-60 word-0-58">から</a><a class="word-0-60 word-0-59"><ruby>成る<rt>ナル</rt></ruby></a><a class="word-0-61"><ruby>島国<rt>シマグニ</rt></ruby></a><a class="word-0-64 word-0-62">で</a><a class="word-0-64 word-0-63">ある</a><a class="">[</a><a class="">1</a><a class="">]。</a><a class="word-0-68"><ruby>日本語<rt>ニホンゴ</rt></ruby></a><a class="word-0-69">が</a><a class="word-0-72 word-0-70"><ruby>事実<rt>ジジツ</rt></ruby></a><a class="word-0-72 word-0-71"><ruby>上<rt>ジョウ</rt></ruby></a><a class="word-0-37">の</a><a class="word-0-76 word-0-74"><ruby>公用<rt>コウヨウ</rt></ruby></a><a class="word-0-76 word-0-75"><ruby>語<rt>ゴ</rt></ruby></a><a class="word-0-77">として</a><a class="word-0-78"><ruby>使用<rt>シヨウ</rt></ruby></a><a class="word-0-81 word-0-25">さ</a><a class="word-0-81 word-0-80">れ</a><a class="word-0-82">て</a><a class="word-0-83">いる</a><a class="word-0-84">。</a><a class="word-0-85"><ruby>首都<rt>シュト</rt></ruby></a><a class="word-0-20">は</a><a class="word-0-72 word-0-70">事実</a><a class="word-0-72 word-0-71">上</a><a class="word-0-92 word-0-90"><ruby>東京<rt>トウキョウ</rt></ruby></a><a class="word-0-92 word-0-91"><ruby>都<rt>ト</rt></ruby></a><a class="word-0-98 word-0-96 word-0-95 word-0-93">と</a><a class="word-0-81 word-0-98 word-0-96 word-0-95 word-0-25">さ</a><a class="word-0-81 word-0-98 word-0-80">れ</a><a class="word-0-82">て</a><a class="word-0-83">いる</a><a class="word-0-84">。</a></p><div class="vocab"><dl class="word-0-0"><dt>日本<small>【にほん、にっぽん】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+Japan</li></ul></dd></dl><dl class="word-0-1"><dt>国<small>【くに】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
 country; state</li><li><small title="noun (common) (futsuumeishi)">n.</small>
 region</li><li><small title="noun (common) (futsuumeishi)">n.</small>
 national government; central government</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-home (i.e. hometown, home country)</li><li><small title="archaism">arch.</small>
-province (of Japan)</li><li><small title="archaism">arch.</small>
-land; earth</li></ul></dd></dl><dl class="word-0-2"><dt>日本国<small>【にほんこく】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
-Japan</li></ul></dd></dl><dl class="word-0-5 blacklisted"><dt>こい<small>【こい、っこい】</small></dt><dd><ul><li><small title="suffix">suffix; </small><small title="adjective (keiyoushi)">adj.</small>
-rich in ...; high in ...; full of ...; very ...; quite ...</li></ul></dd></dl><dl class="word-0-7 blacklisted"><dt>に</dt><dd><ul><li><small title="particle">part.</small>
-at (place, time); in; on; during</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-to (direction, state); toward; into</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-for (purpose)</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-because of (reason); for; with</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-by; from</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-as (i.e. in the role of)</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-per; in; for; a (e.g. &quot;once a month")</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-and; in addition to</li><li><small title="archaism">arch.</small>
-if; although</li></ul></dd></dl><dl class="word-0-12"><dt>または</dt><dd><ul><li><small title="conjunction">conj.; </small><small title="expressions (phrases, clauses, etc.)">phrase; </small><small title="word usually written using kana alone">us. kana</small>
-or; otherwise</li></ul></dd></dl><dl class="word-0-20 blacklisted"><dt>は</dt><dd><ul><li><small title="particle">part.</small>
-topic marker particle</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-indicates contrast with another option (stated or unstated)</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-adds emphasis</li></ul></dd></dl><dl class="word-0-20 blacklisted"><dt>は<small>【はあ、は】</small></dt><dd><ul><li><small title="interjection (kandoushi)">interj.</small>
-yes; indeed; well</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-ha!</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-what?; huh?</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-sigh</li></ul></dd></dl><dl class="word-0-22"><dt>東アジア<small>【ひがしアジア】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="nouns which may take the genitive case particle `no&#039;">no-n.</small>
-East Asia</li></ul></dd></dl><dl class="word-0-24 blacklisted"><dt>位置<small>【いち】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="noun or participle which takes the aux. verb suru">suru</small>
-place; situation; position; location</li></ul></dd></dl><dl class="word-0-25 blacklisted"><dt>する</dt><dd><ul><li><small title="suru verb - irregular">vsuruirr.; </small><small title="word usually written using kana alone">us. kana</small>
-to do</li><li><small title="word usually written using kana alone">us. kana</small>
-to cause to become; to make (into); to turn (into)</li><li><small title="word usually written using kana alone">us. kana</small>
-to serve as; to act as; to work as</li><li><small title="word usually written using kana alone">us. kana</small>
-to wear (clothes, a facial expression, etc.)</li><li><small title="word usually written using kana alone">us. kana</small>
-to judge as being; to view as being; to think of as; to treat as; to use as</li><li><small title="word usually written using kana alone">us. kana</small>
-to decide on; to choose</li><li><small title="suru verb - irregular">vsuruirr.; </small><small title="intransitive verb">vi.; </small><small title="word usually written using kana alone">us. kana</small>
-to be sensed (of a smell, noise, etc.)</li><li><small title="word usually written using kana alone">us. kana</small>
-to be (in a state, condition, etc.)</li><li><small title="word usually written using kana alone">us. kana</small>
-to be worth; to cost</li><li><small title="word usually written using kana alone">us. kana</small>
-to pass (of time); to elapse</li><li><small title="suru verb - irregular">vsuruirr.; </small><small title="transitive verb">vt.; </small><small title="word usually written using kana alone">us. kana</small>
-to place, or raise, person A to a post or status B</li><li><small title="word usually written using kana alone">us. kana</small>
-to transform A to B; to make A into B; to exchange A for B</li><li><small title="word usually written using kana alone">us. kana</small>
-to make use of A for B; to view A as B; to handle A as if it were B</li><li><small title="word usually written using kana alone">us. kana</small>
-to feel A about B</li><li><small title="suffix">suffix; </small><small title="suru verb - irregular">vsuruirr.; </small><small title="word usually written using kana alone">us. kana</small>
-verbalizing suffix (applies to nouns noted in this dictionary with the part of speech &quot;vs")</li><li><small title="auxiliary verb">auxv.; </small><small title="suru verb - irregular">vsuruirr.; </small><small title="word usually written using kana alone">us. kana</small>
-creates a humble verb (after a noun prefixed with &quot;o" or "go")</li><li><small title="word usually written using kana alone">us. kana</small>
-to be just about to; to be just starting to; to try to; to attempt to</li></ul></dd></dl><dl class="word-0-25 blacklisted"><dt>する</dt><dd><ul><li><small title="Godan verb with `ru&#039; ending">v5ru.; </small><small title="transitive verb">vt.; </small><small title="word usually written using kana alone">us. kana</small>
-to pick someone&#039;s pocket</li></ul></dd></dl><dl class="word-0-27"><dt>列島<small>【れっとう】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
-archipelago; chain of islands</li></ul></dd></dl><dl class="word-0-28"><dt>日本列島<small>【にほんれっとう、にっぽんれっとう】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
-the Japanese islands</li></ul></dd></dl><dl class="word-0-30 blacklisted"><dt>北海道<small>【ほっかいどう】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
-Hokkaido (island, prefectural-level administrative unit)</li></ul></dd></dl><dl class="word-0-31 blacklisted"><dt>・<small>【なかぐろ】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
-middle dot (typographical symbol used between parallel terms, names in katakana, etc.); full-stop mark at mid-character height; interpoint (interword separation)</li></ul></dd></dl><dl class="word-0-31 blacklisted"><dt>・<small>【なかぽつ、なかポツ】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
-middle dot (typographical symbol used between parallel terms, names in katakana, etc.); full-stop mark at mid-character height; interpoint (interword separation)</li></ul></dd></dl><dl class="word-0-32 blacklisted"><dt>本州<small>【ほんしゅう】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
-Honshu (largest of the four main islands of Japan)</li></ul></dd></dl><dl class="word-0-34"><dt>四国<small>【しこく】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
-Shikoku (smallest of the four main islands of Japan)</li></ul></dd></dl><dl class="word-0-36 blacklisted"><dt>九州<small>【きゅうしゅう】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
-Kyushu (southernmost of the four main islands of Japan)</li></ul></dd></dl><dl class="word-0-37 blacklisted"><dt>の</dt><dd><ul><li><small title="particle">part.</small>
-indicates possessive</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-nominalizes verbs and adjectives</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-substitutes for &quot;ga" in subordinate phrases</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-(at sentence-end, falling tone) indicates a confident conclusion</li><li><small title="female term or language">fem.</small>
-(at sentence-end) indicates emotional emphasis</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-(at sentence-end, rising tone) indicates question</li></ul></dd></dl><dl class="word-0-38"><dt>主要<small>【しゅよう】</small></dt><dd><ul><li><small title="adjectival nouns or quasi-adjectives (keiyodoshi)">adjn..; </small><small title="noun (common) (futsuumeishi)">n.</small>
-chief; main; principal; major</li></ul></dd></dl><dl class="word-0-39 blacklisted"><dt>四<small>【し、よん、よ】</small></dt><dd><ul><li><small title="numeric">num.</small>
-four</li></ul></dd></dl><dl class="word-0-39 blacklisted"><dt>四<small>【スー】</small></dt><dd><ul><li><small title="numeric">num.</small>
-four</li></ul></dd></dl><dl class="word-0-40"><dt>島<small>【しま】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
-island</li><li><small title="word usually written using kana alone">us. kana</small>
-territory (of a prostitute, organized crime gang, etc.); turf</li></ul></dd></dl><dl class="word-0-40"><dt>島<small>【とう】</small></dt><dd><ul><li><small title="suffix">suffix</small>
+home (i.e. hometown, home country)</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="archaism">arch.</small>
+province (of Japan)</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="archaism">arch.</small>
+land; earth</li></ul></dd></dl><dl class="word-0-2"><dt>日本国<small>【にほんこく、にっぽんこく】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+Japan</li></ul></dd></dl><dl class="word-0-5 blacklisted"><dt>こい<small>【こい、っこい】</small></dt><dd lang="en"><ul><li><small title="suffix">suffix; </small><small title="adjective (keiyoushi)">adj.</small>
+rich in ...; high in ...; full of ...; very ...; quite ...</li></ul></dd></dl><dl class="word-0-7 blacklisted"><dt>に</dt><dd lang="en"><ul><li><small title="particle">part.</small>
+at (place, time); in; on; during</li><li><small title="particle">part.</small>
+to (direction, state); toward; into</li><li><small title="particle">part.</small>
+for (purpose)</li><li><small title="particle">part.</small>
+because of (reason); for; with</li><li><small title="particle">part.</small>
+by; from</li><li><small title="particle">part.</small>
+as (i.e. in the role of)</li><li><small title="particle">part.</small>
+per; in; for; a (e.g. &quot;once a month")</li><li><small title="particle">part.</small>
+and; in addition to</li><li><small title="particle">part.; </small><small title="archaism">arch.</small>
+if; although</li></ul></dd></dl><dl class="word-0-12"><dt>または</dt><dd lang="en"><ul><li><small title="conjunction">conj.; </small><small title="word usually written using kana alone">us. kana</small>
+or; either ... or ...</li></ul></dd></dl><dl class="word-0-20 blacklisted"><dt>は</dt><dd lang="en"><ul><li><small title="particle">part.</small>
+indicates sentence topic</li><li><small title="particle">part.</small>
+indicates contrast with another option (stated or unstated)</li><li><small title="particle">part.</small>
+adds emphasis</li></ul></dd></dl><dl class="word-0-20 blacklisted"><dt>は<small>【はあ、はー、は、はぁ、はあっ、はーッ、ハーッ】</small></dt><dd lang="en"><ul><li><small title="interjection (kandoushi)">interj.</small>
+yes; indeed; well</li><li><small title="interjection (kandoushi)">interj.</small>
+ha!</li><li><small title="interjection (kandoushi)">interj.</small>
+what?; huh?</li><li><small title="interjection (kandoushi)">interj.</small>
+sigh</li></ul></dd></dl><dl class="word-0-22"><dt>東アジア<small>【ひがしアジア】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small>nouns which may take the genitive case particle &#039;no'</small>
+East Asia</li></ul></dd></dl><dl class="word-0-24 blacklisted"><dt>位置<small>【いち】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="noun or participle which takes the aux. verb suru">suru</small>
+place; situation; position; location</li></ul></dd></dl><dl class="word-0-25 blacklisted"><dt>する</dt><dd lang="en"><ul><li><small>suru verb - included; </small><small title="word usually written using kana alone">us. kana</small>
+to do; to carry out; to perform</li><li><small>suru verb - included; </small><small title="word usually written using kana alone">us. kana</small>
+to cause to become; to make (into); to turn (into)</li><li><small>suru verb - included; </small><small title="word usually written using kana alone">us. kana</small>
+to serve as; to act as; to work as</li><li><small>suru verb - included; </small><small title="word usually written using kana alone">us. kana</small>
+to wear (clothes, a facial expression, etc.)</li><li><small>suru verb - included; </small><small title="word usually written using kana alone">us. kana</small>
+to judge as being; to view as being; to think of as; to treat as; to use as</li><li><small>suru verb - included; </small><small title="word usually written using kana alone">us. kana</small>
+to decide on; to choose</li><li><small>suru verb - included; </small><small title="intransitive verb">vi.; </small><small title="word usually written using kana alone">us. kana</small>
+to be sensed (of a smell, noise, etc.)</li><li><small>suru verb - included; </small><small title="intransitive verb">vi.; </small><small title="word usually written using kana alone">us. kana</small>
+to be (in a state, condition, etc.)</li><li><small>suru verb - included; </small><small title="intransitive verb">vi.; </small><small title="word usually written using kana alone">us. kana</small>
+to be worth; to cost</li><li><small>suru verb - included; </small><small title="intransitive verb">vi.; </small><small title="word usually written using kana alone">us. kana</small>
+to pass (of time); to elapse</li><li><small>suru verb - included; </small><small title="transitive verb">vt.; </small><small title="word usually written using kana alone">us. kana</small>
+to place, or raise, person A to a post or status B</li><li><small>suru verb - included; </small><small title="transitive verb">vt.; </small><small title="word usually written using kana alone">us. kana</small>
+to transform A to B; to make A into B; to exchange A for B</li><li><small>suru verb - included; </small><small title="transitive verb">vt.; </small><small title="word usually written using kana alone">us. kana</small>
+to make use of A for B; to view A as B; to handle A as if it were B</li><li><small>suru verb - included; </small><small title="transitive verb">vt.; </small><small title="word usually written using kana alone">us. kana</small>
+to feel A about B</li><li><small title="suffix">suffix; </small><small>suru verb - included; </small><small title="word usually written using kana alone">us. kana</small>
+verbalizing suffix (applies to nouns noted in this dictionary with the part of speech &quot;vs")</li><li><small title="auxiliary verb">auxv.; </small><small>suru verb - included; </small><small title="word usually written using kana alone">us. kana</small>
+creates a humble verb (after a noun prefixed with &quot;o" or "go")</li><li><small title="auxiliary verb">auxv.; </small><small>suru verb - included; </small><small title="word usually written using kana alone">us. kana</small>
+to be just about to; to be just starting to; to try to; to attempt to</li></ul></dd></dl><dl class="word-0-25 blacklisted"><dt>する<small>【する、スる】</small></dt><dd lang="en"><ul><li><small>Godan verb with &#039;ru' ending; </small><small title="transitive verb">vt.; </small><small title="word usually written using kana alone">us. kana</small>
+to pickpocket; to steal</li></ul></dd></dl><dl class="word-0-27"><dt>列島<small>【れっとう】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+archipelago; chain of islands</li></ul></dd></dl><dl class="word-0-28"><dt>日本列島<small>【にほんれっとう、にっぽんれっとう】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+the Japanese islands</li></ul></dd></dl><dl class="word-0-30 blacklisted"><dt>北海道<small>【ほっかいどう】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+Hokkaido (island, prefectural-level administrative unit)</li></ul></dd></dl><dl class="word-0-32 blacklisted"><dt>本州<small>【ほんしゅう】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+Honshū (largest of the four main islands of Japan); Honshu</li></ul></dd></dl><dl class="word-0-34"><dt>四国<small>【しこく】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+Shikoku (smallest of the four main islands of Japan)</li></ul></dd></dl><dl class="word-0-36 blacklisted"><dt>九州<small>【きゅうしゅう】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+Kyūshū (southernmost of the four main islands of Japan)</li></ul></dd></dl><dl class="word-0-37 blacklisted"><dt>の</dt><dd lang="en"><ul><li><small title="particle">part.</small>
+indicates possessive</li><li><small title="particle">part.</small>
+nominalizes verbs and adjectives</li><li><small title="particle">part.</small>
+substitutes for &quot;ga" in subordinate phrases</li><li><small title="particle">part.</small>
+(at sentence-end, falling tone) indicates a confident conclusion</li><li><small title="particle">part.; </small><small title="female term or language">fem.</small>
+(at sentence-end) indicates emotional emphasis</li><li><small title="particle">part.</small>
+(at sentence-end, rising tone) indicates question</li></ul></dd></dl><dl class="word-0-38"><dt>主要<small>【しゅよう】</small></dt><dd lang="en"><ul><li><small title="adjectival nouns or quasi-adjectives (keiyodoshi)">adjn..; </small><small title="noun (common) (futsuumeishi)">n.</small>
+chief; main; principal; major</li></ul></dd></dl><dl class="word-0-39 blacklisted"><dt>四<small>【し、よん、よ】</small></dt><dd lang="en"><ul><li><small title="numeric">num.</small>
+four; 4</li></ul></dd></dl><dl class="word-0-39 blacklisted"><dt>四<small>【スー】</small></dt><dd lang="en"><ul><li><small title="numeric">num.</small>
+four</li></ul></dd></dl><dl class="word-0-40"><dt>島<small>【しま】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+island</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="word usually written using kana alone">us. kana</small>
+one&#039;s territory (e.g. of a sex worker, organized crime gang); one's turf</li></ul></dd></dl><dl class="word-0-40"><dt>島<small>【とう】</small></dt><dd lang="en"><ul><li><small title="suffix">suffix</small>
 Island</li><li><small title="noun, used as a suffix">sufn.; </small><small title="noun (common) (futsuumeishi)">n.</small>
-insula; island; islet</li></ul></dd></dl><dl class="word-0-42 blacklisted"><dt>それ</dt><dd><ul><li><small title="pronoun">pron.; </small><small title="nouns which may take the genitive case particle `no&#039;">no-n.; </small><small title="word usually written using kana alone">us. kana</small>
-that (indicating an item or person near the listener, the action of the listener, or something on their mind); it</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-that time; then</li><li><small title="archaism">arch.</small>
-there (indicating a place near the listener)</li><li><small title="archaism">arch.</small>
-you</li></ul></dd></dl><dl class="word-0-42 blacklisted"><dt>それ</dt><dd><ul><li><small title="interjection (kandoushi)">interj.</small>
-there! (used to call someone&#039;s attention to something)</li></ul></dd></dl><dl class="word-0-44"><dt>それに</dt><dd><ul><li><small title="conjunction">conj.; </small><small title="word usually written using kana alone">us. kana</small>
-besides; in addition; also; moreover</li></ul></dd></dl><dl class="word-0-45"><dt>付随<small>【ふずい】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="noun or participle which takes the aux. verb suru">suru</small>
-being incident to; being accompanied by; being collateral with; being attached to</li></ul></dd></dl><dl class="word-0-47"><dt>島々<small>【しまじま】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
-islands</li></ul></dd></dl><dl class="word-0-49"><dt>及び<small>【および】</small></dt><dd><ul><li><small title="conjunction">conj.</small>
-and; as well as</li></ul></dd></dl><dl class="word-0-51"><dt>南西諸島<small>【なんせいしょとう】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
-Nansei Islands; Ryukyu Islands; chain of islands extending from southwestern Kyushu to northern Taiwan</li></ul></dd></dl><dl class="word-0-54 blacklisted"><dt>など</dt><dd><ul><li><small title="particle">part.; </small><small title="word usually written using kana alone">us. kana</small>
-et cetera; etc.; and the like; and so forth</li><li><small title="word usually written using kana alone">us. kana</small>
-or something</li><li><small title="word usually written using kana alone">us. kana</small>
-the likes of</li></ul></dd></dl><dl class="word-0-56"><dt>諸<small>【しょ】</small></dt><dd><ul><li><small title="prefix">pref.</small>
-various; many; several</li></ul></dd></dl><dl class="word-0-56"><dt>諸<small>【もろ、モロ】</small></dt><dd><ul><li><small title="prefix">pref.; </small><small title="word usually written using kana alone">us. kana</small>
-both</li><li><small title="word usually written using kana alone">us. kana</small>
-many; various; all</li><li><small title="word usually written using kana alone">us. kana</small>
-together</li></ul></dd></dl><dl class="word-0-57"><dt>島嶼<small>【とうしょ】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
-islands</li></ul></dd></dl><dl class="word-0-58 blacklisted"><dt>から</dt><dd><ul><li><small title="particle">part.</small>
-from (e.g. time, place, numerical quantity); since</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-from (originator); by</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-because; since</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-out of (constituent, part)</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-through (e.g. window, vestibule)</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-after; since</li></ul></dd></dl><dl class="word-0-59"><dt>成る<small>【なる】</small></dt><dd><ul><li><small title="Godan verb with `ru&#039; ending">v5ru.; </small><small title="intransitive verb">vi.; </small><small title="word usually written using kana alone">us. kana</small>
-to become; to get; to grow; to be; to reach; to attain</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-to result in; to prove to be</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-to consist of; to be composed of</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-to succeed; to be complete</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-to change into; to be exchanged for</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-to play a role</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-to be promoted</li><li><small title="Godan verb with `ru&#039; ending">v5ru.; </small><small title="honorific or respectful (sonkeigo) language">sonkeigo</small>
-to do ...</li></ul></dd></dl><dl class="word-0-60"><dt>島国<small>【しまぐに、とうごく】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
-island country (sometimes used as a metaphor for Japan)</li></ul></dd></dl><dl class="word-0-61 blacklisted"><dt>だ</dt><dd><ul><li><small title="copula">cop.</small>
+insula; island; islet</li></ul></dd></dl><dl class="word-0-42 blacklisted"><dt>それ</dt><dd lang="en"><ul><li><small title="pronoun">pron.; </small><small title="word usually written using kana alone">us. kana</small>
+that; it</li><li><small title="pronoun">pron.; </small><small title="word usually written using kana alone">us. kana</small>
+then; that point (in time); that time</li><li><small title="pronoun">pron.; </small><small title="archaism">arch.</small>
+there</li><li><small title="pronoun">pron.; </small><small title="archaism">arch.</small>
+you</li></ul></dd></dl><dl class="word-0-42 blacklisted"><dt>それ<small>【それ、それっ】</small></dt><dd lang="en"><ul><li><small title="interjection (kandoushi)">interj.</small>
+there!; look!</li><li><small title="interjection (kandoushi)">interj.</small>
+go on!; right!; here goes!</li></ul></dd></dl><dl class="word-0-44"><dt>それに</dt><dd lang="en"><ul><li><small title="conjunction">conj.; </small><small title="word usually written using kana alone">us. kana</small>
+besides; in addition; also; moreover</li></ul></dd></dl><dl class="word-0-45"><dt>付随<small>【ふずい】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="noun or participle which takes the aux. verb suru">suru</small>
+being incident to; being accompanied by; being collateral with; being attached to</li></ul></dd></dl><dl class="word-0-47"><dt>島々<small>【しまじま】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+islands</li></ul></dd></dl><dl class="word-0-49"><dt>及び<small>【および】</small></dt><dd lang="en"><ul><li><small title="conjunction">conj.</small>
+and; as well as</li></ul></dd></dl><dl class="word-0-51"><dt>南西諸島<small>【なんせいしょとう】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+Nansei Islands; Ryukyu Islands; chain of islands extending from southwestern Kyushu to northern Taiwan</li></ul></dd></dl><dl class="word-0-54 blacklisted"><dt>など</dt><dd lang="en"><ul><li><small title="particle">part.; </small><small title="word usually written using kana alone">us. kana</small>
+et cetera; etc.; and the like; and so forth</li><li><small title="particle">part.; </small><small title="word usually written using kana alone">us. kana</small>
+or something</li><li><small title="particle">part.; </small><small title="word usually written using kana alone">us. kana</small>
+the likes of</li><li><small title="particle">part.; </small><small title="word usually written using kana alone">us. kana</small>
+for example; for instance; for one</li></ul></dd></dl><dl class="word-0-56"><dt>諸<small>【しょ】</small></dt><dd lang="en"><ul><li><small title="prefix">pref.</small>
+various; many; several</li></ul></dd></dl><dl class="word-0-56"><dt>諸<small>【もろもろ】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+all kinds of things; various things; large number of people</li></ul></dd></dl><dl class="word-0-56"><dt>諸<small>【もろ、モロ】</small></dt><dd lang="en"><ul><li><small title="prefix">pref.; </small><small title="word usually written using kana alone">us. kana</small>
+both</li><li><small title="prefix">pref.; </small><small title="word usually written using kana alone">us. kana</small>
+many; various; all</li><li><small title="prefix">pref.; </small><small title="word usually written using kana alone">us. kana</small>
+together</li></ul></dd></dl><dl class="word-0-57"><dt>島嶼<small>【とうしょ】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+islands</li></ul></dd></dl><dl class="word-0-58 blacklisted"><dt>から</dt><dd lang="en"><ul><li><small title="particle">part.</small>
+from (e.g. time, place, numerical quantity); since</li><li><small title="particle">part.</small>
+from (originator); by</li><li><small title="particle">part.</small>
+because; since</li><li><small title="particle">part.</small>
+out of (constituent, part)</li><li><small title="particle">part.</small>
+through (e.g. window, vestibule)</li><li><small title="particle">part.</small>
+after; since</li><li><small title="particle">part.</small>
+expresses sympathy or warning</li></ul></dd></dl><dl class="word-0-59"><dt>成る<small>【なる】</small></dt><dd lang="en"><ul><li><small>Godan verb with &#039;ru' ending; </small><small title="intransitive verb">vi.; </small><small title="word usually written using kana alone">us. kana</small>
+to become; to get; to grow; to turn; to reach; to attain</li><li><small>Godan verb with &#039;ru' ending; </small><small title="intransitive verb">vi.; </small><small title="word usually written using kana alone">us. kana</small>
+to result in; to turn out; to end up; to prove (to be)</li><li><small>Godan verb with &#039;ru' ending; </small><small title="intransitive verb">vi.; </small><small title="word usually written using kana alone">us. kana</small>
+to consist of; to be composed of; to be made up of</li><li><small>Godan verb with &#039;ru' ending; </small><small title="intransitive verb">vi.; </small><small title="word usually written using kana alone">us. kana</small>
+to be completed; to be realized; to succeed; to be attained; to be accomplished</li><li><small>Godan verb with &#039;ru' ending; </small><small title="intransitive verb">vi.; </small><small title="word usually written using kana alone">us. kana</small>
+to change (into); to turn (into); to transform</li><li><small>Godan verb with &#039;ru' ending; </small><small title="intransitive verb">vi.; </small><small title="word usually written using kana alone">us. kana</small>
+to come (to do); to begin (to do); to grow (to do)</li><li><small>Godan verb with &#039;ru' ending; </small><small title="intransitive verb">vi.; </small><small title="word usually written using kana alone">us. kana</small>
+to come to; to amount to; to add up to; to make</li><li><small>Godan verb with &#039;ru' ending; </small><small title="intransitive verb">vi.; </small><small title="word usually written using kana alone">us. kana</small>
+to play (the part of); to act as</li><li><small>Godan verb with &#039;ru' ending; </small><small title="intransitive verb">vi.; </small><small title="word usually written using kana alone">us. kana</small>
+to be used for; to be useful for; to serve as</li><li><small>Godan verb with &#039;ru' ending; </small><small title="intransitive verb">vi.</small>
+to be promoted</li><li><small title="auxiliary verb">auxv.; </small><small>Godan verb with &#039;ru' ending; </small><small title="honorific or respectful (sonkeigo) language">sonkeigo; </small><small title="word usually written using kana alone">us. kana</small>
+to do ...</li></ul></dd></dl><dl class="word-0-60"><dt>から成る<small>【からなる】</small></dt><dd lang="en"><ul><li><small title="expressions (phrases, clauses, etc.)">phrase; </small><small title="word usually written using kana alone">us. kana</small>
+consists of; comprises; is made up of</li></ul></dd></dl><dl class="word-0-61"><dt>島国<small>【しまぐに、とうごく】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+island country</li></ul></dd></dl><dl class="word-0-62 blacklisted"><dt>だ</dt><dd lang="en"><ul><li><small title="copula">cop.</small>
 be; is</li><li><small title="auxiliary verb">auxv.</small>
-indicates past or completed action</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-indicates light imperative</li></ul></dd></dl><dl class="word-0-62 blacklisted"><dt>ある</dt><dd><ul><li><small title="Godan verb with `ru&#039; ending (irregular verb)">v5ruirr.; </small><small title="intransitive verb">vi.; </small><small title="word usually written using kana alone">us. kana</small>
-to be (usu. of inanimate objects); to exist; to live</li><li><small title="word usually written using kana alone">us. kana</small>
-to have</li><li><small title="word usually written using kana alone">us. kana</small>
-to be located</li><li><small title="word usually written using kana alone">us. kana</small>
-to be equipped with</li><li><small title="word usually written using kana alone">us. kana</small>
-to happen; to come about</li></ul></dd></dl><dl class="word-0-62 blacklisted"><dt>ある</dt><dd><ul><li><small title="pre-noun adjectival (rentaishi)">pren.; </small><small title="word usually written using kana alone">us. kana</small>
-a certain ...; some ...</li></ul></dd></dl><dl class="word-0-63"><dt>である</dt><dd><ul><li><small title="Godan verb with `ru&#039; ending (irregular verb)">v5ruirr.</small>
-be; is</li></ul></dd></dl><dl class="word-0-67"><dt>日本語<small>【にほんご、にっぽんご】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="nouns which may take the genitive case particle `no&#039;">no-n.</small>
-Japanese (language)</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-Japanese as a second language</li></ul></dd></dl><dl class="word-0-68 blacklisted"><dt>が</dt><dd><ul><li><small title="particle">part.</small>
-indicates sentence subject (occasionally object)</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-indicates possessive (esp. in literary expressions)</li><li><small title="particle">part.; </small><small title="conjunction">conj.</small>
-but; however; still; and</li></ul></dd></dl><dl class="word-0-69"><dt>事実<small>【じじつ】</small></dt><dd><ul><li><small title="adverbial noun (fukushitekimeishi)">advn.; </small><small title="noun (common) (futsuumeishi)">n.</small>
-fact; truth; reality</li></ul></dd></dl><dl class="word-0-70 blacklisted"><dt>上<small>【うえ】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="nouns which may take the genitive case particle `no&#039;">no-n.; </small><small title="adverbial noun (fukushitekimeishi)">advn.; </small><small title="noun, used as a suffix">sufn.</small>
+did; (have) done</li><li><small title="auxiliary verb">auxv.</small>
+please; do</li></ul></dd></dl><dl class="word-0-63 blacklisted"><dt>ある</dt><dd lang="en"><ul><li><small>Godan verb with &#039;ru' ending (irregular verb); </small><small title="intransitive verb">vi.; </small><small title="word usually written using kana alone">us. kana</small>
+to be; to exist; to live</li><li><small>Godan verb with &#039;ru' ending (irregular verb); </small><small title="intransitive verb">vi.; </small><small title="word usually written using kana alone">us. kana</small>
+to have</li><li><small>Godan verb with &#039;ru' ending (irregular verb); </small><small title="intransitive verb">vi.; </small><small title="word usually written using kana alone">us. kana</small>
+to be located</li><li><small>Godan verb with &#039;ru' ending (irregular verb); </small><small title="intransitive verb">vi.; </small><small title="word usually written using kana alone">us. kana</small>
+to be equipped with</li><li><small>Godan verb with &#039;ru' ending (irregular verb); </small><small title="intransitive verb">vi.; </small><small title="word usually written using kana alone">us. kana</small>
+to happen; to come about</li></ul></dd></dl><dl class="word-0-63 blacklisted"><dt>ある</dt><dd lang="en"><ul><li><small title="pre-noun adjectival (rentaishi)">pren.; </small><small title="word usually written using kana alone">us. kana</small>
+a certain ...; some ...</li></ul></dd></dl><dl class="word-0-64"><dt>である</dt><dd lang="en"><ul><li><small title="copula">cop.; </small><small>Godan verb with &#039;ru' ending (irregular verb); </small><small>formal or literary term</small>
+be; is</li></ul></dd></dl><dl class="word-0-68"><dt>日本語<small>【にほんご、にっぽんご】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+Japanese (language)</li></ul></dd></dl><dl class="word-0-69 blacklisted"><dt>が</dt><dd lang="en"><ul><li><small title="particle">part.</small>
+indicates sentence subject (occasionally object)</li><li><small title="particle">part.</small>
+indicates possessive (esp. in literary expressions)</li><li><small title="conjunction">conj.</small>
+but; however; still; and</li><li><small title="conjunction">conj.</small>
+regardless of; whether (or not)</li></ul></dd></dl><dl class="word-0-70"><dt>事実<small>【じじつ】</small></dt><dd lang="en"><ul><li><small title="adverb (fukushi)">adv.; </small><small title="noun (common) (futsuumeishi)">n.</small>
+fact; truth; reality</li></ul></dd></dl><dl class="word-0-71 blacklisted"><dt>上<small>【うえ】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small>nouns which may take the genitive case particle &#039;no'; </small><small title="adverb (fukushi)">adv.; </small><small title="noun, used as a suffix">sufn.</small>
 above; up; over; elder (e.g. daughter)</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-top; summit</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-surface; on</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-before; previous</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-superiority; one&#039;s superior (i.e. one's elder)</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-on top of that; besides; what&#039;s more</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-upon (further inspection, etc.); based on (and occurring after)</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-matters concerning...; as concerns ...</li><li><small title="noun (common) (futsuumeishi)">n.</small>
+top; summit; head (e.g. of a staircase)</li><li><small title="noun (common) (futsuumeishi)">n.</small>
+surface</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small>nouns which may take the genitive case particle &#039;no'; </small><small title="adverb (fukushi)">adv.</small>
+before; previous</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small>nouns which may take the genitive case particle &#039;no'</small>
+superiority; one&#039;s superior; one's elder</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="adverb (fukushi)">adv.</small>
+on top of that; besides; what&#039;s more; not only ... but</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="adverb (fukushi)">adv.</small>
+upon (further inspection, etc.); based on (and occurring after)</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="adverb (fukushi)">adv.</small>
+matters concerning ...; as concerns ...</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="adverb (fukushi)">adv.</small>
 since (i.e. &quot;for that reason")</li><li><small title="noun, used as a suffix">sufn.; </small><small title="honorific or respectful (sonkeigo) language">sonkeigo</small>
-suffix indicating higher social standing</li><li><small title="archaism">arch.</small>
-place of one&#039;s superior (i.e. the throne)</li><li><small title="archaism">arch.</small>
-emperor; sovereign; shogun; daimyo</li><li><small title="archaism">arch.</small>
-noblewoman (esp. the wife of a nobleman)</li></ul></dd></dl><dl class="word-0-70 blacklisted"><dt>上<small>【うわ】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="prefix">pref.</small>
-upper; upward; outer; surface; top</li></ul></dd></dl><dl class="word-0-70 blacklisted"><dt>上<small>【かみ】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+honorable; venerable</li><li><small title="noun, used as a suffix">sufn.; </small><small title="archaism">arch.</small>
+place of one&#039;s superior (e.g. the throne)</li><li><small title="noun, used as a suffix">sufn.; </small><small title="archaism">arch.</small>
+emperor; sovereign; shogun; daimyo</li><li><small title="noun, used as a suffix">sufn.; </small><small title="archaism">arch.</small>
+noblewoman (esp. the wife of a nobleman)</li></ul></dd></dl><dl class="word-0-71 blacklisted"><dt>上<small>【うわ】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="prefix">pref.</small>
+upper; upward; outer; surface; top</li></ul></dd></dl><dl class="word-0-71 blacklisted"><dt>上<small>【かみ】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
 upper reaches (of a river); upper stream</li><li><small title="noun (common) (futsuumeishi)">n.</small>
 top; upper part; upper half (of the body)</li><li><small title="noun (common) (futsuumeishi)">n.</small>
 long ago</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-beginning; first</li><li><small title="honorific or respectful (sonkeigo) language">sonkeigo</small>
+beginning; first</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="honorific or respectful (sonkeigo) language">sonkeigo</small>
 person of high rank (e.g. the emperor)</li><li><small title="noun (common) (futsuumeishi)">n.</small>
 government; imperial court</li><li><small title="noun (common) (futsuumeishi)">n.</small>
 imperial capital (i.e. Kyoto); capital region (i.e. Kansai); region (or direction of) the imperial palace</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-head (of a table)</li><li><small title="honorific or respectful (sonkeigo) language">sonkeigo</small>
-wife; mistress (of a restaurant)</li></ul></dd></dl><dl class="word-0-70 blacklisted"><dt>上<small>【じょう】</small></dt><dd><ul><li><small title="noun, used as a suffix">sufn.</small>
-from the standpoint of; as a matter of (e.g. fact); in the field of; being of the type of</li><li><small title="noun (common) (futsuumeishi)">n.</small>
+head (of a table)</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="honorific or respectful (sonkeigo) language">sonkeigo</small>
+wife; mistress (of a restaurant)</li></ul></dd></dl><dl class="word-0-71 blacklisted"><dt>上<small>【じょう】</small></dt><dd lang="en"><ul><li><small title="noun, used as a suffix">sufn.</small>
+from the standpoint of; as a matter of (e.g. fact); in the field of; being of the type of</li><li><small title="noun, used as a suffix">sufn.</small>
 aboard (a ship or vehicle); on top of; on; above</li><li><small title="noun (common) (futsuumeishi)">n.</small>
 first volume (e.g. book)</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="prefix">pref.</small>
-superior quality; best; top; high class</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-going up</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-governmental; imperial</li><li><small title="noun (common) (futsuumeishi)">n.</small>
+superior quality; best; top; high class</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="prefix">pref.</small>
+going up</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="prefix">pref.</small>
+governmental; imperial</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="prefix">pref.</small>
 presenting; showing</li><li><small title="prefix">pref.</small>
-ana- (medical, biol.)</li></ul></dd></dl><dl class="word-0-71"><dt>事実上<small>【じじつじょう】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="nouns which may take the genitive case particle `no&#039;">no-n.</small>
-(as a) matter of fact; actually; in reality</li></ul></dd></dl><dl class="word-0-73"><dt>公用<small>【こうよう】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
-government business; official business</li><li><small title="nouns which may take the genitive case particle `no&#039;">no-n.</small>
-public; official; governmental</li></ul></dd></dl><dl class="word-0-74"><dt>語<small>【ご】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="noun, used as a suffix">sufn.</small>
+ana-</li></ul></dd></dl><dl class="word-0-72"><dt>事実上<small>【じじつじょう】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small>nouns which may take the genitive case particle &#039;no'; </small><small title="adverb (fukushi)">adv.</small>
+as a matter of fact; actually; effectively; in reality; in effect</li></ul></dd></dl><dl class="word-0-74"><dt>公用<small>【こうよう】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+official business; government business; public business; company duties</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small>nouns which may take the genitive case particle &#039;no'</small>
+public use; government use</li></ul></dd></dl><dl class="word-0-75"><dt>語<small>【ご】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="noun, used as a suffix">sufn.; </small><small title="counter">cnt.</small>
+word</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="noun, used as a suffix">sufn.</small>
 language</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-word</li></ul></dd></dl><dl class="word-0-74"><dt>語<small>【かたり】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+speech</li></ul></dd></dl><dl class="word-0-75"><dt>語<small>【かたり】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
 talk; recital</li><li><small title="noun (common) (futsuumeishi)">n.</small>
 narration</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-topic</li></ul></dd></dl><dl class="word-0-75"><dt>公用語<small>【こうようご】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
-official language</li></ul></dd></dl><dl class="word-0-76 blacklisted"><dt>として</dt><dd><ul><li><small title="expressions (phrases, clauses, etc.)">phrase</small>
-as (i.e. in the role of); for (i.e. from the viewpoint of)</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-apart from... (used to change the topic)</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-even (e.g. &quot;not even a single person")</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-thinking that...; trying to...</li></ul></dd></dl><dl class="word-0-77 blacklisted"><dt>使用<small>【しよう】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="noun or participle which takes the aux. verb suru">suru</small>
-use; application; employment; utilization; utilisation</li></ul></dd></dl><dl class="word-0-79 blacklisted"><dt>れる<small>【れる、られる】</small></dt><dd><ul><li><small title="auxiliary verb">auxv.; </small><small title="Ichidan verb">v1.</small>
-indicates passive voice (incl. the &quot;suffering passive")</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-indicates the potential form</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-indicates spontaneous occurrence</li><li><small title="honorific or respectful (sonkeigo) language">sonkeigo</small>
-used as an honorific for others&#039; actions</li></ul></dd></dl><dl class="word-0-80 blacklisted"><dt>される</dt><dd><ul><li><small title="Ichidan verb">v1.; </small><small title="word usually written using kana alone">us. kana</small>
-honorific or passive form of the verb &quot;suru"</li></ul></dd></dl><dl class="word-0-81 blacklisted"><dt>て<small>【って、て】</small></dt><dd><ul><li><small title="particle">part.</small>
-casual quoting particle</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-indicates supposition; if ... then</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-indicates a rhetorical question</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-indicates certainty, insistence, etc.</li></ul></dd></dl><dl class="word-0-81 blacklisted"><dt>て</dt><dd><ul><li><small title="auxiliary">aux.</small>
-indicates continuing action</li></ul></dd></dl><dl class="word-0-82 blacklisted"><dt>いる</dt><dd><ul><li><small title="Godan verb with `ru&#039; ending">v5ru.; </small><small title="intransitive verb">vi.; </small><small title="word usually written using kana alone">us. kana</small>
-to need; to want</li></ul></dd></dl><dl class="word-0-82 blacklisted"><dt>いる</dt><dd><ul><li><small title="Ichidan verb">v1.; </small><small title="intransitive verb">vi.; </small><small title="word usually written using kana alone">us. kana</small>
-to be (of animate objects); to exist</li><li><small title="word usually written using kana alone">us. kana</small>
+topic</li></ul></dd></dl><dl class="word-0-76"><dt>公用語<small>【こうようご】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+official language</li></ul></dd></dl><dl class="word-0-77 blacklisted"><dt>として</dt><dd lang="en"><ul><li><small title="expressions (phrases, clauses, etc.)">phrase</small>
+as (i.e. in the role of); for (i.e. from the viewpoint of)</li><li><small title="expressions (phrases, clauses, etc.)">phrase</small>
+apart from... (used to change the topic)</li><li><small title="expressions (phrases, clauses, etc.)">phrase</small>
+even (e.g. &quot;not even a single person")</li><li><small title="expressions (phrases, clauses, etc.)">phrase</small>
+thinking that...; trying to...</li></ul></dd></dl><dl class="word-0-78 blacklisted"><dt>使用<small>【しよう】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="noun or participle which takes the aux. verb suru">suru</small>
+use; application; employment; utilization; utilisation</li></ul></dd></dl><dl class="word-0-80 blacklisted"><dt>れる<small>【れる、られる】</small></dt><dd lang="en"><ul><li><small title="auxiliary verb">auxv.; </small><small title="Ichidan verb">v1.</small>
+indicates passive voice (incl. the &quot;suffering passive")</li><li><small title="auxiliary verb">auxv.; </small><small title="Ichidan verb">v1.</small>
+indicates the potential form</li><li><small title="auxiliary verb">auxv.; </small><small title="Ichidan verb">v1.</small>
+indicates spontaneous occurrence</li><li><small title="auxiliary verb">auxv.; </small><small title="Ichidan verb">v1.; </small><small title="honorific or respectful (sonkeigo) language">sonkeigo</small>
+used as an honorific for others&#039; actions</li></ul></dd></dl><dl class="word-0-81 blacklisted"><dt>される</dt><dd lang="en"><ul><li><small title="Ichidan verb">v1.; </small><small title="word usually written using kana alone">us. kana</small>
+to be done (to someone)</li><li><small title="Ichidan verb">v1.; </small><small title="word usually written using kana alone">us. kana; </small><small title="honorific or respectful (sonkeigo) language">sonkeigo</small>
+to do; to be doing</li></ul></dd></dl><dl class="word-0-82 blacklisted"><dt>て<small>【って、て】</small></dt><dd lang="en"><ul><li><small title="particle">part.</small>
+you said; he said; she said; they said</li><li><small title="particle">part.</small>
+if ... then</li><li><small title="particle">part.</small>
+do you seriously think that</li><li><small title="particle">part.</small>
+I already told you; you should know by now that; of course</li><li><small title="particle">part.</small>
+the said ...; said ...</li><li><small title="particle">part.</small>
+says that ...</li><li><small title="particle">part.</small>
+I hear that ...</li><li><small title="particle">part.</small>
+as for the term ...</li><li><small title="particle">part.</small>
+as for ...</li></ul></dd></dl><dl class="word-0-82 blacklisted"><dt>て</dt><dd lang="en"><ul><li><small title="auxiliary">aux.</small>
+indicates continuing action</li></ul></dd></dl><dl class="word-0-83 blacklisted"><dt>いる</dt><dd lang="en"><ul><li><small>Godan verb with &#039;ru' ending; </small><small title="intransitive verb">vi.; </small><small title="word usually written using kana alone">us. kana</small>
+to be needed; to be wanted</li></ul></dd></dl><dl class="word-0-83 blacklisted"><dt>いる</dt><dd lang="en"><ul><li><small title="Ichidan verb">v1.; </small><small title="intransitive verb">vi.; </small><small title="word usually written using kana alone">us. kana</small>
+to be (of animate objects); to exist</li><li><small title="Ichidan verb">v1.; </small><small title="intransitive verb">vi.; </small><small title="word usually written using kana alone">us. kana</small>
 to stay</li><li><small title="Ichidan verb">v1.; </small><small title="auxiliary verb">auxv.; </small><small title="word usually written using kana alone">us. kana</small>
-verb indicating continuing action or state (i.e. to be ..ing, to have been ..ing)</li></ul></dd></dl><dl class="word-0-82 blacklisted"><dt>いる</dt><dd><ul><li><small title="Ichidan verb">v1.; </small><small title="intransitive verb">vi.; </small><small title="word usually written using kana alone">us. kana; </small><small title="archaism">arch.</small>
-to calm down</li></ul></dd></dl><dl class="word-0-84 blacklisted"><dt>首都<small>【しゅと】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="nouns which may take the genitive case particle `no&#039;">no-n.</small>
-capital city; metropolis</li></ul></dd></dl><dl class="word-0-89"><dt>東京<small>【とうきょう】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
-Tokyo</li></ul></dd></dl><dl class="word-0-90 blacklisted"><dt>都<small>【みやこ】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
-capital; metropolis</li></ul></dd></dl><dl class="word-0-90 blacklisted"><dt>都<small>【と】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="nouns which may take the genitive case particle `no&#039;">no-n.</small>
-metropolitan; municipal</li></ul></dd></dl><dl class="word-0-91 blacklisted"><dt>東京都<small>【とうきょうと】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
-Tokyo Metropolis; Tokyo metropolitan area</li></ul></dd></dl><dl class="word-0-92 blacklisted"><dt>と</dt><dd><ul><li><small title="particle">part.; </small><small title="conjunction">conj.</small>
-if; when</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-and</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-with</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-particle used for quoting (with speech, thoughts, etc.); quoting particle</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="abbreviation">abbr.</small>
+to be ...-ing; to have been ...-ing</li></ul></dd></dl><dl class="word-0-83 blacklisted"><dt>いる</dt><dd lang="en"><ul><li><small title="Ichidan verb">v1.; </small><small title="intransitive verb">vi.; </small><small title="word usually written using kana alone">us. kana; </small><small title="archaism">arch.</small>
+to calm down</li></ul></dd></dl><dl class="word-0-85 blacklisted"><dt>首都<small>【しゅと】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small>nouns which may take the genitive case particle &#039;no'</small>
+capital city; metropolis</li></ul></dd></dl><dl class="word-0-90"><dt>東京<small>【とうきょう、とうけい】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+Tokyo</li></ul></dd></dl><dl class="word-0-91 blacklisted"><dt>都<small>【みやこ】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+capital (esp. Kyoto, Japan&#039;s former capital); seat of government</li><li><small title="noun (common) (futsuumeishi)">n.</small>
+capital (of music, fashion, etc.); city (e.g. of light)</li><li><small title="noun (common) (futsuumeishi)">n.</small>
+location of the Imperial Palace</li></ul></dd></dl><dl class="word-0-91 blacklisted"><dt>都<small>【と】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+Metropolis (of Tokyo); (Tokyo) Metropolitan District; metropolitan prefecture</li><li><small title="counter">cnt.</small>
+counter for cities and towns</li><li><small title="noun (common) (futsuumeishi)">n.</small>
+capital</li></ul></dd></dl><dl class="word-0-92 blacklisted"><dt>東京都<small>【とうきょうと】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+Tokyo Metropolis (prefecture); Tokyo metropolitan area</li></ul></dd></dl><dl class="word-0-93 blacklisted"><dt>と</dt><dd lang="en"><ul><li><small title="particle">part.; </small><small title="conjunction">conj.</small>
+if; when</li><li><small title="particle">part.; </small><small title="conjunction">conj.</small>
+and</li><li><small title="particle">part.</small>
+with</li><li><small title="particle">part.</small>
+used for quoting (thoughts, speech, etc.)</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="abbreviation">abbr.</small>
 promoted pawn</li><li><small title="particle">part.</small>
-indicates question (sentence end)</li></ul></dd></dl><dl class="word-0-94 blacklisted"><dt>とさ</dt><dd><ul><li><small title="expressions (phrases, clauses, etc.)">phrase; </small><small title="colloquialism">coll.</small>
-apparently; from what I have heard; they say; you know; I hear</li></ul></dd></dl><dl class="word-0-95 blacklisted"><dt>とする</dt><dd><ul><li><small title="expressions (phrases, clauses, etc.)">phrase; </small><small title="suru verb - irregular">vsuruirr.</small>
-to try to ...; to be about to do ...</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-to decide to ...</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-to take as; to treat as</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-to use for</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-to suppose that (such) is the case; to assume</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-to decide that; to think that</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-to make into; to change into</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-to feel (e.g. after sound symbolism or psychological experience word); to look; to feel like</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-to intend; to have the intention</li></ul></dd></dl><dl class="word-0-97"><dt>とされる</dt><dd><ul><li><small title="expressions (phrases, clauses, etc.)">phrase; </small><small title="Ichidan verb">v1.</small>
-... is considered to ...</li></ul></dd></dl></div><div class="buttons"><form action="#"><label><input type="checkbox" class="add_break" id="add_break_0" checked="checked" /> Page break</label></form></div></div><div id="paragraph_1" class="paragraph page_break"><p><a class="word-1-0"><ruby>国号<rt>コクゴウ</rt></ruby></a><a class="">
+indicates a question</li></ul></dd></dl><dl class="word-0-95 blacklisted"><dt>とさ</dt><dd lang="en"><ul><li><small title="expressions (phrases, clauses, etc.)">phrase; </small><small title="colloquialism">coll.</small>
+apparently; from what I have heard; they say; you know; I hear</li></ul></dd></dl><dl class="word-0-96 blacklisted"><dt>とする</dt><dd lang="en"><ul><li><small title="expressions (phrases, clauses, etc.)">phrase; </small><small>suru verb - included</small>
+to try to ...; to be about to do ...</li><li><small title="expressions (phrases, clauses, etc.)">phrase; </small><small>suru verb - included</small>
+to decide to ...</li><li><small title="expressions (phrases, clauses, etc.)">phrase; </small><small>suru verb - included</small>
+to take as; to treat as; to regard as</li><li><small title="expressions (phrases, clauses, etc.)">phrase; </small><small>suru verb - included</small>
+to use for</li><li><small title="expressions (phrases, clauses, etc.)">phrase; </small><small>suru verb - included</small>
+to suppose that (such) is the case; to assume</li><li><small title="expressions (phrases, clauses, etc.)">phrase; </small><small>suru verb - included</small>
+to decide that; to think that</li><li><small title="expressions (phrases, clauses, etc.)">phrase; </small><small>suru verb - included</small>
+to make into; to change into</li><li><small title="expressions (phrases, clauses, etc.)">phrase; </small><small>suru verb - included</small>
+to feel (e.g. after sound symbolism or psychological experience word); to look; to feel like</li><li><small title="expressions (phrases, clauses, etc.)">phrase; </small><small>suru verb - included</small>
+to intend; to have the intention</li></ul></dd></dl><dl class="word-0-98"><dt>とされる</dt><dd lang="en"><ul><li><small title="expressions (phrases, clauses, etc.)">phrase; </small><small title="Ichidan verb">v1.</small>
+... is considered to ...</li></ul></dd></dl></div><div class="buttons"><form action="#"><label lang="en"><input type="checkbox" class="add_break" id="add_break_0" checked="checked" /> Page break</label></form></div></div><div id="paragraph_1" class="paragraph page_break"><p><a class="word-1-0"><ruby>国号<rt>コクゴウ</rt></ruby></a><a class="">
 <br /></a><a class="">----------</a><a class="">
-<br /></a><a class="word-1-4">「</a><a class="word-1-5"><ruby>日本<rt>ニッポン</rt></ruby></a><a class="word-1-6">」</a><a class="word-1-7">という</a><a class="word-1-8"><ruby>漢字<rt>カンジ</rt></ruby></a><a class="word-1-9">による</a><a class="word-1-0">国号</a><a class="word-1-11">の</a><a class="word-1-12"><ruby>表記<rt>ヒョウキ</rt></ruby></a><a class="word-1-13">は</a><a class="word-1-14">、</a><a class="word-1-17 word-1-5">日本</a><a class="word-1-17 word-1-16"><ruby>列島<rt>レットウ</rt></ruby></a><a class="word-1-18">が</a><a class="word-1-21 word-1-19"><ruby>中国<rt>チュウゴク</rt></ruby></a><a class="word-1-21 word-1-20"><ruby>大陸<rt>タイリク</rt></ruby></a><a class="word-1-22">から</a><a class="word-1-23"><ruby>見<rt>ミ</rt></ruby></a><a class="word-1-24">て</a><a class="word-1-25"><ruby>東<rt>ヒガシ</rt></ruby></a><a class="word-1-11">の</a><a class="word-1-27"><ruby>果て<rt>ハテ</rt></ruby></a><a class="word-1-14">、</a><a class="word-1-29">つまり</a><a class="word-1-4">「</a><a class="word-1-31"><ruby>日の本<rt>ヒノモト</rt></ruby></a><a class="word-1-32">（</a><a class="word-1-33">ひ</a><a class="word-1-39 word-1-11">の</a><a class="word-1-39 word-1-35">もと</a><a class="word-1-39 word-1-36">）</a><a class="word-1-39 word-1-6">」</a><a class="word-1-39 word-1-38">に</a><a class="word-1-40"><ruby>位置<rt>イチ</rt></ruby></a><a class="word-1-41">する</a><a class="word-1-42">こと</a><a class="word-1-38">に</a><a class="word-1-44"><ruby>由来<rt>ユライ</rt></ruby></a><a class="word-1-41">する</a><a class="word-1-49 word-1-48 word-1-11">の</a><a class="word-1-55 word-1-53 word-1-51 word-1-49 word-1-48 word-1-47">で</a><a class="word-1-56 word-1-55 word-1-53 word-1-51 word-1-13">は</a><a class="word-1-57 word-1-56 word-1-55 word-1-53 word-1-52">ない</a><a class="word-1-57 word-1-56 word-1-55 word-1-54">か</a><a class="word-1-63 word-1-61 word-1-60 word-1-58">と</a><a class="word-1-64 word-1-63 word-1-61 word-1-60 word-1-41">さ</a><a class="word-1-64 word-1-63 word-1-62">れる</a><a class="">[</a><a class="">2</a><a class="">]。</a><a class="word-1-68"><ruby>近代<rt>キンダイ</rt></ruby></a><a class="word-1-11">の</a><a class="word-1-70"><ruby>二つ<rt>フタツ</rt></ruby></a><a class="word-1-11">の</a><a class="word-1-72"><ruby>憲法<rt>ケンポウ</rt></ruby></a><a class="word-1-11">の</a><a class="word-1-74"><ruby>表題<rt>ヒョウダイ</rt></ruby></a><a class="word-1-13">は</a><a class="word-1-14">、</a><a class="word-1-4">「</a><a class="word-1-80 word-1-78"><ruby>日本国<rt>ニッポンコク</rt></ruby></a><a class="word-1-80 word-1-72">憲法</a><a class="word-1-6">」</a><a class="word-1-82">および</a><a class="word-1-4">「</a><a class="word-1-86 word-1-84"><ruby>大日本帝国<rt>ダイニッポンテイコク</rt></ruby></a><a class="word-1-86 word-1-72">憲法</a><a class="word-1-6">」</a><a class="word-1-90 word-1-47">で</a><a class="word-1-90 word-1-89">ある</a><a class="word-1-18">が</a><a class="word-1-14">、</a><a class="word-1-0">国号</a><a class="word-1-94">を</a><a class="word-1-4">「</a><a class="word-1-78 word-1-5">日本</a><a class="word-1-78 word-1-97"><ruby>国<rt>コク</rt></ruby></a><a class="word-1-6">」</a><a class="word-1-100">または</a><a class="word-1-4">「</a><a class="word-1-5">日本</a><a class="word-1-6">」</a><a class="word-1-58">と</a><a class="word-1-105"><ruby>直接<rt>チョクセツ</rt></ruby></a><a class="word-1-106">かつ</a><a class="word-1-107"><ruby>明確<rt>メイカク</rt></ruby></a><a class="word-1-38">に</a><a class="word-1-109"><ruby>規定<rt>キテイ</rt></ruby></a><a class="word-1-41">し</a><a class="word-1-111">た</a><a class="word-1-112"><ruby>法令<rt>ホウレイ</rt></ruby></a><a class="word-1-13">は</a><a class="word-1-114"><ruby>存在<rt>ソンザイ</rt></ruby></a><a class="word-1-41">し</a><a class="word-1-52">ない</a><a class="word-1-117">。</a><a class="">[</a><a class="word-1-121 word-1-119"><ruby>疑問<rt>ギモン</rt></ruby></a><a class="word-1-121 word-1-120"><ruby>点<rt>テン</rt></ruby></a><a class=""> </a><a class="">–</a><a class=""> </a><a class="word-1-125">ノート</a><a class="">]</a><a class="word-1-127">ただし</a><a class="word-1-14">、</a><a class="word-1-129"><ruby>日本工業規格<rt>ニホンコウギョウキカク</rt></ruby></a><a class=""> </a><a class="">(</a><a class="">Japanese</a><a class=""> </a><a class="">Industrial</a><a class=""> </a><a class="">Standard</a><a class="">)</a><a class=""> </a><a class="word-1-51">では</a><a class="word-1-78 word-1-5">日本</a><a class="word-1-78 word-1-97">国</a><a class="word-1-14">、</a><a class="word-1-144"><ruby>英語<rt>エイゴ</rt></ruby></a><a class="word-1-12">表記</a><a class="word-1-94">を</a><a class="">Japan</a><a class="word-1-58">と</a><a class="word-1-109">規定</a><a class="word-1-117">。</a><a class="word-1-151"><ruby>更に<rt>サラニ</rt></ruby></a><a class="word-1-14">、</a><a class="word-1-155 word-1-153"><ruby>国際<rt>コクサイ</rt></ruby></a><a class="word-1-155 word-1-154"><ruby>規格<rt>キカク</rt></ruby></a><a class=""> </a><a class="">(</a><a class="">ISO</a><a class="">)</a><a class=""> </a><a class="word-1-51">では</a><a class="">3</a><a class="word-1-163"><ruby>文字<rt>モジ</rt></ruby></a><a class="word-1-164"><ruby>略号<rt>リャクゴウ</rt></ruby></a><a class="word-1-94">を</a><a class="">JPN</a><a class="word-1-14">、</a><a class="">2</a><a class="word-1-163">文字</a><a class="word-1-164">略号</a><a class="word-1-94">を</a><a class="">JP</a><a class="word-1-58">と</a><a class="word-1-109">規定</a><a class="word-1-177 word-1-41">し</a><a class="word-1-177 word-1-24">て</a><a class="word-1-178">いる</a><a class="word-1-117">。</a><a class="word-1-180">また</a><a class="word-1-14">、</a><a class="word-1-78">日本国</a><a class="word-1-183"><ruby>外務省<rt>ガイムショウ</rt></ruby></a><a class="word-1-22">から</a><a class="word-1-185"><ruby>発給<rt>ハッキュウ</rt></ruby></a><a class="word-1-64 word-1-41">さ</a><a class="word-1-64 word-1-62">れる</a><a class="word-1-189"><ruby>旅券<rt>リョケン</rt></ruby></a><a class="word-1-11">の</a><a class="word-1-191"><ruby>表紙<rt>ヒョウシ</rt></ruby></a><a class="word-1-194 word-1-38">に</a><a class="word-1-194 word-1-13">は</a><a class="word-1-4">「</a><a class="word-1-78 word-1-5">日本</a><a class="word-1-78 word-1-97">国</a><a class="word-1-6">」</a><a class="word-1-11">の</a><a class="word-1-12">表記</a><a class="word-1-58">と</a><a class="word-1-205 word-1-203"><ruby>十<rt>ジュウ</rt></ruby></a><a class="word-1-205 word-1-204"><ruby>六<rt>ロク</rt></ruby></a><a class="word-1-208 word-1-206">一</a><a class="word-1-208 word-1-207">重</a><a class="word-1-209"><ruby>表<rt>ヒョウ</rt></ruby></a><a class="word-1-210"><ruby>菊<rt>キク</rt></ruby></a><a class="">[</a><a class="">3</a><a class="">]</a><a class="word-1-94">を</a><a class="word-1-215"><ruby>提示<rt>テイジ</rt></ruby></a><a class="word-1-177 word-1-41">し</a><a class="word-1-177 word-1-24">て</a><a class="word-1-178">いる</a><a class="word-1-117">。</a><a class="">
-<br /></a><a class="">(</a><a class="">From</a><a class=""> </a><a class="">Wikipedia</a><a class="">:</a><a class=""> </a><a class="">https</a><a class="">://</a><a class="">ja</a><a class="">.</a><a class="">wikipedia</a><a class="">.</a><a class="">org</a><a class="">/</a><a class="">wiki</a><a class="">/%</a><a class="">E</a><a class="">6</a><a class="">%</a><a class="">97</a><a class="">%</a><a class="">A</a><a class="">5</a><a class="">%</a><a class="">E</a><a class="">6</a><a class="">%</a><a class="">9</a><a class="">C</a><a class="">%</a><a class="">AC</a><a class=""> </a><a class="">)</a></p><div class="vocab"><dl class="word-1-0"><dt>国号<small>【こくごう】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
-name of a country</li></ul></dd></dl><dl class="word-1-5"><dt>日本<small>【にほん、にっぽん】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
-Japan</li></ul></dd></dl><dl class="word-1-7 blacklisted"><dt>という<small>【という、とゆう】</small></dt><dd><ul><li><small title="expressions (phrases, clauses, etc.)">phrase; </small><small title="word usually written using kana alone">us. kana</small>
-called; named</li><li><small title="word usually written using kana alone">us. kana</small>
-as many as; as much as</li><li><small title="word usually written using kana alone">us. kana</small>
-all X; every X</li></ul></dd></dl><dl class="word-1-8"><dt>漢字<small>【かんじ】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
-Chinese characters; kanji</li></ul></dd></dl><dl class="word-1-9"><dt>による</dt><dd><ul><li><small title="expressions (phrases, clauses, etc.)">phrase; </small><small title="Godan verb with `ru&#039; ending">v5ru.; </small><small title="word usually written using kana alone">us. kana</small>
-by means of; due to; because of; according to</li></ul></dd></dl><dl class="word-1-11 blacklisted"><dt>の</dt><dd><ul><li><small title="particle">part.</small>
-indicates possessive</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-nominalizes verbs and adjectives</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-substitutes for &quot;ga" in subordinate phrases</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-(at sentence-end, falling tone) indicates a confident conclusion</li><li><small title="female term or language">fem.</small>
-(at sentence-end) indicates emotional emphasis</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-(at sentence-end, rising tone) indicates question</li></ul></dd></dl><dl class="word-1-12 blacklisted"><dt>表記<small>【ひょうき】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="noun or participle which takes the aux. verb suru">suru; </small><small title="nouns which may take the genitive case particle `no&#039;">no-n.</small>
-writing on the surface (e.g. an address on an envelope); inscribing on the face</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-expression in writing; notation; surface form; transcription</li></ul></dd></dl><dl class="word-1-13 blacklisted"><dt>は</dt><dd><ul><li><small title="particle">part.</small>
-topic marker particle</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-indicates contrast with another option (stated or unstated)</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-adds emphasis</li></ul></dd></dl><dl class="word-1-13 blacklisted"><dt>は<small>【はあ、は】</small></dt><dd><ul><li><small title="interjection (kandoushi)">interj.</small>
-yes; indeed; well</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-ha!</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-what?; huh?</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-sigh</li></ul></dd></dl><dl class="word-1-16"><dt>列島<small>【れっとう】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
-archipelago; chain of islands</li></ul></dd></dl><dl class="word-1-17"><dt>日本列島<small>【にほんれっとう、にっぽんれっとう】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
-the Japanese islands</li></ul></dd></dl><dl class="word-1-18 blacklisted"><dt>が</dt><dd><ul><li><small title="particle">part.</small>
-indicates sentence subject (occasionally object)</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-indicates possessive (esp. in literary expressions)</li><li><small title="particle">part.; </small><small title="conjunction">conj.</small>
-but; however; still; and</li></ul></dd></dl><dl class="word-1-19"><dt>中国<small>【ちゅうごく】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
-China</li><li><small title="abbreviation">abbr.</small>
-Chugoku region of western Honshu (incl. Okayama, Hiroshima, Shimane, Tottori and Yamaguchi prefectures)</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-central part of a country; main region</li></ul></dd></dl><dl class="word-1-20"><dt>大陸<small>【たいりく】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="nouns which may take the genitive case particle `no&#039;">no-n.</small>
+<br /></a><a class="word-1-4">「</a><a class="word-1-5"><ruby>日本<rt>ニッポン</rt></ruby></a><a class="word-1-6">」</a><a class="word-1-7">という</a><a class="word-1-8"><ruby>漢字<rt>カンジ</rt></ruby></a><a class="word-1-9">による</a><a class="word-1-0">国号</a><a class="word-1-11">の</a><a class="word-1-12"><ruby>表記<rt>ヒョウキ</rt></ruby></a><a class="word-1-13">は</a><a class="word-1-14">、</a><a class="word-1-17 word-1-5">日本</a><a class="word-1-17 word-1-16"><ruby>列島<rt>レットウ</rt></ruby></a><a class="word-1-18">が</a><a class="word-1-21 word-1-19"><ruby>中国<rt>チュウゴク</rt></ruby></a><a class="word-1-21 word-1-20"><ruby>大陸<rt>タイリク</rt></ruby></a><a class="word-1-22">から</a><a class="word-1-23"><ruby>見<rt>ミ</rt></ruby></a><a class="word-1-24">て</a><a class="word-1-25"><ruby>東<rt>ヒガシ</rt></ruby></a><a class="word-1-11">の</a><a class="word-1-27"><ruby>果て<rt>ハテ</rt></ruby></a><a class="word-1-14">、</a><a class="word-1-29">つまり</a><a class="word-1-4">「</a><a class="word-1-31"><ruby>日の本<rt>ヒノモト</rt></ruby></a><a class="word-1-32">（</a><a class="word-1-33">ひ</a><a class="word-1-11">の</a><a class="word-1-35">もと</a><a class="word-1-36">）</a><a class="word-1-6">」</a><a class="word-1-38">に</a><a class="word-1-39"><ruby>位置<rt>イチ</rt></ruby></a><a class="word-1-40">する</a><a class="word-1-41">こと</a><a class="word-1-38">に</a><a class="word-1-43"><ruby>由来<rt>ユライ</rt></ruby></a><a class="word-1-40">する</a><a class="word-1-48 word-1-47 word-1-11">の</a><a class="word-1-54 word-1-52 word-1-50 word-1-48 word-1-47 word-1-46">で</a><a class="word-1-55 word-1-54 word-1-52 word-1-50 word-1-13">は</a><a class="word-1-56 word-1-55 word-1-54 word-1-52 word-1-51">ない</a><a class="word-1-56 word-1-55 word-1-54 word-1-53">か</a><a class="word-1-62 word-1-60 word-1-59 word-1-57">と</a><a class="word-1-63 word-1-62 word-1-60 word-1-59 word-1-40">さ</a><a class="word-1-63 word-1-62 word-1-61">れる</a><a class="">[</a><a class="">2</a><a class="">]。</a><a class="word-1-67"><ruby>近代<rt>キンダイ</rt></ruby></a><a class="word-1-11">の</a><a class="word-1-69"><ruby>二つ<rt>フタツ</rt></ruby></a><a class="word-1-11">の</a><a class="word-1-71"><ruby>憲法<rt>ケンポウ</rt></ruby></a><a class="word-1-11">の</a><a class="word-1-73"><ruby>表題<rt>ヒョウダイ</rt></ruby></a><a class="word-1-13">は</a><a class="word-1-14">、</a><a class="word-1-4">「</a><a class="word-1-79 word-1-77"><ruby>日本国<rt>ニッポンコク</rt></ruby></a><a class="word-1-79 word-1-71">憲法</a><a class="word-1-6">」</a><a class="word-1-81">および</a><a class="word-1-4">「</a><a class="word-1-85 word-1-83"><ruby>大日本帝国<rt>ダイニッポンテイコク</rt></ruby></a><a class="word-1-85 word-1-71">憲法</a><a class="word-1-6">」</a><a class="word-1-89 word-1-46">で</a><a class="word-1-89 word-1-88">ある</a><a class="word-1-18">が</a><a class="word-1-14">、</a><a class="word-1-0">国号</a><a class="word-1-93">を</a><a class="word-1-4">「</a><a class="word-1-77 word-1-5">日本</a><a class="word-1-77 word-1-96"><ruby>国<rt>コク</rt></ruby></a><a class="word-1-6">」</a><a class="word-1-99">または</a><a class="word-1-4">「</a><a class="word-1-5">日本</a><a class="word-1-6">」</a><a class="word-1-57">と</a><a class="word-1-104"><ruby>直接<rt>チョクセツ</rt></ruby></a><a class="word-1-105">かつ</a><a class="word-1-106"><ruby>明確<rt>メイカク</rt></ruby></a><a class="word-1-38">に</a><a class="word-1-108"><ruby>規定<rt>キテイ</rt></ruby></a><a class="word-1-40">し</a><a class="word-1-110">た</a><a class="word-1-111"><ruby>法令<rt>ホウレイ</rt></ruby></a><a class="word-1-13">は</a><a class="word-1-113"><ruby>存在<rt>ソンザイ</rt></ruby></a><a class="word-1-40">し</a><a class="word-1-51">ない</a><a class="word-1-116">。</a><a class="">[</a><a class="word-1-120 word-1-118"><ruby>疑問<rt>ギモン</rt></ruby></a><a class="word-1-120 word-1-119"><ruby>点<rt>テン</rt></ruby></a><a class=""> </a><a class="">–</a><a class=""> </a><a class="word-1-124">ノート</a><a class="">]</a><a class="word-1-126">ただし</a><a class="word-1-14">、</a><a class="word-1-128"><ruby>日本工業規格<rt>ニホンコウギョウキカク</rt></ruby></a><a class=""> </a><a class="">(</a><a class="">Japanese</a><a class=""> </a><a class="">Industrial</a><a class=""> </a><a class="">Standard</a><a class="">)</a><a class=""> </a><a class="word-1-50">では</a><a class="word-1-77 word-1-5">日本</a><a class="word-1-77 word-1-96">国</a><a class="word-1-14">、</a><a class="word-1-143"><ruby>英語<rt>エイゴ</rt></ruby></a><a class="word-1-12">表記</a><a class="word-1-93">を</a><a class="">Japan</a><a class="word-1-57">と</a><a class="word-1-108">規定</a><a class="word-1-116">。</a><a class="word-1-150"><ruby>更に<rt>サラニ</rt></ruby></a><a class="word-1-14">、</a><a class="word-1-154 word-1-152"><ruby>国際<rt>コクサイ</rt></ruby></a><a class="word-1-154 word-1-153"><ruby>規格<rt>キカク</rt></ruby></a><a class=""> </a><a class="">(</a><a class="">ISO</a><a class="">)</a><a class=""> </a><a class="word-1-50">では</a><a class="">3</a><a class="word-1-162"><ruby>文字<rt>モジ</rt></ruby></a><a class="word-1-163"><ruby>略号<rt>リャクゴウ</rt></ruby></a><a class="word-1-93">を</a><a class="">JPN</a><a class="word-1-14">、</a><a class="">2</a><a class="word-1-162">文字</a><a class="word-1-163">略号</a><a class="word-1-93">を</a><a class="">JP</a><a class="word-1-57">と</a><a class="word-1-108">規定</a><a class="word-1-176 word-1-40">し</a><a class="word-1-176 word-1-24">て</a><a class="word-1-177">いる</a><a class="word-1-116">。</a><a class="word-1-179">また</a><a class="word-1-14">、</a><a class="word-1-77">日本国</a><a class="word-1-182"><ruby>外務省<rt>ガイムショウ</rt></ruby></a><a class="word-1-22">から</a><a class="word-1-184"><ruby>発給<rt>ハッキュウ</rt></ruby></a><a class="word-1-63 word-1-40">さ</a><a class="word-1-63 word-1-61">れる</a><a class="word-1-188"><ruby>旅券<rt>リョケン</rt></ruby></a><a class="word-1-11">の</a><a class="word-1-190"><ruby>表紙<rt>ヒョウシ</rt></ruby></a><a class="word-1-193 word-1-38">に</a><a class="word-1-193 word-1-13">は</a><a class="word-1-4">「</a><a class="word-1-77 word-1-5">日本</a><a class="word-1-77 word-1-96">国</a><a class="word-1-6">」</a><a class="word-1-11">の</a><a class="word-1-12">表記</a><a class="word-1-57">と</a><a class="word-1-204 word-1-202"><ruby>十<rt>ジュウ</rt></ruby></a><a class="word-1-204 word-1-203"><ruby>六<rt>ロク</rt></ruby></a><a class="word-1-207 word-1-205">一</a><a class="word-1-207 word-1-206">重</a><a class="word-1-208"><ruby>表<rt>ヒョウ</rt></ruby></a><a class="word-1-209"><ruby>菊<rt>キク</rt></ruby></a><a class="">[</a><a class="">3</a><a class="">]</a><a class="word-1-93">を</a><a class="word-1-214"><ruby>提示<rt>テイジ</rt></ruby></a><a class="word-1-176 word-1-40">し</a><a class="word-1-176 word-1-24">て</a><a class="word-1-177">いる</a><a class="word-1-116">。</a><a class="">
+<br /></a><a class="">(</a><a class="">From</a><a class=""> </a><a class="">Wikipedia</a><a class="">:</a><a class=""> </a><a class="">https</a><a class="">://</a><a class="">ja</a><a class="">.</a><a class="">wikipedia</a><a class="">.</a><a class="">org</a><a class="">/</a><a class="">wiki</a><a class="">/%</a><a class="">E</a><a class="">6</a><a class="">%</a><a class="">97</a><a class="">%</a><a class="">A</a><a class="">5</a><a class="">%</a><a class="">E</a><a class="">6</a><a class="">%</a><a class="">9</a><a class="">C</a><a class="">%</a><a class="">AC</a><a class=""> </a><a class="">)</a></p><div class="vocab"><dl class="word-1-0"><dt>国号<small>【こくごう】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+name of a country</li></ul></dd></dl><dl class="word-1-5"><dt>日本<small>【にほん、にっぽん】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+Japan</li></ul></dd></dl><dl class="word-1-7 blacklisted"><dt>という<small>【という、とゆう】</small></dt><dd lang="en"><ul><li><small title="expressions (phrases, clauses, etc.)">phrase; </small><small title="word usually written using kana alone">us. kana</small>
+called; named; that says; that</li><li><small title="expressions (phrases, clauses, etc.)">phrase; </small><small title="word usually written using kana alone">us. kana</small>
+as many as; as much as</li><li><small title="expressions (phrases, clauses, etc.)">phrase; </small><small title="word usually written using kana alone">us. kana</small>
+all ...; every single ...</li></ul></dd></dl><dl class="word-1-8"><dt>漢字<small>【かんじ】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+kanji; Chinese character</li></ul></dd></dl><dl class="word-1-9"><dt>による</dt><dd lang="en"><ul><li><small title="expressions (phrases, clauses, etc.)">phrase; </small><small>Godan verb with &#039;ru' ending; </small><small title="word usually written using kana alone">us. kana</small>
+by means of; due to; because of; according to</li></ul></dd></dl><dl class="word-1-11 blacklisted"><dt>の</dt><dd lang="en"><ul><li><small title="particle">part.</small>
+indicates possessive</li><li><small title="particle">part.</small>
+nominalizes verbs and adjectives</li><li><small title="particle">part.</small>
+substitutes for &quot;ga" in subordinate phrases</li><li><small title="particle">part.</small>
+(at sentence-end, falling tone) indicates a confident conclusion</li><li><small title="particle">part.; </small><small title="female term or language">fem.</small>
+(at sentence-end) indicates emotional emphasis</li><li><small title="particle">part.</small>
+(at sentence-end, rising tone) indicates question</li></ul></dd></dl><dl class="word-1-12 blacklisted"><dt>表記<small>【ひょうき】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="noun or participle which takes the aux. verb suru">suru</small>
+expression in writing; written representation; notation; transcription; orthography</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="noun or participle which takes the aux. verb suru">suru</small>
+writing on the surface (e.g. an address on an envelope); inscribing on the face</li></ul></dd></dl><dl class="word-1-13 blacklisted"><dt>は</dt><dd lang="en"><ul><li><small title="particle">part.</small>
+indicates sentence topic</li><li><small title="particle">part.</small>
+indicates contrast with another option (stated or unstated)</li><li><small title="particle">part.</small>
+adds emphasis</li></ul></dd></dl><dl class="word-1-13 blacklisted"><dt>は<small>【はあ、はー、は、はぁ、はあっ、はーッ、ハーッ】</small></dt><dd lang="en"><ul><li><small title="interjection (kandoushi)">interj.</small>
+yes; indeed; well</li><li><small title="interjection (kandoushi)">interj.</small>
+ha!</li><li><small title="interjection (kandoushi)">interj.</small>
+what?; huh?</li><li><small title="interjection (kandoushi)">interj.</small>
+sigh</li></ul></dd></dl><dl class="word-1-16"><dt>列島<small>【れっとう】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+archipelago; chain of islands</li></ul></dd></dl><dl class="word-1-17"><dt>日本列島<small>【にほんれっとう、にっぽんれっとう】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+the Japanese islands</li></ul></dd></dl><dl class="word-1-18 blacklisted"><dt>が</dt><dd lang="en"><ul><li><small title="particle">part.</small>
+indicates sentence subject (occasionally object)</li><li><small title="particle">part.</small>
+indicates possessive (esp. in literary expressions)</li><li><small title="conjunction">conj.</small>
+but; however; still; and</li><li><small title="conjunction">conj.</small>
+regardless of; whether (or not)</li></ul></dd></dl><dl class="word-1-19"><dt>中国<small>【ちゅうごく、ちゅうこく】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+China</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="abbreviation">abbr.</small>
+Chūgoku region (western part of Honshu comprising the prefectures of Okayama, Hiroshima, Yamaguchi, Tottori and Shimane)</li><li><small title="noun (common) (futsuumeishi)">n.</small>
+central part of a country; main region</li><li><small title="noun (common) (futsuumeishi)">n.</small>
+province of the second lowest rank (ritsuryo system)</li></ul></dd></dl><dl class="word-1-20"><dt>大陸<small>【たいりく】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small>nouns which may take the genitive case particle &#039;no'</small>
 continent</li><li><small title="noun (common) (futsuumeishi)">n.</small>
 continental Asia (esp. mainland China)</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-continental Europe</li></ul></dd></dl><dl class="word-1-21"><dt>中国大陸<small>【ちゅうごくたいりく】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
-mainland China</li></ul></dd></dl><dl class="word-1-22 blacklisted"><dt>から</dt><dd><ul><li><small title="particle">part.</small>
-from (e.g. time, place, numerical quantity); since</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-from (originator); by</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-because; since</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-out of (constituent, part)</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-through (e.g. window, vestibule)</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-after; since</li></ul></dd></dl><dl class="word-1-23 blacklisted"><dt>見る<small>【みる】</small></dt><dd><ul><li><small title="Ichidan verb">v1.; </small><small title="transitive verb">vt.</small>
-to see; to look; to watch; to view; to observe</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-to look over; to look on; to assess; to examine; to judge</li><li><small title="word usually written using kana alone">us. kana</small>
-to look after; to keep an eye on; to take care of</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-to view (e.g. flowers, movie)</li><li><small title="auxiliary verb">auxv.; </small><small title="Ichidan verb">v1.; </small><small title="word usually written using kana alone">us. kana</small>
-to try; to try out; to test</li><li><small title="word usually written using kana alone">us. kana</small>
-to see that...; to find that...</li></ul></dd></dl><dl class="word-1-24 blacklisted"><dt>て<small>【って、て】</small></dt><dd><ul><li><small title="particle">part.</small>
-casual quoting particle</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-indicates supposition; if ... then</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-indicates a rhetorical question</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-indicates certainty, insistence, etc.</li></ul></dd></dl><dl class="word-1-24 blacklisted"><dt>て</dt><dd><ul><li><small title="auxiliary">aux.</small>
-indicates continuing action</li></ul></dd></dl><dl class="word-1-25 blacklisted"><dt>東<small>【あずま、あづま】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="archaism">arch.</small>
-eastern Japan (esp. Kamakura or Edo, from perspective of Kyoto or Nara); eastern provinces</li><li><small title="archaism">arch.</small>
-east</li><li><small title="abbreviation">abbr.</small>
-six-stringed Japanese zither</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-my spouse</li></ul></dd></dl><dl class="word-1-25 blacklisted"><dt>東<small>【ひがし、ひむかし、ひんがし】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
-east</li></ul></dd></dl><dl class="word-1-25 blacklisted"><dt>東<small>【トン】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+continental Europe</li></ul></dd></dl><dl class="word-1-21"><dt>中国大陸<small>【ちゅうごくたいりく】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+mainland China</li></ul></dd></dl><dl class="word-1-22 blacklisted"><dt>から</dt><dd lang="en"><ul><li><small title="particle">part.</small>
+from (e.g. time, place, numerical quantity); since</li><li><small title="particle">part.</small>
+from (originator); by</li><li><small title="particle">part.</small>
+because; since</li><li><small title="particle">part.</small>
+out of (constituent, part)</li><li><small title="particle">part.</small>
+through (e.g. window, vestibule)</li><li><small title="particle">part.</small>
+after; since</li><li><small title="particle">part.</small>
+expresses sympathy or warning</li></ul></dd></dl><dl class="word-1-23 blacklisted"><dt>見る<small>【みる】</small></dt><dd lang="en"><ul><li><small title="Ichidan verb">v1.; </small><small title="transitive verb">vt.</small>
+to see; to look; to watch; to view; to observe</li><li><small title="Ichidan verb">v1.; </small><small title="transitive verb">vt.</small>
+to examine; to look over; to assess; to check; to judge</li><li><small title="Ichidan verb">v1.; </small><small title="transitive verb">vt.</small>
+to look after; to attend to; to take care of; to keep an eye on</li><li><small title="Ichidan verb">v1.; </small><small title="transitive verb">vt.</small>
+to experience; to meet with (misfortune, success, etc.)</li><li><small title="auxiliary verb">auxv.; </small><small title="Ichidan verb">v1.; </small><small title="word usually written using kana alone">us. kana</small>
+to try ...; to have a go at ...; to give ... a try</li><li><small title="auxiliary verb">auxv.; </small><small title="Ichidan verb">v1.; </small><small title="word usually written using kana alone">us. kana</small>
+to see (that) ...; to find (that) ...</li></ul></dd></dl><dl class="word-1-24 blacklisted"><dt>て<small>【って、て】</small></dt><dd lang="en"><ul><li><small title="particle">part.</small>
+you said; he said; she said; they said</li><li><small title="particle">part.</small>
+if ... then</li><li><small title="particle">part.</small>
+do you seriously think that</li><li><small title="particle">part.</small>
+I already told you; you should know by now that; of course</li><li><small title="particle">part.</small>
+the said ...; said ...</li><li><small title="particle">part.</small>
+says that ...</li><li><small title="particle">part.</small>
+I hear that ...</li><li><small title="particle">part.</small>
+as for the term ...</li><li><small title="particle">part.</small>
+as for ...</li></ul></dd></dl><dl class="word-1-24 blacklisted"><dt>て</dt><dd lang="en"><ul><li><small title="auxiliary">aux.</small>
+indicates continuing action</li></ul></dd></dl><dl class="word-1-25 blacklisted"><dt>東<small>【あずま、あづま】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="archaism">arch.</small>
+eastern Japan (esp. Kamakura or Edo, from perspective of Kyoto or Nara); eastern provinces</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="archaism">arch.</small>
+east</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="abbreviation">abbr.</small>
+wagon; yamatogoto; six-stringed native Japanese zither</li><li><small title="noun (common) (futsuumeishi)">n.</small>
+my spouse</li></ul></dd></dl><dl class="word-1-25 blacklisted"><dt>東<small>【ひがし、ひむかし、ひんがし】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+east</li></ul></dd></dl><dl class="word-1-25 blacklisted"><dt>東<small>【トン】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
 east wind tile</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-winning hand with a pung (or kong) of east wind tiles</li></ul></dd></dl><dl class="word-1-27"><dt>果て<small>【はて】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
-the end; the extremity; the limit; the limits; the result</li></ul></dd></dl><dl class="word-1-29 blacklisted"><dt>つまり</dt><dd><ul><li><small title="adverb (fukushi)">adv.; </small><small title="word usually written using kana alone">us. kana</small>
-that is to say; that is; in other words; I mean; that (this, it) means</li><li><small title="word usually written using kana alone">us. kana</small>
+winning hand with a pung (or kong) of east wind tiles</li></ul></dd></dl><dl class="word-1-27"><dt>果て<small>【はて】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+the end; the extremity; the limit; the limits; the result</li></ul></dd></dl><dl class="word-1-29 blacklisted"><dt>つまり</dt><dd lang="en"><ul><li><small title="adverb (fukushi)">adv.; </small><small title="word usually written using kana alone">us. kana</small>
+that is to say; that is; in other words; I mean; that (this, it) means</li><li><small title="adverb (fukushi)">adv.; </small><small title="word usually written using kana alone">us. kana</small>
 in short; in brief; to sum up; ultimately; in the end; in the long run; when all is said and done; what it all comes down to; when you get right down to it; basically</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="word usually written using kana alone">us. kana</small>
-clogging; obstruction; stuffing; (degree of) blockage</li><li><small title="word usually written using kana alone">us. kana</small>
-shrinkage</li><li><small title="word usually written using kana alone">us. kana</small>
-end; conclusion</li><li><small title="word usually written using kana alone">us. kana; </small><small title="archaism">arch.</small>
-dead end; corner</li><li><small title="word usually written using kana alone">us. kana; </small><small title="archaism">arch.</small>
-distress; being at the end of one&#039;s rope</li></ul></dd></dl><dl class="word-1-31"><dt>日の本<small>【ひのもと】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="archaism">arch.</small>
-Japan</li></ul></dd></dl><dl class="word-1-33 blacklisted"><dt>ひる<small>【ひる、ヒル】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="word usually written using kana alone">us. kana</small>
-leech</li></ul></dd></dl><dl class="word-1-38 blacklisted"><dt>に</dt><dd><ul><li><small title="particle">part.</small>
-at (place, time); in; on; during</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-to (direction, state); toward; into</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-for (purpose)</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-because of (reason); for; with</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-by; from</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-as (i.e. in the role of)</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-per; in; for; a (e.g. &quot;once a month")</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-and; in addition to</li><li><small title="archaism">arch.</small>
-if; although</li></ul></dd></dl><dl class="word-1-39 blacklisted"><dt>のもとに</dt><dd><ul><li><small title="expressions (phrases, clauses, etc.)">phrase; </small><small title="word usually written using kana alone">us. kana</small>
-under the supervision of</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-underneath</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-on the basis of</li></ul></dd></dl><dl class="word-1-40 blacklisted"><dt>位置<small>【いち】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="noun or participle which takes the aux. verb suru">suru</small>
-place; situation; position; location</li></ul></dd></dl><dl class="word-1-41 blacklisted"><dt>する</dt><dd><ul><li><small title="suru verb - irregular">vsuruirr.; </small><small title="word usually written using kana alone">us. kana</small>
-to do</li><li><small title="word usually written using kana alone">us. kana</small>
-to cause to become; to make (into); to turn (into)</li><li><small title="word usually written using kana alone">us. kana</small>
-to serve as; to act as; to work as</li><li><small title="word usually written using kana alone">us. kana</small>
-to wear (clothes, a facial expression, etc.)</li><li><small title="word usually written using kana alone">us. kana</small>
-to judge as being; to view as being; to think of as; to treat as; to use as</li><li><small title="word usually written using kana alone">us. kana</small>
-to decide on; to choose</li><li><small title="suru verb - irregular">vsuruirr.; </small><small title="intransitive verb">vi.; </small><small title="word usually written using kana alone">us. kana</small>
-to be sensed (of a smell, noise, etc.)</li><li><small title="word usually written using kana alone">us. kana</small>
-to be (in a state, condition, etc.)</li><li><small title="word usually written using kana alone">us. kana</small>
-to be worth; to cost</li><li><small title="word usually written using kana alone">us. kana</small>
-to pass (of time); to elapse</li><li><small title="suru verb - irregular">vsuruirr.; </small><small title="transitive verb">vt.; </small><small title="word usually written using kana alone">us. kana</small>
-to place, or raise, person A to a post or status B</li><li><small title="word usually written using kana alone">us. kana</small>
-to transform A to B; to make A into B; to exchange A for B</li><li><small title="word usually written using kana alone">us. kana</small>
-to make use of A for B; to view A as B; to handle A as if it were B</li><li><small title="word usually written using kana alone">us. kana</small>
-to feel A about B</li><li><small title="suffix">suffix; </small><small title="suru verb - irregular">vsuruirr.; </small><small title="word usually written using kana alone">us. kana</small>
-verbalizing suffix (applies to nouns noted in this dictionary with the part of speech &quot;vs")</li><li><small title="auxiliary verb">auxv.; </small><small title="suru verb - irregular">vsuruirr.; </small><small title="word usually written using kana alone">us. kana</small>
-creates a humble verb (after a noun prefixed with &quot;o" or "go")</li><li><small title="word usually written using kana alone">us. kana</small>
-to be just about to; to be just starting to; to try to; to attempt to</li></ul></dd></dl><dl class="word-1-41 blacklisted"><dt>する</dt><dd><ul><li><small title="Godan verb with `ru&#039; ending">v5ru.; </small><small title="transitive verb">vt.; </small><small title="word usually written using kana alone">us. kana</small>
-to pick someone&#039;s pocket</li></ul></dd></dl><dl class="word-1-42 blacklisted"><dt>こと<small>【こと、こん】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="word usually written using kana alone">us. kana</small>
-thing; matter</li><li><small title="word usually written using kana alone">us. kana</small>
-incident; occurrence; event; something serious; trouble; crisis</li><li><small title="word usually written using kana alone">us. kana</small>
-circumstances; situation; state of affairs</li><li><small title="word usually written using kana alone">us. kana</small>
-work; business; affair</li><li><small title="word usually written using kana alone">us. kana</small>
+clogging; obstruction; stuffing; (degree of) blockage</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="word usually written using kana alone">us. kana</small>
+shrinkage</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="word usually written using kana alone">us. kana</small>
+end; conclusion</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="word usually written using kana alone">us. kana; </small><small title="archaism">arch.</small>
+dead end; corner</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="word usually written using kana alone">us. kana; </small><small title="archaism">arch.</small>
+distress; being at the end of one&#039;s rope</li></ul></dd></dl><dl class="word-1-31"><dt>日の本<small>【ひのもと】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="archaism">arch.</small>
+Japan</li></ul></dd></dl><dl class="word-1-33 blacklisted"><dt>ひる<small>【ひる、ヒル】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="word usually written using kana alone">us. kana</small>
+leech</li></ul></dd></dl><dl class="word-1-33 blacklisted"><dt>ひる</dt><dd lang="en"><ul><li><small>Godan verb with &#039;ru' ending; </small><small title="transitive verb">vt.; </small><small title="word usually written using kana alone">us. kana</small>
+to expel (from the body); to excrete; to defecate; to give birth</li></ul></dd></dl><dl class="word-1-38 blacklisted"><dt>に</dt><dd lang="en"><ul><li><small title="particle">part.</small>
+at (place, time); in; on; during</li><li><small title="particle">part.</small>
+to (direction, state); toward; into</li><li><small title="particle">part.</small>
+for (purpose)</li><li><small title="particle">part.</small>
+because of (reason); for; with</li><li><small title="particle">part.</small>
+by; from</li><li><small title="particle">part.</small>
+as (i.e. in the role of)</li><li><small title="particle">part.</small>
+per; in; for; a (e.g. &quot;once a month")</li><li><small title="particle">part.</small>
+and; in addition to</li><li><small title="particle">part.; </small><small title="archaism">arch.</small>
+if; although</li></ul></dd></dl><dl class="word-1-39 blacklisted"><dt>位置<small>【いち】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="noun or participle which takes the aux. verb suru">suru</small>
+place; situation; position; location</li></ul></dd></dl><dl class="word-1-40 blacklisted"><dt>する</dt><dd lang="en"><ul><li><small>suru verb - included; </small><small title="word usually written using kana alone">us. kana</small>
+to do; to carry out; to perform</li><li><small>suru verb - included; </small><small title="word usually written using kana alone">us. kana</small>
+to cause to become; to make (into); to turn (into)</li><li><small>suru verb - included; </small><small title="word usually written using kana alone">us. kana</small>
+to serve as; to act as; to work as</li><li><small>suru verb - included; </small><small title="word usually written using kana alone">us. kana</small>
+to wear (clothes, a facial expression, etc.)</li><li><small>suru verb - included; </small><small title="word usually written using kana alone">us. kana</small>
+to judge as being; to view as being; to think of as; to treat as; to use as</li><li><small>suru verb - included; </small><small title="word usually written using kana alone">us. kana</small>
+to decide on; to choose</li><li><small>suru verb - included; </small><small title="intransitive verb">vi.; </small><small title="word usually written using kana alone">us. kana</small>
+to be sensed (of a smell, noise, etc.)</li><li><small>suru verb - included; </small><small title="intransitive verb">vi.; </small><small title="word usually written using kana alone">us. kana</small>
+to be (in a state, condition, etc.)</li><li><small>suru verb - included; </small><small title="intransitive verb">vi.; </small><small title="word usually written using kana alone">us. kana</small>
+to be worth; to cost</li><li><small>suru verb - included; </small><small title="intransitive verb">vi.; </small><small title="word usually written using kana alone">us. kana</small>
+to pass (of time); to elapse</li><li><small>suru verb - included; </small><small title="transitive verb">vt.; </small><small title="word usually written using kana alone">us. kana</small>
+to place, or raise, person A to a post or status B</li><li><small>suru verb - included; </small><small title="transitive verb">vt.; </small><small title="word usually written using kana alone">us. kana</small>
+to transform A to B; to make A into B; to exchange A for B</li><li><small>suru verb - included; </small><small title="transitive verb">vt.; </small><small title="word usually written using kana alone">us. kana</small>
+to make use of A for B; to view A as B; to handle A as if it were B</li><li><small>suru verb - included; </small><small title="transitive verb">vt.; </small><small title="word usually written using kana alone">us. kana</small>
+to feel A about B</li><li><small title="suffix">suffix; </small><small>suru verb - included; </small><small title="word usually written using kana alone">us. kana</small>
+verbalizing suffix (applies to nouns noted in this dictionary with the part of speech &quot;vs")</li><li><small title="auxiliary verb">auxv.; </small><small>suru verb - included; </small><small title="word usually written using kana alone">us. kana</small>
+creates a humble verb (after a noun prefixed with &quot;o" or "go")</li><li><small title="auxiliary verb">auxv.; </small><small>suru verb - included; </small><small title="word usually written using kana alone">us. kana</small>
+to be just about to; to be just starting to; to try to; to attempt to</li></ul></dd></dl><dl class="word-1-40 blacklisted"><dt>する<small>【する、スる】</small></dt><dd lang="en"><ul><li><small>Godan verb with &#039;ru' ending; </small><small title="transitive verb">vt.; </small><small title="word usually written using kana alone">us. kana</small>
+to pickpocket; to steal</li></ul></dd></dl><dl class="word-1-41 blacklisted"><dt>こと<small>【こと、こん】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="word usually written using kana alone">us. kana</small>
+thing; matter</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="word usually written using kana alone">us. kana</small>
+incident; occurrence; event; something serious; trouble; crisis</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="word usually written using kana alone">us. kana</small>
+circumstances; situation; state of affairs</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="word usually written using kana alone">us. kana</small>
+work; business; affair</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="word usually written using kana alone">us. kana</small>
 after an inflectable word, creates a noun phrase indicating something the speaker does not feel close to</li><li><small title="noun, used as a suffix">sufn.; </small><small title="word usually written using kana alone">us. kana</small>
-nominalizing suffix</li><li><small title="word usually written using kana alone">us. kana</small>
-pretending to ...; playing make-believe ...</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="noun, used as a suffix">sufn.; </small><small title="word usually written using kana alone">us. kana</small>
-alias; aka; nickname; alternative name; also known as</li></ul></dd></dl><dl class="word-1-42 blacklisted"><dt>こと</dt><dd><ul><li><small title="particle">part.</small>
-particle indicating a command</li><li><small title="female term or language">fem.</small>
-particle indicating mild enthusiasm</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-particle indicating a gentle interrogative</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-particle used to soften a judgment or conclusion</li></ul></dd></dl><dl class="word-1-44 blacklisted"><dt>由来<small>【ゆらい】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="noun or participle which takes the aux. verb suru">suru; </small><small title="adverb (fukushi)">adv.</small>
-origin; source; history; derivation; reason; destiny</li></ul></dd></dl><dl class="word-1-47 blacklisted"><dt>だ</dt><dd><ul><li><small title="copula">cop.</small>
+nominalizing suffix</li><li><small title="noun, used as a suffix">sufn.; </small><small title="word usually written using kana alone">us. kana</small>
+pretending to ...; playing make-believe ...</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="word usually written using kana alone">us. kana</small>
+alias; also known as; otherwise known as; or</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="word usually written using kana alone">us. kana</small>
+necessity; need</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="word usually written using kana alone">us. kana</small>
+you should ...; I advise that you ...; it&#039;s important to ...</li></ul></dd></dl><dl class="word-1-41 blacklisted"><dt>こと</dt><dd lang="en"><ul><li><small title="particle">part.</small>
+particle indicating a command</li><li><small title="particle">part.; </small><small title="female term or language">fem.</small>
+particle indicating mild enthusiasm</li><li><small title="particle">part.</small>
+particle indicating a gentle interrogative</li><li><small title="particle">part.</small>
+particle used to soften a judgment or conclusion</li></ul></dd></dl><dl class="word-1-43 blacklisted"><dt>由来<small>【ゆらい】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="noun or participle which takes the aux. verb suru">suru</small>
+origin; source; history; derivation</li><li><small title="adverb (fukushi)">adv.</small>
+originally; from the start; by nature</li></ul></dd></dl><dl class="word-1-46 blacklisted"><dt>だ</dt><dd lang="en"><ul><li><small title="copula">cop.</small>
 be; is</li><li><small title="auxiliary verb">auxv.</small>
-indicates past or completed action</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-indicates light imperative</li></ul></dd></dl><dl class="word-1-48 blacklisted"><dt>ので<small>【ので、んで】</small></dt><dd><ul><li><small title="particle">part.</small>
-that being the case; because of ...; the reason is ....; given that...</li></ul></dd></dl><dl class="word-1-49 blacklisted"><dt>のだ<small>【のです、のだ、んです、んだ】</small></dt><dd><ul><li><small title="expressions (phrases, clauses, etc.)">phrase</small>
-the expectation is that ...; the reason is that ...; the fact is that ...; it is that ...</li></ul></dd></dl><dl class="word-1-51 blacklisted"><dt>では</dt><dd><ul><li><small title="conjunction">conj.; </small><small title="interjection (kandoushi)">interj.</small>
-then; well; so; well then</li></ul></dd></dl><dl class="word-1-52 blacklisted"><dt>ない</dt><dd><ul><li><small title="adjective (keiyoushi)">adj.; </small><small title="word usually written using kana alone">us. kana</small>
-nonexistent; not being (there)</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-unpossessed; unowned; not had</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-unique</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-indicates negation, inexperience, unnecessariness or impossibility</li><li><small title="auxiliary adjective">auxadj.</small>
-not ...</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-to not be...; to have not ...</li></ul></dd></dl><dl class="word-1-52 blacklisted"><dt>ない</dt><dd><ul><li><small title="auxiliary adjective">auxadj.</small>
+did; (have) done</li><li><small title="auxiliary verb">auxv.</small>
+please; do</li></ul></dd></dl><dl class="word-1-47 blacklisted"><dt>ので<small>【ので、んで】</small></dt><dd lang="en"><ul><li><small title="particle">part.</small>
+that being the case; because of ...; the reason is ...; given that ...</li></ul></dd></dl><dl class="word-1-48 blacklisted"><dt>のだ<small>【のだ、んだ】</small></dt><dd lang="en"><ul><li><small title="expressions (phrases, clauses, etc.)">phrase</small>
+the expectation is that ...; the reason is that ...; the fact is that ...; the explanation is that ...; it is that ...</li></ul></dd></dl><dl class="word-1-50 blacklisted"><dt>では</dt><dd lang="en"><ul><li><small title="conjunction">conj.; </small><small title="interjection (kandoushi)">interj.</small>
+then; well; so; well then</li><li><small title="expressions (phrases, clauses, etc.)">phrase; </small><small title="archaism">arch.</small>
+if not ...; unless ...</li><li><small title="interjection (kandoushi)">interj.</small>
+bye then</li></ul></dd></dl><dl class="word-1-51 blacklisted"><dt>ない</dt><dd lang="en"><ul><li><small title="adjective (keiyoushi)">adj.; </small><small title="word usually written using kana alone">us. kana</small>
+nonexistent; not being (there)</li><li><small title="adjective (keiyoushi)">adj.</small>
+unowned; not had; unpossessed</li><li><small title="adjective (keiyoushi)">adj.</small>
+unique</li><li><small title="adjective (keiyoushi)">adj.</small>
+not; impossible; won&#039;t happen</li><li><small title="auxiliary adjective">auxadj.</small>
+not</li><li><small title="auxiliary adjective">auxadj.</small>
+to not be; to have not</li></ul></dd></dl><dl class="word-1-51 blacklisted"><dt>ない</dt><dd lang="en"><ul><li><small title="suffix">suffix</small>
 not</li><li><small title="suffix">suffix; </small><small title="adjective (keiyoushi)">adj.</small>
-emphatic suffix</li></ul></dd></dl><dl class="word-1-53 blacklisted"><dt>ではない</dt><dd><ul><li><small title="expressions (phrases, clauses, etc.)">phrase; </small><small title="adjective (keiyoushi)">adj.; </small><small title="word usually written using kana alone">us. kana</small>
-is not; am not; are not</li></ul></dd></dl><dl class="word-1-54 blacklisted"><dt>か</dt><dd><ul><li><small title="particle">part.</small>
-indicates a question (sometimes rhetorical)</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-or; whether or not</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-some- (e.g. something, someone)</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-indicates doubt, uncertainty, etc.</li><li><small title="prefix">pref.</small>
-emphatic prefix</li><li><small title="suffix">suffix</small>
-suffix forming adjectives or adverbs</li><li><small title="adverb (fukushi)">adv.; </small><small title="archaism">arch.</small>
-in that way</li></ul></dd></dl><dl class="word-1-55 blacklisted"><dt>ではないか</dt><dd><ul><li><small title="expressions (phrases, clauses, etc.)">phrase; </small><small title="word usually written using kana alone">us. kana</small>
-questioning (something)</li><li><small title="word usually written using kana alone">us. kana</small>
-let&#039;s do (something)</li></ul></dd></dl><dl class="word-1-56 blacklisted"><dt>はないか<small>【はないか、ハナイカ】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="word usually written using kana alone">us. kana</small>
-paintpot cuttlefish (Metasepia tullbergi)</li></ul></dd></dl><dl class="word-1-57 blacklisted"><dt>ないか</dt><dd><ul><li><small title="expressions (phrases, clauses, etc.)">phrase</small>
-(used to ask a question in the negative) won&#039;t (hasn't, isn't, doesn't, etc.)</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-(used to make invitations, express desires or give indirect commands) won&#039;t you</li></ul></dd></dl><dl class="word-1-58 blacklisted"><dt>と</dt><dd><ul><li><small title="particle">part.; </small><small title="conjunction">conj.</small>
-if; when</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-and</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-with</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-particle used for quoting (with speech, thoughts, etc.); quoting particle</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="abbreviation">abbr.</small>
+emphatic suffix</li></ul></dd></dl><dl class="word-1-52 blacklisted"><dt>ではない</dt><dd lang="en"><ul><li><small title="expressions (phrases, clauses, etc.)">phrase; </small><small title="adjective (keiyoushi)">adj.; </small><small title="word usually written using kana alone">us. kana</small>
+is not; am not; are not</li></ul></dd></dl><dl class="word-1-53 blacklisted"><dt>か</dt><dd lang="en"><ul><li><small title="particle">part.</small>
+indicates a question</li><li><small title="particle">part.</small>
+or; whether or not</li><li><small title="particle">part.</small>
+some- (e.g. something, someone)</li><li><small title="particle">part.</small>
+hmm; huh</li><li><small title="prefix">pref.</small>
+very</li><li><small title="suffix">suffix</small>
+-al; -ial; -ic; -ical; -ish; -y</li><li><small title="adverb (fukushi)">adv.; </small><small title="archaism">arch.</small>
+in that way</li></ul></dd></dl><dl class="word-1-54 blacklisted"><dt>ではないか</dt><dd lang="en"><ul><li><small title="expressions (phrases, clauses, etc.)">phrase; </small><small title="word usually written using kana alone">us. kana</small>
+isn&#039;t it?</li><li><small title="expressions (phrases, clauses, etc.)">phrase; </small><small title="word usually written using kana alone">us. kana</small>
+let&#039;s ...; why don't we ...; how about we ...; shouldn't we ...</li></ul></dd></dl><dl class="word-1-55 blacklisted"><dt>はないか<small>【はないか、ハナイカ】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="word usually written using kana alone">us. kana</small>
+paintpot cuttlefish (Metasepia tullbergi)</li></ul></dd></dl><dl class="word-1-56 blacklisted"><dt>ないか</dt><dd lang="en"><ul><li><small title="expressions (phrases, clauses, etc.)">phrase</small>
+won&#039;t; hasn't; isn't; doesn't</li><li><small title="expressions (phrases, clauses, etc.)">phrase</small>
+won&#039;t you</li></ul></dd></dl><dl class="word-1-57 blacklisted"><dt>と</dt><dd lang="en"><ul><li><small title="particle">part.; </small><small title="conjunction">conj.</small>
+if; when</li><li><small title="particle">part.; </small><small title="conjunction">conj.</small>
+and</li><li><small title="particle">part.</small>
+with</li><li><small title="particle">part.</small>
+used for quoting (thoughts, speech, etc.)</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="abbreviation">abbr.</small>
 promoted pawn</li><li><small title="particle">part.</small>
-indicates question (sentence end)</li></ul></dd></dl><dl class="word-1-60 blacklisted"><dt>とさ</dt><dd><ul><li><small title="expressions (phrases, clauses, etc.)">phrase; </small><small title="colloquialism">coll.</small>
-apparently; from what I have heard; they say; you know; I hear</li></ul></dd></dl><dl class="word-1-61 blacklisted"><dt>とする</dt><dd><ul><li><small title="expressions (phrases, clauses, etc.)">phrase; </small><small title="suru verb - irregular">vsuruirr.</small>
-to try to ...; to be about to do ...</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-to decide to ...</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-to take as; to treat as</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-to use for</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-to suppose that (such) is the case; to assume</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-to decide that; to think that</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-to make into; to change into</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-to feel (e.g. after sound symbolism or psychological experience word); to look; to feel like</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-to intend; to have the intention</li></ul></dd></dl><dl class="word-1-62 blacklisted"><dt>れる<small>【れる、られる】</small></dt><dd><ul><li><small title="auxiliary verb">auxv.; </small><small title="Ichidan verb">v1.</small>
-indicates passive voice (incl. the &quot;suffering passive")</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-indicates the potential form</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-indicates spontaneous occurrence</li><li><small title="honorific or respectful (sonkeigo) language">sonkeigo</small>
-used as an honorific for others&#039; actions</li></ul></dd></dl><dl class="word-1-63"><dt>とされる</dt><dd><ul><li><small title="expressions (phrases, clauses, etc.)">phrase; </small><small title="Ichidan verb">v1.</small>
-... is considered to ...</li></ul></dd></dl><dl class="word-1-64 blacklisted"><dt>される</dt><dd><ul><li><small title="Ichidan verb">v1.; </small><small title="word usually written using kana alone">us. kana</small>
-honorific or passive form of the verb &quot;suru"</li></ul></dd></dl><dl class="word-1-68"><dt>近代<small>【きんだい】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="nouns which may take the genitive case particle `no&#039;">no-n.</small>
-present day; modern times</li></ul></dd></dl><dl class="word-1-70 blacklisted"><dt>二つ<small>【ふたつ】</small></dt><dd><ul><li><small title="numeric">num.</small>
-two</li></ul></dd></dl><dl class="word-1-72 blacklisted"><dt>憲法<small>【けんぽう】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="nouns which may take the genitive case particle `no&#039;">no-n.</small>
-constitution</li></ul></dd></dl><dl class="word-1-74"><dt>表題<small>【ひょうだい】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
-title; index; heading; headline; caption</li></ul></dd></dl><dl class="word-1-78"><dt>日本国<small>【にほんこく】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
-Japan</li></ul></dd></dl><dl class="word-1-80"><dt>日本国憲法<small>【にほんこくけんぽう】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
-constitution of Japan; Japanese constitution</li></ul></dd></dl><dl class="word-1-84"><dt>大日本帝国<small>【だいにっぽんていこく】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
-Empire of Japan (Japan&#039;s official name under the Meiji Constitution)</li></ul></dd></dl><dl class="word-1-86"><dt>大日本帝国憲法<small>【だいにっぽんていこくけんぽう】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
-Meiji Constitution (Constitution of the Empire of Japan)</li></ul></dd></dl><dl class="word-1-89 blacklisted"><dt>ある</dt><dd><ul><li><small title="Godan verb with `ru&#039; ending (irregular verb)">v5ruirr.; </small><small title="intransitive verb">vi.; </small><small title="word usually written using kana alone">us. kana</small>
-to be (usu. of inanimate objects); to exist; to live</li><li><small title="word usually written using kana alone">us. kana</small>
-to have</li><li><small title="word usually written using kana alone">us. kana</small>
-to be located</li><li><small title="word usually written using kana alone">us. kana</small>
-to be equipped with</li><li><small title="word usually written using kana alone">us. kana</small>
-to happen; to come about</li></ul></dd></dl><dl class="word-1-89 blacklisted"><dt>ある</dt><dd><ul><li><small title="pre-noun adjectival (rentaishi)">pren.; </small><small title="word usually written using kana alone">us. kana</small>
-a certain ...; some ...</li></ul></dd></dl><dl class="word-1-90"><dt>である</dt><dd><ul><li><small title="Godan verb with `ru&#039; ending (irregular verb)">v5ruirr.</small>
-be; is</li></ul></dd></dl><dl class="word-1-94 blacklisted"><dt>を</dt><dd><ul><li><small title="particle">part.</small>
-indicates direct object of action</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-indicates subject of causative expression</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-indicates an area traversed</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-indicates time (period) over which action takes place</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-indicates point of departure or separation of action</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-indicates object of desire, like, hate, etc.</li></ul></dd></dl><dl class="word-1-97"><dt>国<small>【くに】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+indicates a question</li></ul></dd></dl><dl class="word-1-59 blacklisted"><dt>とさ</dt><dd lang="en"><ul><li><small title="expressions (phrases, clauses, etc.)">phrase; </small><small title="colloquialism">coll.</small>
+apparently; from what I have heard; they say; you know; I hear</li></ul></dd></dl><dl class="word-1-60 blacklisted"><dt>とする</dt><dd lang="en"><ul><li><small title="expressions (phrases, clauses, etc.)">phrase; </small><small>suru verb - included</small>
+to try to ...; to be about to do ...</li><li><small title="expressions (phrases, clauses, etc.)">phrase; </small><small>suru verb - included</small>
+to decide to ...</li><li><small title="expressions (phrases, clauses, etc.)">phrase; </small><small>suru verb - included</small>
+to take as; to treat as; to regard as</li><li><small title="expressions (phrases, clauses, etc.)">phrase; </small><small>suru verb - included</small>
+to use for</li><li><small title="expressions (phrases, clauses, etc.)">phrase; </small><small>suru verb - included</small>
+to suppose that (such) is the case; to assume</li><li><small title="expressions (phrases, clauses, etc.)">phrase; </small><small>suru verb - included</small>
+to decide that; to think that</li><li><small title="expressions (phrases, clauses, etc.)">phrase; </small><small>suru verb - included</small>
+to make into; to change into</li><li><small title="expressions (phrases, clauses, etc.)">phrase; </small><small>suru verb - included</small>
+to feel (e.g. after sound symbolism or psychological experience word); to look; to feel like</li><li><small title="expressions (phrases, clauses, etc.)">phrase; </small><small>suru verb - included</small>
+to intend; to have the intention</li></ul></dd></dl><dl class="word-1-61 blacklisted"><dt>れる<small>【れる、られる】</small></dt><dd lang="en"><ul><li><small title="auxiliary verb">auxv.; </small><small title="Ichidan verb">v1.</small>
+indicates passive voice (incl. the &quot;suffering passive")</li><li><small title="auxiliary verb">auxv.; </small><small title="Ichidan verb">v1.</small>
+indicates the potential form</li><li><small title="auxiliary verb">auxv.; </small><small title="Ichidan verb">v1.</small>
+indicates spontaneous occurrence</li><li><small title="auxiliary verb">auxv.; </small><small title="Ichidan verb">v1.; </small><small title="honorific or respectful (sonkeigo) language">sonkeigo</small>
+used as an honorific for others&#039; actions</li></ul></dd></dl><dl class="word-1-62"><dt>とされる</dt><dd lang="en"><ul><li><small title="expressions (phrases, clauses, etc.)">phrase; </small><small title="Ichidan verb">v1.</small>
+... is considered to ...</li></ul></dd></dl><dl class="word-1-63 blacklisted"><dt>される</dt><dd lang="en"><ul><li><small title="Ichidan verb">v1.; </small><small title="word usually written using kana alone">us. kana</small>
+to be done (to someone)</li><li><small title="Ichidan verb">v1.; </small><small title="word usually written using kana alone">us. kana; </small><small title="honorific or respectful (sonkeigo) language">sonkeigo</small>
+to do; to be doing</li></ul></dd></dl><dl class="word-1-67"><dt>近代<small>【きんだい】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+present day; modern times; recent times</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small>historical term</small>
+early modern period (in Japan, usu. from the Meiji Restoration until the end of World War II)</li></ul></dd></dl><dl class="word-1-69 blacklisted"><dt>二つ<small>【ふたつ】</small></dt><dd lang="en"><ul><li><small title="numeric">num.</small>
+two</li></ul></dd></dl><dl class="word-1-71 blacklisted"><dt>憲法<small>【けんぽう、けんぼう】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+constitution</li><li><small title="noun (common) (futsuumeishi)">n.</small>
+rules; regulation</li></ul></dd></dl><dl class="word-1-73"><dt>表題<small>【ひょうだい】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+title; index; heading; headline; caption</li></ul></dd></dl><dl class="word-1-77"><dt>日本国<small>【にほんこく、にっぽんこく】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+Japan</li></ul></dd></dl><dl class="word-1-79"><dt>日本国憲法<small>【にほんこくけんぽう】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+constitution of Japan; Japanese constitution</li></ul></dd></dl><dl class="word-1-83"><dt>大日本帝国<small>【だいにっぽんていこく】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small>historical term</small>
+Empire of Japan (Japan&#039;s official name under the Meiji Constitution)</li></ul></dd></dl><dl class="word-1-85"><dt>大日本帝国憲法<small>【だいにっぽんていこくけんぽう】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+Constitution of the Empire of Japan; Meiji Constitution</li></ul></dd></dl><dl class="word-1-88 blacklisted"><dt>ある</dt><dd lang="en"><ul><li><small>Godan verb with &#039;ru' ending (irregular verb); </small><small title="intransitive verb">vi.; </small><small title="word usually written using kana alone">us. kana</small>
+to be; to exist; to live</li><li><small>Godan verb with &#039;ru' ending (irregular verb); </small><small title="intransitive verb">vi.; </small><small title="word usually written using kana alone">us. kana</small>
+to have</li><li><small>Godan verb with &#039;ru' ending (irregular verb); </small><small title="intransitive verb">vi.; </small><small title="word usually written using kana alone">us. kana</small>
+to be located</li><li><small>Godan verb with &#039;ru' ending (irregular verb); </small><small title="intransitive verb">vi.; </small><small title="word usually written using kana alone">us. kana</small>
+to be equipped with</li><li><small>Godan verb with &#039;ru' ending (irregular verb); </small><small title="intransitive verb">vi.; </small><small title="word usually written using kana alone">us. kana</small>
+to happen; to come about</li></ul></dd></dl><dl class="word-1-88 blacklisted"><dt>ある</dt><dd lang="en"><ul><li><small title="pre-noun adjectival (rentaishi)">pren.; </small><small title="word usually written using kana alone">us. kana</small>
+a certain ...; some ...</li></ul></dd></dl><dl class="word-1-89"><dt>である</dt><dd lang="en"><ul><li><small title="copula">cop.; </small><small>Godan verb with &#039;ru' ending (irregular verb); </small><small>formal or literary term</small>
+be; is</li></ul></dd></dl><dl class="word-1-93 blacklisted"><dt>を</dt><dd lang="en"><ul><li><small title="particle">part.</small>
+indicates direct object of action</li><li><small title="particle">part.</small>
+indicates subject of causative expression</li><li><small title="particle">part.</small>
+indicates an area traversed</li><li><small title="particle">part.</small>
+indicates time (period) over which action takes place</li><li><small title="particle">part.</small>
+indicates point of departure or separation of action</li><li><small title="particle">part.</small>
+indicates object of desire, like, hate, etc.</li></ul></dd></dl><dl class="word-1-96"><dt>国<small>【くに】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
 country; state</li><li><small title="noun (common) (futsuumeishi)">n.</small>
 region</li><li><small title="noun (common) (futsuumeishi)">n.</small>
 national government; central government</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-home (i.e. hometown, home country)</li><li><small title="archaism">arch.</small>
-province (of Japan)</li><li><small title="archaism">arch.</small>
-land; earth</li></ul></dd></dl><dl class="word-1-100"><dt>または</dt><dd><ul><li><small title="conjunction">conj.; </small><small title="expressions (phrases, clauses, etc.)">phrase; </small><small title="word usually written using kana alone">us. kana</small>
-or; otherwise</li></ul></dd></dl><dl class="word-1-105 blacklisted"><dt>直接<small>【ちょくせつ】</small></dt><dd><ul><li><small title="adjectival nouns or quasi-adjectives (keiyodoshi)">adjn..; </small><small title="adverbial noun (fukushitekimeishi)">advn.; </small><small title="nouns which may take the genitive case particle `no&#039;">no-n.</small>
-direct; immediate; personal; firsthand</li></ul></dd></dl><dl class="word-1-106"><dt>かつ</dt><dd><ul><li><small title="adverb (fukushi)">adv.; </small><small title="conjunction">conj.; </small><small title="word usually written using kana alone">us. kana</small>
-yet; moreover; and</li></ul></dd></dl><dl class="word-1-107"><dt>明確<small>【めいかく】</small></dt><dd><ul><li><small title="adjectival nouns or quasi-adjectives (keiyodoshi)">adjn..</small>
-clear; precise; definite; distinct</li></ul></dd></dl><dl class="word-1-109"><dt>規定<small>【きてい】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="nouns which may take the genitive case particle `no&#039;">no-n.; </small><small title="noun or participle which takes the aux. verb suru">suru</small>
-stipulation; prescription; provision; regulation; rule</li></ul></dd></dl><dl class="word-1-111 blacklisted"><dt>た</dt><dd><ul><li><small title="auxiliary verb">auxv.</small>
-indicate past or completed action</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-indicates light imperative</li></ul></dd></dl><dl class="word-1-112"><dt>法令<small>【ほうれい】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="nouns which may take the genitive case particle `no&#039;">no-n.</small>
-laws and ordinances; acts (of parliament, congress, etc.)</li></ul></dd></dl><dl class="word-1-114 blacklisted"><dt>存在<small>【そんざい】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="noun or participle which takes the aux. verb suru">suru; </small><small title="nouns which may take the genitive case particle `no&#039;">no-n.</small>
-existence; being</li></ul></dd></dl><dl class="word-1-119 blacklisted"><dt>疑問<small>【ぎもん】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
-question; problem; doubt; guess</li></ul></dd></dl><dl class="word-1-120 blacklisted"><dt>点<small>【ちょぼ、チョボ】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="word usually written using kana alone">us. kana</small>
-dot; point; mark</li><li><small title="word usually written using kana alone">us. kana</small>
-gidayuu musicians (in kabuki)</li></ul></dd></dl><dl class="word-1-120 blacklisted"><dt>点<small>【てん】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="noun, used as a suffix">sufn.</small>
-spot; mark</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-point; dot</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-mark (e.g. in exam); score; points</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-comma</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-aspect; matter; respect</li><li><small title="counter">cnt.</small>
-counter for goods, items, articles of clothing, works of art, etc.</li></ul></dd></dl><dl class="word-1-120 blacklisted"><dt>点<small>【ぽち、ぽつ】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="word usually written using kana alone">us. kana</small>
-dot; point; mark</li><li><small title="word usually written using kana alone">us. kana</small>
+home (i.e. hometown, home country)</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="archaism">arch.</small>
+province (of Japan)</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="archaism">arch.</small>
+land; earth</li></ul></dd></dl><dl class="word-1-99"><dt>または</dt><dd lang="en"><ul><li><small title="conjunction">conj.; </small><small title="word usually written using kana alone">us. kana</small>
+or; either ... or ...</li></ul></dd></dl><dl class="word-1-104 blacklisted"><dt>直接<small>【ちょくせつ】</small></dt><dd lang="en"><ul><li><small title="adjectival nouns or quasi-adjectives (keiyodoshi)">adjn..; </small><small title="noun (common) (futsuumeishi)">n.; </small><small>nouns which may take the genitive case particle &#039;no'; </small><small title="adverb (fukushi)">adv.</small>
+direct; immediate; personal; firsthand</li></ul></dd></dl><dl class="word-1-105"><dt>かつ</dt><dd lang="en"><ul><li><small title="conjunction">conj.; </small><small title="adverb (fukushi)">adv.; </small><small title="word usually written using kana alone">us. kana</small>
+and; moreover; besides; as well as; and on top of that; at the same time</li></ul></dd></dl><dl class="word-1-106"><dt>明確<small>【めいかく】</small></dt><dd lang="en"><ul><li><small title="adjectival nouns or quasi-adjectives (keiyodoshi)">adjn..</small>
+clear; precise; definite; distinct</li></ul></dd></dl><dl class="word-1-108"><dt>規定<small>【きてい】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small>nouns which may take the genitive case particle &#039;no'; </small><small title="noun or participle which takes the aux. verb suru">suru</small>
+stipulation; prescription; provision; regulation; rule</li></ul></dd></dl><dl class="word-1-110 blacklisted"><dt>た</dt><dd lang="en"><ul><li><small title="auxiliary verb">auxv.</small>
+did; (have) done</li><li><small title="auxiliary verb">auxv.</small>
+(please) do</li></ul></dd></dl><dl class="word-1-111"><dt>法令<small>【ほうれい】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small>nouns which may take the genitive case particle &#039;no'</small>
+laws and ordinances; acts (of parliament, congress, etc.)</li></ul></dd></dl><dl class="word-1-113 blacklisted"><dt>存在<small>【そんざい】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="noun or participle which takes the aux. verb suru">suru; </small><small>nouns which may take the genitive case particle &#039;no'</small>
+existence; being</li></ul></dd></dl><dl class="word-1-118 blacklisted"><dt>疑問<small>【ぎもん】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+doubt; question; suspicion; dubiousness</li></ul></dd></dl><dl class="word-1-119 blacklisted"><dt>点<small>【ちょぼ、チョボ】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="word usually written using kana alone">us. kana</small>
+dot; point; mark</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="word usually written using kana alone">us. kana</small>
+gidayū musicians (in kabuki)</li></ul></dd></dl><dl class="word-1-119 blacklisted"><dt>点<small>【てん】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+dot; spot; point; speck; mark</li><li><small title="noun (common) (futsuumeishi)">n.</small>
+mark (in an exam, etc.); grade; score; points</li><li><small title="noun (common) (futsuumeishi)">n.</small>
+point (in a game); score; goal; run</li><li><small title="noun (common) (futsuumeishi)">n.</small>
+point (in geometry)</li><li><small title="noun (common) (futsuumeishi)">n.</small>
+point; aspect; matter; detail; part; respect; way; viewpoint</li><li><small title="noun (common) (futsuumeishi)">n.</small>
+(punctuation) mark (e.g. comma, period, decimal point); dot</li><li><small title="noun (common) (futsuumeishi)">n.</small>
+&quot;dot" stroke (in a Chinese character)</li><li><small title="counter">cnt.</small>
+counter for points, marks, goals, etc.</li><li><small title="counter">cnt.</small>
+counter for goods, items, articles of clothing, works of art, etc.</li></ul></dd></dl><dl class="word-1-119 blacklisted"><dt>点<small>【ぽち、ぽつ】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="word usually written using kana alone">us. kana</small>
+dot; point; mark</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="word usually written using kana alone">us. kana</small>
 tip; gratuity</li><li><small title="suffix">suffix; </small><small title="word usually written using kana alone">us. kana</small>
-a little; paltry; piddling; mere</li></ul></dd></dl><dl class="word-1-121"><dt>疑問点<small>【ぎもんてん】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
-point of uncertainty; unclarified issue; doubt</li></ul></dd></dl><dl class="word-1-125 blacklisted"><dt>ノート</dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="noun or participle which takes the aux. verb suru">suru; </small><small title="abbreviation">abbr.</small>
-notebook; copy-book; exercise book</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-note</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-notebook PC</li></ul></dd></dl><dl class="word-1-127 blacklisted"><dt>ただし</dt><dd><ul><li><small title="conjunction">conj.; </small><small title="word usually written using kana alone">us. kana</small>
-but; however; provided that</li></ul></dd></dl><dl class="word-1-129"><dt>日本工業規格<small>【にほんこうぎょうきかく】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
-Japan Industrial Standards; JIS</li></ul></dd></dl><dl class="word-1-144"><dt>英語<small>【えいご】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="nouns which may take the genitive case particle `no&#039;">no-n.</small>
-English (language)</li></ul></dd></dl><dl class="word-1-151 blacklisted"><dt>更に<small>【さらに】</small></dt><dd><ul><li><small title="adverb (fukushi)">adv.; </small><small title="conjunction">conj.; </small><small title="word usually written using kana alone">us. kana</small>
-furthermore; again; after all; more and more; moreover; even more</li></ul></dd></dl><dl class="word-1-153"><dt>国際<small>【こくさい】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="nouns which may take the genitive case particle `no&#039;">no-n.</small>
-international</li></ul></dd></dl><dl class="word-1-154"><dt>規格<small>【きかく】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
-standard; norm</li></ul></dd></dl><dl class="word-1-155"><dt>国際規格<small>【こくさいきかく】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
-international standard</li></ul></dd></dl><dl class="word-1-163 blacklisted"><dt>文字<small>【もじ、もんじ】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
-letter (of alphabet); character</li><li><small title="nouns which may take the genitive case particle `no&#039;">no-n.</small>
-literal</li></ul></dd></dl><dl class="word-1-164"><dt>略号<small>【りゃくごう】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
-code; mark; symbol</li></ul></dd></dl><dl class="word-1-177 blacklisted"><dt>して</dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
-doer; performer</li><li><small title="word usually written using kana alone">us. kana</small>
+a little; paltry; piddling; mere</li></ul></dd></dl><dl class="word-1-120"><dt>疑問点<small>【ぎもんてん】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+point of uncertainty; unclarified issue; doubt</li></ul></dd></dl><dl class="word-1-124 blacklisted"><dt>ノート</dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="abbreviation">abbr.</small>
+notebook; copy-book; exercise book</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="noun or participle which takes the aux. verb suru">suru</small>
+note; noting down</li><li><small title="noun (common) (futsuumeishi)">n.</small>
+(musical) note</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="abbreviation">abbr.</small>
+laptop (computer); notebook (computer)</li></ul></dd></dl><dl class="word-1-126 blacklisted"><dt>ただし</dt><dd lang="en"><ul><li><small title="conjunction">conj.; </small><small title="word usually written using kana alone">us. kana</small>
+but; however; provided that</li></ul></dd></dl><dl class="word-1-128"><dt>日本工業規格<small>【にほんこうぎょうきかく】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+Japan Industrial Standards; JIS</li></ul></dd></dl><dl class="word-1-143"><dt>英語<small>【えいご】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+English (language)</li></ul></dd></dl><dl class="word-1-150 blacklisted"><dt>更に<small>【さらに】</small></dt><dd lang="en"><ul><li><small title="adverb (fukushi)">adv.; </small><small title="conjunction">conj.; </small><small title="word usually written using kana alone">us. kana</small>
+furthermore; again; after all; more and more; moreover; even more</li></ul></dd></dl><dl class="word-1-152"><dt>国際<small>【こくさい】</small></dt><dd lang="en"><ul><li><small>nouns which may take the genitive case particle &#039;no'; </small><small title="noun (common) (futsuumeishi)">n.</small>
+international</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="obsolete term">obsolete</small>
+diplomatic intercourse</li></ul></dd></dl><dl class="word-1-153"><dt>規格<small>【きかく】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+standard; norm</li></ul></dd></dl><dl class="word-1-154"><dt>国際規格<small>【こくさいきかく】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+international standard</li></ul></dd></dl><dl class="word-1-162 blacklisted"><dt>文字<small>【もじ、もんじ】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+letter (of alphabet); character</li><li><small title="noun (common) (futsuumeishi)">n.</small>
+writing</li></ul></dd></dl><dl class="word-1-163"><dt>略号<small>【りゃくごう】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+code; mark; symbol</li></ul></dd></dl><dl class="word-1-176 blacklisted"><dt>して</dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+doer; performer</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="word usually written using kana alone">us. kana</small>
 protagonist (in noh or kyogen); hero; leading part; main character</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-speculator (in trading)</li></ul></dd></dl><dl class="word-1-177 blacklisted"><dt>して</dt><dd><ul><li><small title="particle">part.</small>
-by (indicating means of action); as (a group, etc.)</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-indicates patient of a causative expression</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-acts as a connective</li><li><small title="noun (common) (futsuumeishi)">n.</small>
+speculator (in trading)</li></ul></dd></dl><dl class="word-1-176 blacklisted"><dt>して</dt><dd lang="en"><ul><li><small title="particle">part.</small>
+by (indicating means of action); as (a group, etc.)</li><li><small title="particle">part.</small>
+indicates patient of a causative expression</li><li><small title="particle">part.</small>
+acts as a connective</li><li><small title="particle">part.</small>
 adds emphasis</li><li><small title="conjunction">conj.</small>
-and then</li></ul></dd></dl><dl class="word-1-178 blacklisted"><dt>いる</dt><dd><ul><li><small title="Godan verb with `ru&#039; ending">v5ru.; </small><small title="intransitive verb">vi.; </small><small title="word usually written using kana alone">us. kana</small>
-to need; to want</li></ul></dd></dl><dl class="word-1-178 blacklisted"><dt>いる</dt><dd><ul><li><small title="Ichidan verb">v1.; </small><small title="intransitive verb">vi.; </small><small title="word usually written using kana alone">us. kana</small>
-to be (of animate objects); to exist</li><li><small title="word usually written using kana alone">us. kana</small>
+and then</li></ul></dd></dl><dl class="word-1-177 blacklisted"><dt>いる</dt><dd lang="en"><ul><li><small>Godan verb with &#039;ru' ending; </small><small title="intransitive verb">vi.; </small><small title="word usually written using kana alone">us. kana</small>
+to be needed; to be wanted</li></ul></dd></dl><dl class="word-1-177 blacklisted"><dt>いる</dt><dd lang="en"><ul><li><small title="Ichidan verb">v1.; </small><small title="intransitive verb">vi.; </small><small title="word usually written using kana alone">us. kana</small>
+to be (of animate objects); to exist</li><li><small title="Ichidan verb">v1.; </small><small title="intransitive verb">vi.; </small><small title="word usually written using kana alone">us. kana</small>
 to stay</li><li><small title="Ichidan verb">v1.; </small><small title="auxiliary verb">auxv.; </small><small title="word usually written using kana alone">us. kana</small>
-verb indicating continuing action or state (i.e. to be ..ing, to have been ..ing)</li></ul></dd></dl><dl class="word-1-178 blacklisted"><dt>いる</dt><dd><ul><li><small title="Ichidan verb">v1.; </small><small title="intransitive verb">vi.; </small><small title="word usually written using kana alone">us. kana; </small><small title="archaism">arch.</small>
-to calm down</li></ul></dd></dl><dl class="word-1-180 blacklisted"><dt>また</dt><dd><ul><li><small title="adverb (fukushi)">adv.; </small><small title="conjunction">conj.; </small><small title="prefix">pref.; </small><small title="word usually written using kana alone">us. kana</small>
-again; and; also; still (doing something)</li></ul></dd></dl><dl class="word-1-183"><dt>外務省<small>【がいむしょう】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
-Ministry of Foreign Affairs</li></ul></dd></dl><dl class="word-1-185"><dt>発給<small>【はっきゅう】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="noun or participle which takes the aux. verb suru">suru</small>
-issuance (e.g. of a passport); issuing</li></ul></dd></dl><dl class="word-1-189"><dt>旅券<small>【りょけん】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
-passport</li></ul></dd></dl><dl class="word-1-191 blacklisted"><dt>表紙<small>【ひょうし】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
-front cover; binding; (book) cover</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="noun or participle which takes the aux. verb suru">suru</small>
-appearing on the cover of a magazine</li></ul></dd></dl><dl class="word-1-194 blacklisted"><dt>には</dt><dd><ul><li><small title="particle">part.</small>
-for (in regard to); in order to</li></ul></dd></dl><dl class="word-1-203 blacklisted"><dt>十<small>【じゅう、とお、と】</small></dt><dd><ul><li><small title="numeric">num.</small>
-ten</li></ul></dd></dl><dl class="word-1-203 blacklisted"><dt>十<small>【シー】</small></dt><dd><ul><li><small title="numeric">num.</small>
-ten</li></ul></dd></dl><dl class="word-1-204 blacklisted"><dt>六<small>【ろく、む、むう】</small></dt><dd><ul><li><small title="numeric">num.</small>
-six</li></ul></dd></dl><dl class="word-1-204 blacklisted"><dt>六<small>【リュー】</small></dt><dd><ul><li><small title="numeric">num.</small>
-six</li></ul></dd></dl><dl class="word-1-205 blacklisted"><dt>十六<small>【じゅうろく】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
-16; sixteen</li></ul></dd></dl><dl class="word-1-206 blacklisted"><dt>一<small>【いち】</small></dt><dd><ul><li><small title="numeric">num.; </small><small title="prefix">pref.</small>
-one</li><li><small title="nouns which may take the genitive case particle `no&#039;">no-n.; </small><small title="suffix">suffix</small>
-best</li><li><small title="nouns which may take the genitive case particle `no&#039;">no-n.</small>
+to be ...-ing; to have been ...-ing</li></ul></dd></dl><dl class="word-1-177 blacklisted"><dt>いる</dt><dd lang="en"><ul><li><small title="Ichidan verb">v1.; </small><small title="intransitive verb">vi.; </small><small title="word usually written using kana alone">us. kana; </small><small title="archaism">arch.</small>
+to calm down</li></ul></dd></dl><dl class="word-1-179 blacklisted"><dt>また</dt><dd lang="en"><ul><li><small title="adverb (fukushi)">adv.; </small><small title="word usually written using kana alone">us. kana</small>
+again; once more; once again; another time; some other time</li><li><small title="adverb (fukushi)">adv.; </small><small title="word usually written using kana alone">us. kana</small>
+also; too; as well; likewise</li><li><small title="adverb (fukushi)">adv.; </small><small title="word usually written using kana alone">us. kana</small>
+on the other hand; while</li><li><small title="conjunction">conj.; </small><small title="word usually written using kana alone">us. kana</small>
+and; in addition; besides; moreover; furthermore</li><li><small title="conjunction">conj.; </small><small title="word usually written using kana alone">us. kana</small>
+or; otherwise</li><li><small title="adverb (fukushi)">adv.; </small><small title="word usually written using kana alone">us. kana</small>
+really; how; (what, why) on earth</li><li><small title="prefix">pref.</small>
+indirect</li></ul></dd></dl><dl class="word-1-182"><dt>外務省<small>【がいむしょう】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+Ministry of Foreign Affairs</li></ul></dd></dl><dl class="word-1-184"><dt>発給<small>【はっきゅう】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="noun or participle which takes the aux. verb suru">suru</small>
+issuance (e.g. of a passport); issuing</li></ul></dd></dl><dl class="word-1-188"><dt>旅券<small>【りょけん】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+passport</li></ul></dd></dl><dl class="word-1-190 blacklisted"><dt>表紙<small>【ひょうし】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+cover (of a book, magazine, etc.); binding</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="noun or participle which takes the aux. verb suru">suru</small>
+appearing on the cover of a magazine</li></ul></dd></dl><dl class="word-1-193 blacklisted"><dt>には</dt><dd lang="en"><ul><li><small title="expressions (phrases, clauses, etc.)">phrase; </small><small title="particle">part.</small>
+to; for; on; in; at</li><li><small title="expressions (phrases, clauses, etc.)">phrase; </small><small title="particle">part.</small>
+in order to; for</li><li><small title="expressions (phrases, clauses, etc.)">phrase; </small><small title="particle">part.</small>
+as for; regarding</li><li><small title="expressions (phrases, clauses, etc.)">phrase; </small><small title="particle">part.</small>
+while it is (was) the case that ...; indeed ... (but); certainly ... (but)</li></ul></dd></dl><dl class="word-1-202 blacklisted"><dt>十<small>【じゅう、とお、と】</small></dt><dd lang="en"><ul><li><small title="numeric">num.</small>
+ten; 10</li><li><small title="noun (common) (futsuumeishi)">n.</small>
+ten years of age</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="archaism">arch.</small>
+book containing a collection of poems</li></ul></dd></dl><dl class="word-1-202 blacklisted"><dt>十<small>【シー】</small></dt><dd lang="en"><ul><li><small title="numeric">num.</small>
+ten</li></ul></dd></dl><dl class="word-1-203 blacklisted"><dt>六<small>【ろく、む、むう】</small></dt><dd lang="en"><ul><li><small title="numeric">num.</small>
+six; 6</li></ul></dd></dl><dl class="word-1-203 blacklisted"><dt>六<small>【リュー、リィウ、リウ】</small></dt><dd lang="en"><ul><li><small title="numeric">num.</small>
+six</li></ul></dd></dl><dl class="word-1-204 blacklisted"><dt>十六<small>【じゅうろく】</small></dt><dd lang="en"><ul><li><small title="numeric">num.</small>
+16; sixteen</li></ul></dd></dl><dl class="word-1-205 blacklisted"><dt>一<small>【いち】</small></dt><dd lang="en"><ul><li><small title="numeric">num.; </small><small title="prefix">pref.</small>
+one; 1</li><li><small>nouns which may take the genitive case particle &#039;no'; </small><small title="suffix">suffix</small>
+best</li><li><small>nouns which may take the genitive case particle &#039;no'</small>
 first; foremost</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-beginning; start</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-bottom string (on a shamisen, etc.)</li></ul></dd></dl><dl class="word-1-206 blacklisted"><dt>一<small>【ひとつ】</small></dt><dd><ul><li><small title="numeric">num.</small>
+beginning; start</li><li><small title="noun, used as a prefix">prefn.</small>
+a (single); one (of many)</li><li><small title="noun (common) (futsuumeishi)">n.</small>
+ace (playing card)</li><li><small title="noun (common) (futsuumeishi)">n.</small>
+bottom string (on a shamisen, etc.)</li></ul></dd></dl><dl class="word-1-205 blacklisted"><dt>一<small>【ひとつ】</small></dt><dd lang="en"><ul><li><small title="numeric">num.</small>
 one</li><li><small title="noun (common) (futsuumeishi)">n.</small>
 for one thing</li><li><small title="noun (common) (futsuumeishi)">n.</small>
 only</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-(not) even</li><li><small title="adverbial noun (fukushitekimeishi)">advn.</small>
-just (e.g. &quot;just try it")</li></ul></dd></dl><dl class="word-1-206 blacklisted"><dt>一<small>【イー】</small></dt><dd><ul><li><small title="numeric">num.</small>
-one</li></ul></dd></dl><dl class="word-1-206 blacklisted"><dt>一<small>【いっち】</small></dt><dd><ul><li><small title="adverb (fukushi)">adv.; </small><small title="archaism">arch.</small>
-most</li></ul></dd></dl><dl class="word-1-206 blacklisted"><dt>一<small>【ひと、ひ、ひい】</small></dt><dd><ul><li><small title="prefix">pref.</small>
+(not) even</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="adverb (fukushi)">adv.</small>
+just (e.g. &quot;just try it")</li><li><small>nouns which may take the genitive case particle &#039;no'</small>
+some kind of; one type of</li></ul></dd></dl><dl class="word-1-205 blacklisted"><dt>一<small>【イー】</small></dt><dd lang="en"><ul><li><small title="numeric">num.</small>
+one</li></ul></dd></dl><dl class="word-1-205 blacklisted"><dt>一<small>【いっち】</small></dt><dd lang="en"><ul><li><small title="adverb (fukushi)">adv.</small>
+most; best</li></ul></dd></dl><dl class="word-1-205 blacklisted"><dt>一<small>【ひと、ひ、ひい】</small></dt><dd lang="en"><ul><li><small title="prefix">pref.</small>
 one</li><li><small title="numeric">num.</small>
-one</li></ul></dd></dl><dl class="word-1-207"><dt>重<small>【おも】</small></dt><dd><ul><li><small title="adjectival nouns or quasi-adjectives (keiyodoshi)">adjn..; </small><small title="noun (common) (futsuumeishi)">n.</small>
-chief; main; principal; important</li><li><small title="abbreviation">abbr.</small>
-main secondary or supporting role (in kyogen)</li></ul></dd></dl><dl class="word-1-207"><dt>重<small>【え】</small></dt><dd><ul><li><small title="suffix">suffix; </small><small title="counter">cnt.</small>
--fold; -ply</li></ul></dd></dl><dl class="word-1-207"><dt>重<small>【じゅう】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="abbreviation">abbr.</small>
-multi-tiered food box; stacked boxes</li><li><small title="noun, used as a prefix">prefn.</small>
-heavy</li><li><small title="noun (common) (futsuumeishi)">n.</small>
+one</li></ul></dd></dl><dl class="word-1-205 blacklisted"><dt>一<small>【いつ】</small></dt><dd lang="en"><ul><li><small title="numeric">num.</small>
+one</li><li><small title="noun (common) (futsuumeishi)">n.</small>
+same (mind, path, etc.)</li></ul></dd></dl><dl class="word-1-206"><dt>重<small>【おも】</small></dt><dd lang="en"><ul><li><small title="adjectival nouns or quasi-adjectives (keiyodoshi)">adjn..; </small><small title="noun (common) (futsuumeishi)">n.</small>
+chief; main; principal; important</li><li><small title="adjectival nouns or quasi-adjectives (keiyodoshi)">adjn..; </small><small title="noun (common) (futsuumeishi)">n.; </small><small title="abbreviation">abbr.</small>
+main secondary or supporting role (in kyogen)</li></ul></dd></dl><dl class="word-1-206"><dt>重<small>【え】</small></dt><dd lang="en"><ul><li><small title="suffix">suffix; </small><small title="counter">cnt.</small>
+-fold; -ply</li></ul></dd></dl><dl class="word-1-206"><dt>重<small>【じゅう】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="abbreviation">abbr.</small>
+jūbako; multi-tiered food box</li><li><small title="noun, used as a prefix">prefn.</small>
+heavy</li><li><small title="noun, used as a prefix">prefn.</small>
 serious; extreme</li><li><small title="suffix">suffix; </small><small title="counter">cnt.</small>
--fold; -ply</li></ul></dd></dl><dl class="word-1-208"><dt>一重<small>【ひとえ】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="nouns which may take the genitive case particle `no&#039;">no-n.</small>
-one layer; single; onefold</li></ul></dd></dl><dl class="word-1-209 blacklisted"><dt>表<small>【おもて】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+-fold; -ply</li></ul></dd></dl><dl class="word-1-207"><dt>一重<small>【ひとえ】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small>nouns which may take the genitive case particle &#039;no'</small>
+one layer; single layer</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small>nouns which may take the genitive case particle &#039;no'</small>
+monopetalous</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="abbreviation">abbr.</small>
+unlined kimono</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="abbreviation">abbr.</small>
+single-edged eyelid; eyelid with an epicanthic fold; upper eyelid with no fold</li></ul></dd></dl><dl class="word-1-208 blacklisted"><dt>表<small>【おもて】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
 surface</li><li><small title="noun (common) (futsuumeishi)">n.</small>
 face (i.e. the visible side of an object)</li><li><small title="noun (common) (futsuumeishi)">n.</small>
 front (of a building, etc.); obverse side (i.e. &quot;head") of a coin</li><li><small title="noun (common) (futsuumeishi)">n.</small>
@@ -478,7 +533,9 @@ appearance</li><li><small title="noun (common) (futsuumeishi)">n.</small>
 public</li><li><small title="noun (common) (futsuumeishi)">n.</small>
 first half (of an inning); top (of an inning)</li><li><small title="noun (common) (futsuumeishi)">n.</small>
 cover (for tatami mats, etc.)</li><li><small title="noun (common) (futsuumeishi)">n.</small>
-foreground</li></ul></dd></dl><dl class="word-1-209 blacklisted"><dt>表<small>【ひょう】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="noun, used as a suffix">sufn.</small>
-table (e.g. Table 1); chart; list</li></ul></dd></dl><dl class="word-1-210 blacklisted"><dt>菊<small>【きく】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
-chrysanthemum (Chrysanthemum morifolium)</li></ul></dd></dl><dl class="word-1-215"><dt>提示<small>【ていじ】</small></dt><dd><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="noun or participle which takes the aux. verb suru">suru</small>
-presentation; exhibit; suggest; citation</li></ul></dd></dl></div><div class="buttons"><form action="#"><label><input type="checkbox" class="add_break" id="add_break_1" checked="checked" /> Page break</label></form></div></div></div></body></html>
+foreground</li><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="abbreviation">abbr.</small>
+Omotesenke school of tea ceremony</li></ul></dd></dl><dl class="word-1-208 blacklisted"><dt>表<small>【ひょう】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="noun, used as a suffix">sufn.</small>
+table; chart; list</li><li><small title="noun (common) (futsuumeishi)">n.</small>
+memorial to an emperor</li></ul></dd></dl><dl class="word-1-209 blacklisted"><dt>菊<small>【きく、キク】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.</small>
+chrysanthemum (Chrysanthemum morifolium)</li></ul></dd></dl><dl class="word-1-214"><dt>提示<small>【ていじ】</small></dt><dd lang="en"><ul><li><small title="noun (common) (futsuumeishi)">n.; </small><small title="noun or participle which takes the aux. verb suru">suru</small>
+presentation; exhibit; suggest; citation</li></ul></dd></dl></div><div class="buttons"><form action="#"><label lang="en"><input type="checkbox" class="add_break" id="add_break_1" checked="checked" /> Page break</label></form></div></div></div></body></html>
