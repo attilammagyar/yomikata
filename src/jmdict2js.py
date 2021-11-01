@@ -319,7 +319,7 @@ class JMdict:
         return tuple(self.ANNOTATION_ABREV.get(a, a) for a in (pos + info))
 
     def __texts_from_xpath(self, element, xpath):
-        return tuple(e.text for e in (xpath(element) or ()))
+        return tuple(str(e.text).strip() for e in (xpath(element) or ()))
 
     def __add_to_dictionary(self, dictionary, key, entry_idx):
         node = dictionary
