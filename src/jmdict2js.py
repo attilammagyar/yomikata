@@ -34,7 +34,7 @@ HEADER = """
 /*       "r": {                                                               */
 /*         "i": {                                                             */
 /*           "t": {                                                           */
-/*             "": ENTRY_IDX1                                                 */
+/*             "": ENTRY_IDX1,                                                */
 /*             "e": {                                                         */
 /*               "": [ENTRY_IDX2, ENTRY_IDX3]                                 */
 /*             },                                                             */
