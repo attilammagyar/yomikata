@@ -288,15 +288,9 @@ yomikata = {
     {
         var blacklist = yomikata.build_blacklist();
 
-        dom_element.setAttribute(
-            "href",
-            yomikata.html_to_data_url(
-                yomikata.generate_html(
-                    yomikata.parse_text(
-                        $("japanese-text").value,
-                        blacklist
-                    )
-                )
+        dom_element.href = yomikata.html_to_data_url(
+            yomikata.generate_html(
+                yomikata.parse_text($("japanese-text").value, blacklist)
             )
         );
     },
@@ -305,15 +299,9 @@ yomikata = {
     {
         var blacklist = yomikata.build_blacklist();
 
-        dom_element.setAttribute(
-            "href",
-            yomikata.txt_to_data_url(
-                yomikata.generate_txt(
-                    yomikata.parse_text(
-                        $("japanese-text").value,
-                        blacklist
-                    )
-                )
+        dom_element.href = yomikata.txt_to_data_url(
+            yomikata.generate_txt(
+                yomikata.parse_text($("japanese-text").value, blacklist)
             )
         );
     },
@@ -322,11 +310,8 @@ yomikata = {
     {
         var blacklist = yomikata.build_blacklist();
 
-        dom_element.setAttribute(
-            "href",
-            yomikata.tsv_to_data_url(
-                yomikata.generate_blacklist_tsv(blacklist)
-            )
+        dom_element.href = yomikata.tsv_to_data_url(
+            yomikata.generate_blacklist_tsv(blacklist)
         );
     },
 
@@ -334,16 +319,11 @@ yomikata = {
     {
         var blacklist = yomikata.build_blacklist();
 
-        dom_element.setAttribute(
-            "href",
-            yomikata.tsv_to_data_url(
-                yomikata.generate_new_words_tsv(
-                    yomikata.parse_paragraph(
-                        $("japanese-text").value,
-                        "",
-                        blacklist
-                    )["words"]
-                )
+        dom_element.href = yomikata.tsv_to_data_url(
+            yomikata.generate_new_words_tsv(
+                yomikata.parse_paragraph(
+                    $("japanese-text").value, "", blacklist
+                )["words"]
             )
         );
     },
@@ -467,9 +447,7 @@ yomikata = {
 
     to_data_url: function (mime_type, text)
     {
-        var binary = unescape(encodeURIComponent(text));
-
-        return "data:" + String(mime_type) + ";charset=utf-8;base64," + btoa(binary);
+        return URL.createObjectURL(new Blob([text], {"type": mime_type}));
     },
 
     generate_html: function (paragraphs)
