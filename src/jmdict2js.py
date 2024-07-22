@@ -26,7 +26,7 @@ HEADER = """
 /*   "annotations": ["ann1", "ann2", "ann3", ... ],                           */
 /*   "readings": ["read1", "read2", "read3", ... ],                           */
 /*   "entries": [                                                             */
-/*    "READ_IDX1;READ_IDX2\\nANN_IDX1;ANN_IDX2|mean1; mean2\\nANN_IDX2|mean3",*/
+/*    "READ_IDX1;READ_IDX2\\nANN_IDX1;ANN_IDX2|mean1; mean2\\nANN_IDX2|mean3",  */
 /*    ...                                                                     */
 /*   ],                                                                       */
 /*   "dictionary_trie": {                                                     */
