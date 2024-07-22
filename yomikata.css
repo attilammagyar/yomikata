@@ -5,7 +5,8 @@
 
 html,
 body {
-    color: #001050;
+    color: #d0d0d2;
+    background-color: #0a0a0c;
 }
 
 html,
@@ -19,8 +20,9 @@ input {
 input,
 textarea {
     clear: left;
-    border: inset 2px #2050a0;
-    color: #001050;
+    border: inset 2px #606062;
+    color: #d0d0d2;
+    background-color: #000000;
     width: 70vw;
     border-radius: 3px;
     padding: 0.5vmin;
@@ -33,10 +35,6 @@ textarea {
 
 textarea.vocab-word-list {
     height: 15vh;
-}
-
-html {
-    background-color: #e0e4ff;
 }
 
 body {
@@ -52,11 +50,10 @@ body {
 }
 
 #splashscreen {
-    background-color: #ffffff;
+    background-color: #000000;
     margin: 7vh 5vw;
     padding: 5vh 4vw;
     width: 80vw;
-    box-shadow: 0.5vmin 0.5vmin 0.5vmin 0.5vmin #c8cce4;
 }
 
 #splashscreen p {
@@ -88,10 +85,9 @@ img.loading {
 }
 
 #ui {
-    background-color: #ffffff;
+    background-color: #0a0a0c;
     margin: auto;
     padding: 1.5vh 1.5vw;
-    box-shadow: 0.2vmin 0.2vmin 0.2vmin 0.2vmin #c8cce4;
     min-height: 70vh;
     width: 90vw;
 }
@@ -117,7 +113,7 @@ img.loading {
 #vocab-table,
 #vocab-table tr,
 #vocab-table tr td {
-    border: solid 1px #001050;
+    border: solid 1px #606062;
     border-collapse: collapse;
 }
 
@@ -144,8 +140,8 @@ img.loading {
 
 #ui a.button {
     display: inline-block;
-    background-color: #001050;
-    color: #ffffff;
+    background-color: #081860;
+    color: #f0f0f2;
     border: outset 2px #2050a0;
     border-radius: 3px;
     text-decoration: none;
@@ -167,7 +163,7 @@ img.loading {
 
 #acknowledgement p a {
     font-weight: bold;
-    color: #102070;
+    color: #a0a8f0;
 }
 
 #vocab .guide {
