@@ -20,7 +20,7 @@ yomikata = {
     KANJI_RE: /[\u4e00-\u9faf\u3400-\u4dbf]/,
     NOISE_RE: /([ _.,;:()\[\]{}'"\/*+-]|　|。|、|；|：|（|）|【|】|｛|｝|「|」|『|』|・|＊|＋|ー|＝)/g,
 
-    BLACKLIST: { // basic words and common particles that make vocab lists noisy
+    BLOCKLIST: { // basic words and common particles that make vocab lists noisy
         "て": 0,
         "た": 0,
         "ない": 0,
@@ -209,7 +209,7 @@ yomikata = {
 
     save_known_words: function ()
     {
-        yomikata.blacklist_to_href_data_url_tsv(this);
+        yomikata.blocklist_to_href_data_url_tsv(this);
         this.setAttribute("download", "known_words-" + String(Date.now()) + ".tsv");
 
         return true;
@@ -257,7 +257,7 @@ yomikata = {
         var text = yomikata.japanese_text_input.value,
             html = [],
             id = 0,
-            blacklist = yomikata.build_blacklist(),
+            blocklist = yomikata.build_blocklist(),
             words;
 
         yomikata.customize_vocab_button.innerHTML = "Update vocab customizer";
@@ -270,7 +270,7 @@ yomikata = {
         ].join("");
         yomikata.vocab_container.style.display = "block";
 
-        words = yomikata.parse_paragraph(text, "", yomikata.BLACKLIST)["words"];
+        words = yomikata.parse_paragraph(text, "", yomikata.BLOCKLIST)["words"];
 
         html = words.map(function (entries) {
             var writing;
@@ -287,7 +287,7 @@ yomikata = {
                     "<td>",
                         "<input id=\"vocab-checkbox-", String(id), "\" ",
                                 "type=\"checkbox\" value=\"", writing, "\" ",
-                                blacklist.hasOwnProperty(entries[0]["writing"])
+                                blocklist.hasOwnProperty(entries[0]["writing"])
                                     ? ""
                                     : "checked=\"checked\" ",
                                 "/>",
@@ -330,55 +330,55 @@ yomikata = {
 
     japanese_text_to_href_data_url_html: function (dom_element)
     {
-        var blacklist = yomikata.build_blacklist();
+        var blocklist = yomikata.build_blocklist();
 
         dom_element.href = yomikata.html_to_data_url(
             yomikata.generate_html(
-                yomikata.parse_text(yomikata.japanese_text_input.value, blacklist)
+                yomikata.parse_text(yomikata.japanese_text_input.value, blocklist)
             )
         );
     },
 
     japanese_text_to_href_data_url_txt: function (dom_element)
     {
-        var blacklist = yomikata.build_blacklist();
+        var blocklist = yomikata.build_blocklist();
 
         dom_element.href = yomikata.txt_to_data_url(
             yomikata.generate_txt(
-                yomikata.parse_text(yomikata.japanese_text_input.value, blacklist)
+                yomikata.parse_text(yomikata.japanese_text_input.value, blocklist)
             )
         );
     },
 
-    blacklist_to_href_data_url_tsv: function (dom_element)
+    blocklist_to_href_data_url_tsv: function (dom_element)
     {
-        var blacklist = yomikata.build_blacklist();
+        var blocklist = yomikata.build_blocklist();
 
         dom_element.href = yomikata.tsv_to_data_url(
-            yomikata.generate_blacklist_tsv(blacklist)
+            yomikata.generate_blocklist_tsv(blocklist)
         );
     },
 
     new_words_to_href_data_url_tsv: function (dom_element)
     {
-        var blacklist = yomikata.build_blacklist();
+        var blocklist = yomikata.build_blocklist();
 
         dom_element.href = yomikata.tsv_to_data_url(
             yomikata.generate_new_words_tsv(
                 yomikata.parse_paragraph(
-                    yomikata.japanese_text_input.value, "", blacklist
+                    yomikata.japanese_text_input.value, "", blocklist
                 )["words"]
             )
         );
     },
 
-    generate_blacklist_tsv: function (blacklist)
+    generate_blocklist_tsv: function (blocklist)
     {
         var lines = [yomikata.TSV_HEADER],
             entries, writing;
 
-        for (writing in blacklist) {
-            if (blacklist.hasOwnProperty(writing) && (!yomikata.BLACKLIST.hasOwnProperty(writing))) {
+        for (writing in blocklist) {
+            if (blocklist.hasOwnProperty(writing) && (!yomikata.BLOCKLIST.hasOwnProperty(writing))) {
                 entries = yomikata.lookup_by_writing(
                     {"word_id": null, "writing": writing},
                     {}
@@ -434,7 +434,7 @@ yomikata = {
             entries = words[i];
 
             if (entries.length > 0) {
-                if (!entries[0]["is_blacklisted"]) {
+                if (!entries[0]["is_blocklisted"]) {
                     writing = entries[0]["writing"];
                     lines.push(yomikata.entries_to_tsv_lines(writing, entries));
                 }
@@ -444,22 +444,22 @@ yomikata = {
         return lines.join(yomikata.TXT_EOL);
     },
 
-    build_blacklist: function ()
+    build_blocklist: function ()
     {
-        var blacklist = {},
+        var blocklist = {},
             known_list = yomikata.known_vocab_input.value,
             checkboxes = yomikata.vocab_table.getElementsByTagName("input"),
             lines, word, i, l, k, v;
 
-        for (k in yomikata.BLACKLIST) {
-            if (yomikata.BLACKLIST.hasOwnProperty(k)) {
-                blacklist[k] = yomikata.BLACKLIST[v];
+        for (k in yomikata.BLOCKLIST) {
+            if (yomikata.BLOCKLIST.hasOwnProperty(k)) {
+                blocklist[k] = yomikata.BLOCKLIST[v];
             }
         }
 
         for (i = 0, l = checkboxes.length; i < l; ++i) {
             if (!checkboxes[i].checked) {
-                blacklist[checkboxes[i].value] = 0;
+                blocklist[checkboxes[i].value] = 0;
             }
         }
 
@@ -472,12 +472,12 @@ yomikata = {
                 word = word[1].replace(/['"]/g, "");
 
                 if (word !== "") {
-                    blacklist[word] = 0;
+                    blocklist[word] = 0;
                 }
             }
         }
 
-        return blacklist;
+        return blocklist;
     },
 
     html_to_data_url: function (html)
@@ -523,7 +523,7 @@ yomikata = {
         ].join(yomikata.TXT_EOL);
     },
 
-    parse_text: function (text, blacklist)
+    parse_text: function (text, blocklist)
     {
         var paragraphs = text.split(/\n\n+/).filter(yomikata.is_not_empty),
             i, l;
@@ -531,7 +531,7 @@ yomikata = {
         return paragraphs.map(
             function (paragraph, paragraph_id)
             {
-                return yomikata.parse_paragraph(paragraph, paragraph_id, blacklist);
+                return yomikata.parse_paragraph(paragraph, paragraph_id, blocklist);
             }
         );
     },
@@ -541,7 +541,7 @@ yomikata = {
         return str != "";
     },
 
-    parse_paragraph: function (paragraph, paragraph_id, blacklist)
+    parse_paragraph: function (paragraph, paragraph_id, blocklist)
     {
         var tokens,
             parsed_tokens = [],
@@ -565,7 +565,7 @@ yomikata = {
                 "word_ids": [],
                 "token": s,
                 "reading": null,
-                "is_blacklisted": blacklist.hasOwnProperty(b),
+                "is_blocklisted": blocklist.hasOwnProperty(b),
                 "is_expression": false
             };
 
@@ -613,7 +613,7 @@ yomikata = {
             "words": writings.map(
                 function (writing)
                 {
-                    return yomikata.lookup_by_writing(writing, blacklist);
+                    return yomikata.lookup_by_writing(writing, blocklist);
                 }
             )
         };
@@ -748,12 +748,12 @@ yomikata = {
         return node;
     },
 
-    lookup_by_writing: function (writing, blacklist)
+    lookup_by_writing: function (writing, blocklist)
     {
         var entries = [],
             node,
             entry_ids,
-            is_blacklisted = false,
+            is_blocklisted = false,
             wi = writing["word_id"],
             wr = writing["writing"],
             i, l;
@@ -764,7 +764,7 @@ yomikata = {
             return [];
         }
 
-        is_blacklisted = blacklist.hasOwnProperty(wr);
+        is_blocklisted = blocklist.hasOwnProperty(wr);
         entry_ids = node[""];
 
         if (typeof(entry_ids) === "number") {
@@ -773,14 +773,14 @@ yomikata = {
 
         for (i = 0, l = entry_ids.length; i < l; ++i) {
             entries.push(
-                yomikata.build_entry(wi, wr, entry_ids[i], is_blacklisted)
+                yomikata.build_entry(wi, wr, entry_ids[i], is_blocklisted)
             );
         }
 
         return entries;
     },
 
-    build_entry: function (word_id, writing, entry_id, is_blacklisted)
+    build_entry: function (word_id, writing, entry_id, is_blocklisted)
     {
         var entry = JMdict["entries"][entry_id],
             lines, readings, meanings;
@@ -794,7 +794,7 @@ yomikata = {
             "writing": writing,
             "readings": readings,
             "meanings": meanings,
-            "is_blacklisted": is_blacklisted
+            "is_blocklisted": is_blocklisted
         };
     },
 
@@ -946,7 +946,7 @@ yomikata = {
     format_entry_html: function (entry)
     {
         var html = [],
-            classes = entry["is_blacklisted"] ? " blacklisted" : "",
+            classes = entry["is_blocklisted"] ? " blocklisted" : "",
             writing = yomikata.quote_html(entry["writing"]);
 
         html.push('<dl class="' + entry["word_id"] + classes + '">');
@@ -1079,7 +1079,7 @@ yomikata = {
         for (i = 0, l = tokens.length; i < l; ++i) {
             t = tokens[i];
 
-            if (t["reading"] !== null && !t["is_blacklisted"]) {
+            if (t["reading"] !== null && !t["is_blocklisted"]) {
                 f = [String(t["token"]), " 【", String(t["reading"]), "】 "];
             } else {
                 f = [String(t["token"])];
@@ -1094,15 +1094,15 @@ yomikata = {
     format_entries_txt: function (entries)
     {
         return entries.filter(
-            yomikata.is_not_blacklisted_entry
+            yomikata.is_not_blocklisted_entry
         ).map(
             yomikata.format_entry_txt
         ).join(yomikata.TXT_EOL);
     },
 
-    is_not_blacklisted_entry: function (word)
+    is_not_blocklisted_entry: function (word)
     {
-        return !word["is_blacklisted"];
+        return !word["is_blocklisted"];
     },
 
     format_entry_txt: function (entry)
@@ -1278,7 +1278,7 @@ yomikata.HTML_HEAD = [
         '.paragraph .vocab dl:before {',
             'content: " \\2022 ";',
         '}',
-        '.paragraph .vocab dl.blacklisted {',
+        '.paragraph .vocab dl.blocklisted {',
             'display: none;',
         '}',
         '.paragraph .vocab dl dt {',
