@@ -368,7 +368,13 @@ yomikata = {
                 ].join(" "));
             }
 
-            columns = [writing, readings.join(","), meanings.join(" // ")];
+            readings = readings.join(",").trim();
+
+            if (readings === "") {
+                readings = writing;
+            }
+
+            columns = [writing, readings, meanings.join(" // ")];
             lines.push(columns.join("\t"));
         }
 
