@@ -86,6 +86,7 @@ yomikata = {
     customize_vocab_button: null,
     vocab_container: null,
     known_vocab_input: null,
+    toggle_unselected: null,
 
     initialize: function ()
     {
@@ -101,6 +102,7 @@ yomikata = {
         yomikata.customize_vocab_button = $("customize-vocab");
         yomikata.vocab_container = $("vocab");
         yomikata.known_vocab_input = $("vocab-import-known");
+        yomikata.toggle_unselected = $("toggle-unselected");
 
         yomikata.timer = setInterval(yomikata.update_dictionary_status, 1000);
         setTimeout(yomikata.initialize_tokenizer, 300);
@@ -111,6 +113,7 @@ yomikata = {
         save_known_words.onclick = yomikata.save_known_words;
         save_new_words.onclick = yomikata.save_new_words;
 
+        yomikata.toggle_unselected.onclick = yomikata.toggle_hiding_unselected;
         yomikata.customize_vocab_button.onclick = yomikata.customize_vocab;
     },
 
@@ -218,6 +221,35 @@ yomikata = {
         this.setAttribute("download", "new_words-" + String(Date.now()) + ".tsv");
 
         return true;
+    },
+
+    toggle_hiding_unselected: function ()
+    {
+        var should_hide = yomikata.toggle_unselected.checked,
+            rows = yomikata.vocab_table.getElementsByTagName("tr"),
+            row,
+            inputs,
+            input,
+            i, j, l, ll;
+
+        if (should_hide) {
+            for (i = 0, l = rows.length; i < l; ++i) {
+                row = rows[i];
+                inputs = row.getElementsByTagName("input");
+
+                for (j = 0, ll = inputs.length; j < ll; ++j) {
+                    input = inputs[j];
+
+                    if (input.getAttribute("type") === "checkbox" && !input.checked) {
+                        row.style.display = "none";
+                    }
+                }
+            }
+        } else {
+            for (i = 0, l = rows.length; i < l; ++i) {
+                rows[i].style.display = "";
+            }
+        }
     },
 
     customize_vocab: function ()
