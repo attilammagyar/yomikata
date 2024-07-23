@@ -28,6 +28,10 @@ textarea {
     padding: 0.5vmin;
 }
 
+input#toggle-unselected {
+    width: auto;
+}
+
 textarea {
     height: 45vh;
     width: 80vw;
@@ -138,6 +142,7 @@ img.loading {
     padding: 1vmin;
 }
 
+#ui label#toggle-unselected-label,
 #ui a.button {
     display: inline-block;
     background-color: #081860;

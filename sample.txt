@@ -8,21 +8,21 @@
  * [n.] region
  * [n.] national government; central government
  * [n.] home (i.e. hometown, home country)
- * [n.; arch.] province (of Japan)
- * [n.; arch.] land; earth
+ * [n.; historical term] province (of Japan)
+ * [n.; archaic] land; earth
 日本国 【にほんこく、にっぽんこく】 * [n.] Japan
 または * [conj.; us. kana] or; either ... or ...
-東アジア 【ひがしアジア】 * [n.; nouns which may take the genitive case particle 'no'] East Asia
+東アジア 【ひがしアジア】 * [n.] East Asia
 列島 【れっとう】 * [n.] archipelago; chain of islands
 日本列島 【にほんれっとう、にっぽんれっとう】 * [n.] the Japanese islands
 四国 【しこく】 * [n.] Shikoku (smallest of the four main islands of Japan)
 主要 【しゅよう】 * [adjn..; n.] chief; main; principal; major
-島 【しま】 * [n.] island
- * [n.; us. kana] one's territory (e.g. of a sex worker, organized crime gang); one's turf
+島 【しま、シマ】 * [n.] island
+ * [n.; us. kana] one's territory (of a sex worker, organized crime gang, etc.); one's turf
 島 【とう】 * [suffix] Island
  * [sufn.; n.] insula; island; islet
 それに * [conj.; us. kana] besides; in addition; also; moreover
-付随 【ふずい】 * [n.; suru] being incident to; being accompanied by; being collateral with; being attached to
+付随 【ふずい】 * [n.; suru; vi.] being incident to; being accompanied by; being collateral with; being attached to
 島々 【しまじま】 * [n.] islands
 及び 【および】 * [conj.] and; as well as
 南西諸島 【なんせいしょとう】 * [n.] Nansei Islands; Ryukyu Islands; chain of islands extending from southwestern Kyushu to northern Taiwan
@@ -43,7 +43,7 @@
  * [Godan verb with 'ru' ending; vi.; us. kana] to be used for; to be useful for; to serve as
  * [Godan verb with 'ru' ending; vi.] to be promoted
  * [auxv.; Godan verb with 'ru' ending; sonkeigo; us. kana] to do ...
-から成る 【からなる】 * [phrase; us. kana] consists of; comprises; is made up of
+から成る 【からなる】 * [phrase; Godan verb with 'ru' ending; us. kana] consists of; comprises; is made up of
 島国 【しまぐに、とうごく】 * [n.] island country
 である * [cop.; Godan verb with 'ru' ending (irregular verb); formal or literary term] be; is
 日本語 【にほんご、にっぽんご】 * [n.] Japanese (language)
@@ -51,7 +51,7 @@
 事実上 【じじつじょう】 * [n.; nouns which may take the genitive case particle 'no'; adv.] as a matter of fact; actually; effectively; in reality; in effect
 公用 【こうよう】 * [n.] official business; government business; public business; company duties
  * [n.; nouns which may take the genitive case particle 'no'] public use; government use
-語 【ご】 * [n.; sufn.; cnt.] word
+語 【ご】 * [n.; sufn.; cnt.] word; term
  * [n.; sufn.] language
  * [n.] speech
 語 【かたり】 * [n.] talk; recital
@@ -75,15 +75,16 @@
 列島 【れっとう】 * [n.] archipelago; chain of islands
 日本列島 【にほんれっとう、にっぽんれっとう】 * [n.] the Japanese islands
 中国 【ちゅうごく、ちゅうこく】 * [n.] China
- * [n.; abbr.] Chūgoku region (western part of Honshu comprising the prefectures of Okayama, Hiroshima, Yamaguchi, Tottori and Shimane)
+ * [n.] Chūgoku region (western part of Honshu comprising the prefectures of Okayama, Hiroshima, Yamaguchi, Tottori and Shimane)
  * [n.] central part of a country; main region
- * [n.] province of the second lowest rank (ritsuryo system)
+ * [n.; historical term] province of the second lowest rank (ritsuryō system)
 大陸 【たいりく】 * [n.; nouns which may take the genitive case particle 'no'] continent
  * [n.] continental Asia (esp. mainland China)
  * [n.] continental Europe
 中国大陸 【ちゅうごくたいりく】 * [n.] mainland China
 果て 【はて】 * [n.] the end; the extremity; the limit; the limits; the result
-日の本 【ひのもと】 * [n.; arch.] Japan
+日の本 【ひのもと】 * [n.; archaic] Japan
+のでは * [phrase] isn't it (the case that ...)?; could it be that ...?; don't you think?
 とされる * [phrase; v1.] ... is considered to ...
 近代 【きんだい】 * [n.] present day; modern times; recent times
  * [n.; historical term] early modern period (in Japan, usu. from the Meiji Restoration until the end of World War II)
@@ -91,19 +92,21 @@
 日本国 【にほんこく、にっぽんこく】 * [n.] Japan
 日本国憲法 【にほんこくけんぽう】 * [n.] constitution of Japan; Japanese constitution
 大日本帝国 【だいにっぽんていこく】 * [n.; historical term] Empire of Japan (Japan's official name under the Meiji Constitution)
-大日本帝国憲法 【だいにっぽんていこくけんぽう】 * [n.] Constitution of the Empire of Japan; Meiji Constitution
+大日本帝国憲法 【だいにっぽんていこくけんぽう】 * [n.; historical term] Constitution of the Empire of Japan; Meiji Constitution
 である * [cop.; Godan verb with 'ru' ending (irregular verb); formal or literary term] be; is
 国 【くに】 * [n.] country; state
  * [n.] region
  * [n.] national government; central government
  * [n.] home (i.e. hometown, home country)
- * [n.; arch.] province (of Japan)
- * [n.; arch.] land; earth
+ * [n.; historical term] province (of Japan)
+ * [n.; archaic] land; earth
 または * [conj.; us. kana] or; either ... or ...
 かつ * [conj.; adv.; us. kana] and; moreover; besides; as well as; and on top of that; at the same time
 明確 【めいかく】 * [adjn..] clear; precise; definite; distinct
-規定 【きてい】 * [n.; nouns which may take the genitive case particle 'no'; suru] stipulation; prescription; provision; regulation; rule
-法令 【ほうれい】 * [n.; nouns which may take the genitive case particle 'no'] laws and ordinances; acts (of parliament, congress, etc.)
+規定 【きてい】 * [n.; suru; vt.] stipulation; prescription; provision; regulation; rule
+ * [n.] normal (unit of normality)
+ * [n.; abbr.] compulsory exercise (in gymnastics); compulsory routine; compulsory dance (figure skating); (a) compulsory
+法令 【ほうれい】 * [n.] statute; law; act; ordinance; regulation
 疑問点 【ぎもんてん】 * [n.] point of uncertainty; unclarified issue; doubt
 日本工業規格 【にほんこうぎょうきかく】 * [n.] Japan Industrial Standards; JIS
 英語 【えいご】 * [n.] English (language)
@@ -113,7 +116,7 @@
 国際規格 【こくさいきかく】 * [n.] international standard
 略号 【りゃくごう】 * [n.] code; mark; symbol
 外務省 【がいむしょう】 * [n.] Ministry of Foreign Affairs
-発給 【はっきゅう】 * [n.; suru] issuance (e.g. of a passport); issuing
+発給 【はっきゅう】 * [n.; suru; vt.] issuance (e.g. of a passport); issuing
 旅券 【りょけん】 * [n.] passport
 重 【おも】 * [adjn..; n.] chief; main; principal; important
  * [adjn..; n.; abbr.] main secondary or supporting role (in kyogen)
@@ -126,6 +129,7 @@
  * [n.; nouns which may take the genitive case particle 'no'] monopetalous
  * [n.; abbr.] unlined kimono
  * [n.; abbr.] single-edged eyelid; eyelid with an epicanthic fold; upper eyelid with no fold
-提示 【ていじ】 * [n.; suru] presentation; exhibit; suggest; citation
+提示 【ていじ】 * [n.; suru; vt.] presentation (of a passport, ID, etc.); showing; production (e.g. of documents)
+ * [n.; suru; vt.] presentation (of a plan, response, etc.); bringing up; citing (an example)
 
 -------------------
