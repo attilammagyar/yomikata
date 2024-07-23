@@ -80,15 +80,27 @@ yomikata = {
     timer: null,
     tokenizer: null,
     vocab_selector_loader: null,
+    japanese_text_input: null,
+    title_input: null,
+    vocab_table: null,
+    customize_vocab_button: null,
+    vocab_container: null,
+    known_vocab_input: null,
 
     initialize: function ()
     {
         var open_html = $("open-html"),
-            save_html = $("save-html");
-            save_txt = $("save-txt");
-            save_known_words = $("save-known-words");
+            save_html = $("save-html"),
+            save_txt = $("save-txt"),
+            save_known_words = $("save-known-words"),
             save_new_words = $("save-new-words");
-            customize_vocab = $("customize-vocab");
+
+        yomikata.japanese_text_input = $("japanese-text");
+        yomikata.title_input = $("title");
+        yomikata.vocab_table = $("vocab-table");
+        yomikata.customize_vocab_button = $("customize-vocab");
+        yomikata.vocab_container = $("vocab");
+        yomikata.known_vocab_input = $("vocab-import-known");
 
         yomikata.timer = setInterval(yomikata.update_dictionary_status, 1000);
         setTimeout(yomikata.initialize_tokenizer, 300);
@@ -98,7 +110,8 @@ yomikata = {
         save_txt.onclick = yomikata.save_txt;
         save_known_words.onclick = yomikata.save_known_words;
         save_new_words.onclick = yomikata.save_new_words;
-        customize_vocab.onclick = yomikata.customize_vocab;
+
+        yomikata.customize_vocab_button.onclick = yomikata.customize_vocab;
     },
 
     bind: function (func, obj)
@@ -173,7 +186,7 @@ yomikata = {
 
     save_html: function ()
     {
-        var title = String($("title").value);
+        var title = String(yomikata.title_input.value);
 
         yomikata.japanese_text_to_href_data_url_html(this);
         this.setAttribute("download", title + ".html");
@@ -183,7 +196,7 @@ yomikata = {
 
     save_txt: function ()
     {
-        var title = String($("title").value);
+        var title = String(yomikata.title_input.value);
 
         yomikata.japanese_text_to_href_data_url_txt(this);
         this.setAttribute("download", title + ".txt");
@@ -209,22 +222,21 @@ yomikata = {
 
     customize_vocab: function ()
     {
-        var vocab_table = $("vocab-table"),
-            text = $("japanese-text").value,
+        var text = yomikata.japanese_text_input.value,
             html = [],
             id = 0,
             blacklist = yomikata.build_blacklist(),
             words;
 
-        $("customize-vocab").innerHTML = "Update vocab customizer";
-        vocab_table.innerHTML = [
+        yomikata.customize_vocab_button.innerHTML = "Update vocab customizer";
+        yomikata.vocab_table.innerHTML = [
             '<tr>',
                 '<td class="center" colspan="3" lang="en">',
                     '<img class="loading" src="loading.gif" alt="Please wait..." />',
                 '</td>',
             '</tr>',
         ].join("");
-        $("vocab").style.display = "block";
+        yomikata.vocab_container.style.display = "block";
 
         words = yomikata.parse_paragraph(text, "", yomikata.BLACKLIST)["words"];
 
@@ -281,7 +293,7 @@ yomikata = {
             ].join("");
         }).join("");
 
-        vocab_table.innerHTML = html;
+        yomikata.vocab_table.innerHTML = html;
     },
 
     japanese_text_to_href_data_url_html: function (dom_element)
@@ -290,7 +302,7 @@ yomikata = {
 
         dom_element.href = yomikata.html_to_data_url(
             yomikata.generate_html(
-                yomikata.parse_text($("japanese-text").value, blacklist)
+                yomikata.parse_text(yomikata.japanese_text_input.value, blacklist)
             )
         );
     },
@@ -301,7 +313,7 @@ yomikata = {
 
         dom_element.href = yomikata.txt_to_data_url(
             yomikata.generate_txt(
-                yomikata.parse_text($("japanese-text").value, blacklist)
+                yomikata.parse_text(yomikata.japanese_text_input.value, blacklist)
             )
         );
     },
@@ -322,7 +334,7 @@ yomikata = {
         dom_element.href = yomikata.tsv_to_data_url(
             yomikata.generate_new_words_tsv(
                 yomikata.parse_paragraph(
-                    $("japanese-text").value, "", blacklist
+                    yomikata.japanese_text_input.value, "", blacklist
                 )["words"]
             )
         );
@@ -403,8 +415,8 @@ yomikata = {
     build_blacklist: function ()
     {
         var blacklist = {},
-            known_list = $("vocab-import-known").value,
-            checkboxes = $("vocab-table").getElementsByTagName("input"),
+            known_list = yomikata.known_vocab_input.value,
+            checkboxes = yomikata.vocab_table.getElementsByTagName("input"),
             lines, word, i, l, k, v;
 
         for (k in yomikata.BLACKLIST) {
@@ -458,7 +470,7 @@ yomikata = {
 
     generate_html: function (paragraphs)
     {
-        var title = $("title").value || "yomikata";
+        var title = yomikata.title_input.value || "yomikata";
 
         return [
             yomikata.HTML_HEAD.replace("{{TITLE}}", title),
@@ -469,7 +481,7 @@ yomikata = {
 
     generate_txt: function (paragraphs)
     {
-        var title = $("title").value || "yomikata";
+        var title = yomikata.title_input.value || "yomikata";
 
         return [
             String(title),
